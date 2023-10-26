@@ -10,7 +10,7 @@ const add = ()=>{
 }
 
 function App() {
-let arr = [10,20,30,40,50,60,70];
+let arr = [10,20,30,40,50,60,70,80,90];
 let arr1 = arr.map((i)=>{
    return <li>{i}</li>
 })
