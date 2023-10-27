@@ -1,6 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import Firstdemo from './components/Firstdemo';
+import Seconddemo from './components/Seconddemo';
 
 const add = ()=>{
   let a = 20;
@@ -35,6 +36,7 @@ let arr1 = arr.map((i)=>{
           {arr1}
         </ul>
         <Firstdemo />
+        <Seconddemo />
       </header>
     </div>
   );

@@ -7,9 +7,6 @@ const Firstdemo = () =>{
             <h3>My First Components called</h3>
             <h5>welcome ReactJS</h5>
         </div>
-        <div>
-            <h5>Welcome ReactJS</h5>
-        </div>
         </>
       );
 }
