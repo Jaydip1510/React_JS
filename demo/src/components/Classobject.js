@@ -11,15 +11,22 @@ class Classobject extends Component {
             age:26,
             salary:30000
         }
+        const renderUserDetails = () => {
+            const userDetails = [];
+            for (const key in emp) {
+              userDetails.push(
+                <p key={key}>
+                  <strong>{key}:</strong> {emp[key]}
+                </p>
+              );
+            }
+            return userDetails;
+          };
+          
         return (
             <div>
-                {/* <h3>A is -- {a}</h3>
-                <h3>B is -- {b}</h3>
-                <h3>C is -- {c}</h3> */}
                 <h5>Array list</h5>
-                <h5>Name is --- {emp.name}</h5>
-                <h5>Age is --- {emp.age}</h5>
-                <h5>Salary is --- {emp.salary}</h5>
+                <div>{renderUserDetails()}</div>
                 <ul>
                     {
                         arr2.map((i)=>{
@@ -28,6 +35,7 @@ class Classobject extends Component {
                     }
                 </ul>
             </div>
+            
         );
     }
 }
