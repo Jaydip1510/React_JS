@@ -1,4 +1,4 @@
-import logo from './logo.svg';
+
 import './App.css';
 import Firstdemo from './components/Firstdemo';
 
@@ -20,9 +20,9 @@ let arr1 = arr.map((i)=>{
   return (
     <div className="App">
       <header className="App-header">
-        <h3>my first react demo</h3>
-        <h4>Addition is :- {add()}</h4>
-        <h4>Array is :- {arr [2]}</h4>
+        <h5>my first react demo</h5>
+        <h5>Addition is :- {add()}</h5>
+        <h5>Array is :- {arr[2]}</h5>
         <ul>
           {arr1}
         </ul>

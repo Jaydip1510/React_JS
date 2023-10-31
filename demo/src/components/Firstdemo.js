@@ -4,7 +4,7 @@ const Firstdemo = () =>{
       return (
       
         <div>
-            <h3>My First Components called</h3>
+            <h5>My First Components called</h5>
             <h5>welcome ReactJS</h5>
         </div>
         
