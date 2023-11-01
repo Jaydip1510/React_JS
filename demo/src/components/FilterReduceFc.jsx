@@ -1,3 +1,4 @@
+
 import React from 'react'
 const  FilterReduceFc = () => {
     const arr = [{
@@ -29,6 +30,7 @@ const  FilterReduceFc = () => {
             </ul><hr />
             <h3>Reduce Function</h3>
             result is :- {res1}
+
         </div>
     );
 }
