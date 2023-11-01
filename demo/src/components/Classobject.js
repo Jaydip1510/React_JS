@@ -11,6 +11,11 @@ class Classobject extends Component {
             age:26,
             salary:30000
         }
+        const student = [{
+            roll_no :21,
+            name:"raj",
+            gender:"male"
+        }]
         const renderUserDetails = () => {
             const userDetails = [];
             for (const key in emp) {
@@ -26,7 +31,7 @@ class Classobject extends Component {
         return (
             <div>
                 <h5>Array list</h5>
-                <div>{renderUserDetails()}</div>
+                
                 <ul>
                     {
                         arr2.map((i)=>{
@@ -34,6 +39,19 @@ class Classobject extends Component {
                         })
                     }
                 </ul>
+                {/* <div>{renderUserDetails()}</div> <hr /> */}
+                {
+                    student.map((i)=>{
+                        return (
+                            <div>
+                                <h4>name is:-{i.name}</h4>
+                                <h4>Age is:-{i.roll_no}</h4>
+                                <h4>Gender is:-{i.gender}</h4><hr/>
+                            </div>
+                            
+                        )
+                    })
+                }
             </div>
             
         );

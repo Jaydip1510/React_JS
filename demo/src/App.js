@@ -3,6 +3,7 @@ import './App.css';
 import Firstdemo from './components/Firstdemo';
 
 import Classobject from './components/Classobject';
+import FilterReduceFc from './components/FilterReduceFc';
 
 const add = ()=>{
   let a = 20;
@@ -20,14 +21,15 @@ let arr1 = arr.map((i)=>{
   return (
     <div className="App">
       <header className="App-header">
-        <h5>my first react demo</h5>
+        {/* <h5>my first react demo</h5>
         <h5>Addition is :- {add()}</h5>
         <h5>Array is :- {arr[2]}</h5>
         <ul>
           {arr1}
         </ul>
-        <Firstdemo />
+        <Firstdemo /> */}
         <Classobject />
+        <FilterReduceFc />
       </header>
     </div>
   );
