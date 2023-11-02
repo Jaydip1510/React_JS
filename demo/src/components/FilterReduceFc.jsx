@@ -23,7 +23,7 @@ const  FilterReduceFc = () => {
             <ul>
                 {
                     result.map((i,index)=>{
-                        return <li key={index}>{i.name}</li>
+                        return <li key={index}>{i.age}</li>
                     })
                 }
             </ul><hr />

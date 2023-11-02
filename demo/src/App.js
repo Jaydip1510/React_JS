@@ -26,8 +26,8 @@ let arr1 = arr.map((i)=>{
         <h5>Array is :- {arr[2]}</h5>
         <ul>
           {arr1}
-        </ul>
-        <Firstdemo /> */}
+        </ul>*/}
+        <Firstdemo /> 
         <Classobject />
         <FilterReduceFc />
       </header>
