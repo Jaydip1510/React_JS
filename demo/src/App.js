@@ -4,6 +4,8 @@ import Firstdemo from './components/Firstdemo';
 
 import Classobject from './components/Classobject';
 import FilterReduceFc from './components/FilterReduceFc';
+import FormComponent from './components/Form';
+import SignIn from './components/Login';
 
 const add = ()=>{
   let a = 20;
@@ -27,9 +29,11 @@ let arr1 = arr.map((i)=>{
         <ul>
           {arr1}
         </ul>*/}
-        <Firstdemo /> 
+        {/* <Firstdemo /> 
         <Classobject />
-        <FilterReduceFc />
+        <FilterReduceFc /> */}
+        <FormComponent />
+        <SignIn />
       </header>
     </div>
   );
