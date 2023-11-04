@@ -1,6 +1,7 @@
 
 import './App.css';
 import ArrayComponent from './components/ArrayComponent';
+import ArrayOfobject from './components/ArrayofObject';
 import FirstComponent from './components/FirstComponent';
 import SquareCube from './components/SquareCube';
 
@@ -12,6 +13,7 @@ function App() {
       <FirstComponent />
       <SquareCube />
       <ArrayComponent />
+      <ArrayOfobject />
     </div>
   );
 }

@@ -60,7 +60,7 @@ const ArrayComponent = () => {
                             return <li>{i}</li>
                         })
                     }
-                </ul>
+                </ul><hr/>
 
        </div>
     )
