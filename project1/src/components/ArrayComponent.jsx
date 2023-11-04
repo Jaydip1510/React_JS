@@ -5,12 +5,24 @@ const ArrayComponent = () => {
     let arr2 = [10,20,30,40,50];
     let arr3 = [11,22,33,44,55];
     let array = [...arr2,...arr3];
-
+    
     let year = [2001,2005,2012,2020]
     const tot = arr2.reduce((total,arr2) => total + arr2)
     const result = arr.filter ((i) =>{
          return i == 44;
     })
+
+    let a = ["mango","orange","mango","apple","apple","pineple","apple"];
+    const countElements = (arr) => {
+      return arr.reduce((count, element) => {
+        count[element] = (count[element] || 0) + 1;
+        return count;
+      }, {});
+    };
+  
+    const result1 = countElements(a);
+  
+    console.log(result1);
 
     return (
        <div>
