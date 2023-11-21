@@ -6,6 +6,8 @@ import Classobject from './components/Classobject';
 import FilterReduceFc from './components/FilterReduceFc';
 import FormComponent from './components/Form';
 import SignIn from './components/Login';
+import TransferList from './components/Transferlist';
+import Folderjsx from './components/Folderjsx';
 
 const add = ()=>{
   let a = 20;
@@ -32,8 +34,10 @@ let arr1 = arr.map((i)=>{
         {/* <Firstdemo /> 
         <Classobject />
         <FilterReduceFc /> */}
-        <FormComponent />
+        {/* <FormComponent /> */}
         <SignIn />
+        <Folderjsx />
+        {/* <TransferList /> */}
       </header>
     </div>
   );
