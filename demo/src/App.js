@@ -25,17 +25,17 @@ let arr1 = arr.map((i)=>{
   return (
     <div className="App">
       <header className="App-header">
-        {/* <h5>my first react demo</h5>
+         <h5>my first react demo</h5>
         <h5>Addition is :- {add()}</h5>
         <h5>Array is :- {arr[2]}</h5>
         <ul>
           {arr1}
-        </ul>*/}
-        {/* <Firstdemo /> 
-        <Classobject />
-        <FilterReduceFc /> */}
-        {/* <FormComponent /> */}
-        <SignIn />
+        </ul>
+         {/* <Firstdemo />  */}
+         {/* <FilterReduceFc /> 
+         <FormComponent />  */}
+         <Classobject />
+         {/* <SignIn /> */}
         <Folderjsx />
         {/* <TransferList /> */}
       </header>
