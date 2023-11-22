@@ -1,15 +1,17 @@
 import React from 'react'
 
-export default function Folderjsx() {
+ const Folderjsx = () => {
     const myStyle = {
-        fontSize:'16px',
-        color:'blue',
+        fontSize:'50px',
+        color:'green',
     }
     let abc ="jaydip";
     return (  
     <div>
-        <h4>name is:-{abc}</h4>
+        <h4 style={myStyle}>name is:-{abc}</h4>
     </div>
   )
 }
+
+export default Folderjsx
 
