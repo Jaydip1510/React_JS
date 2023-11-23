@@ -3,7 +3,8 @@ import React from 'react'
  const Folderjsx = () => {
     const myStyle = {
         fontSize:'50px',
-        color:'green',
+        color:'blue',
+        
     }
     let abc ="jaydip";
     return (  
