@@ -9,6 +9,7 @@ import SignIn from './components/Login';
 import TransferList from './components/Transferlist';
 import Folderjsx from './components/Folderjsx';
 import PropsExample from './components/Props';
+import Statefull from './components/Statefull';
 
 const add = ()=>{
   let a = 20;
@@ -37,8 +38,9 @@ let arr1 = arr.map((i)=>{
          <FormComponent />  */}
          {/* <Classobject /> */}
          {/* <SignIn /> */}
-        <Folderjsx />
-        <PropsExample />
+        {/* <Folderjsx /> */}
+        {/* <PropsExample /> */}
+        <Statefull />
         {/* <TransferList /> */}
       </header>
     </div>
