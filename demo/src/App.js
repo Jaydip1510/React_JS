@@ -10,6 +10,7 @@ import TransferList from './components/Transferlist';
 import Folderjsx from './components/Folderjsx';
 import PropsExample from './components/Props';
 import Statefull from './components/Statefull';
+import Statefunctionbase from './components/statefunctionbase';
 
 const add = ()=>{
   let a = 20;
@@ -41,6 +42,7 @@ let arr1 = arr.map((i)=>{
         {/* <Folderjsx /> */}
         {/* <PropsExample /> */}
         <Statefull />
+        <Statefunctionbase />
         {/* <TransferList /> */}
       </header>
     </div>
