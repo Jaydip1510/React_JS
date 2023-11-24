@@ -11,7 +11,7 @@ import Folderjsx from './components/Folderjsx';
 import PropsExample from './components/Props';
 import Statefull from './components/Statefull';
 import Statefunction from './components/Statefunction';
-import Simplefunction from './components/Simplefunction';
+import Componentlifecycle from './components/Componentlifecycle';
 
 
 
@@ -45,9 +45,9 @@ let arr1 = arr.map((i)=>{
          {/* <SignIn /> */}
         {/* <Folderjsx /> */}
         {/* <PropsExample /> */}
-        <Statefull />
-        <Statefunction />
-        {/* <Simplefunction /> */}
+        {/* <Statefull />
+        <Statefunction /> */}
+        <Componentlifecycle />
         {/* <TransferList /> */}
       </header>
     </div>
