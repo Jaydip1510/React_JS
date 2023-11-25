@@ -10,7 +10,7 @@ export default function Incrementdecrement() {
     }
     return (
         <div>
-             <h3>Functional componet called...</h3>
+             <h3>Functional component called...</h3>
              <h4>Count is:{count}</h4>
              <button onClick={addNum}>Increment</button><br />
              <button onClick={subNum}>Decrement</button>
