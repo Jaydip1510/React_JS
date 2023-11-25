@@ -11,9 +11,9 @@ function App() {
     <div className="App">
       <header className="App-header">
       </header>
-      <Incrementdecrement />
-      <Statecomponent />
-      <Allmethod />
+      <Incrementdecrement /><hr/>
+      <Statecomponent /><hr/>
+      <Allmethod /><hr/>
       <Classbasemethod />
     </div>
   );
