@@ -27,7 +27,7 @@ export default function Allmethod() {
     }
   return (
     <div>
-      <h1>Functionbase Arithmetic operation</h1>
+      <h1>Functionbase Arithmetic operators</h1>
       <h5>Addition is :- {add()}</h5>
       <h5>Subtaction is :- {sub()}</h5>
       <h5>Multiplication is :- {mul()}</h5>

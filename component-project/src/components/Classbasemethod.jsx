@@ -28,7 +28,7 @@ class Classbasemethod extends Component {
         }
         return (
             <div>
-                <h1>Classbase Arithmetic operayion</h1>
+                <h1>Classbase Arithmetic operators</h1>
                 <h5>Addition is :- {add()}</h5>
                 <h5>Subtaction is :- {sub()}</h5>
                 <h5>Multiplication is :- {mul()}</h5>
