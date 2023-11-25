@@ -12,9 +12,9 @@ class Componentlifecycle extends Component {
             this.setState({name:"jaydip"})
         },2000)
     }
-    // static getDerivedStateFromProps(props,state) {
-    //     return {name: props.myName}
-    // }
+    static getDerivedStateFromProps(props,state) {
+        return {name: props.myName}
+    }
     render() {
         console.log("render called...")
         return (

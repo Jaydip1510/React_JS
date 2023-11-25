@@ -47,7 +47,7 @@ let arr1 = arr.map((i)=>{
         {/* <PropsExample /> */}
         {/* <Statefull />
         <Statefunction /> */}
-        <Componentlifecycle />
+        <Componentlifecycle myName />
         {/* <TransferList /> */}
       </header>
     </div>
