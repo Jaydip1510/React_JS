@@ -1,4 +1,4 @@
-
+import {useState} from 'react'
 import './App.css';
 import Firstdemo from './components/Firstdemo';
 
@@ -28,6 +28,11 @@ let arr1 = arr.map((i)=>{
    return <li>{i}</li>
 })
 
+const [data,setData] =useState("jaydip")
+const updateData = () =>{
+  setData("makwana")
+}
+
   return (
     <div className="App">
       <header className="App-header">
@@ -47,6 +52,8 @@ let arr1 = arr.map((i)=>{
         <Statefull />
         <Statefunction />
         <Componentlifecycle myName="makwana" />
+        {/* <h3>{data}</h3>
+       <button onClick={updateData}>Updata data</button>  */}
       </header>
     </div>
   );
