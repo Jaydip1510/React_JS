@@ -6,7 +6,6 @@ import Classobject from './components/Classobject';
 import FilterReduceFc from './components/FilterReduceFc';
 import FormComponent from './components/Form';
 import SignIn from './components/Login';
-import TransferList from './components/Transferlist';
 import Folderjsx from './components/Folderjsx';
 import PropsExample from './components/Props';
 import Statefull from './components/Statefull';
@@ -45,10 +44,9 @@ let arr1 = arr.map((i)=>{
          {/* <SignIn /> */}
         {/* <Folderjsx /> */}
         {/* <PropsExample /> */}
-        {/* <Statefull />
-        <Statefunction /> */}
-        <Componentlifecycle myName />
-        {/* <TransferList /> */}
+        <Statefull />
+        <Statefunction />
+        <Componentlifecycle myName="makwana" />
       </header>
     </div>
   );
