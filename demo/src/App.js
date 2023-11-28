@@ -1,7 +1,6 @@
-import {useState} from 'react'
 import './App.css';
 import Firstdemo from './components/Firstdemo';
-
+import React from 'react';
 import Classobject from './components/Classobject';
 import FilterReduceFc from './components/FilterReduceFc';
 import FormComponent from './components/Form';
@@ -11,6 +10,7 @@ import PropsExample from './components/Props';
 import Statefull from './components/Statefull';
 import Statefunction from './components/Statefunction';
 import Componentlifecycle from './components/Componentlifecycle';
+import Hocomponent from './components/Hocomponent';
 
 
 
@@ -22,17 +22,17 @@ const add = ()=>{
   return c;
 }
 
-function App() {
-let arr = [10,20,30,40,50,60,70,80,90];
-let arr1 = arr.map((i)=>{
-   return <li>{i}</li>
-})
+class App extends React.Component {
+// let arr = [10,20,30,40,50,60,70,80,90];
+// let arr1 = arr.map((i)=>{
+//    return <li>{i}</li>
+// })
 
-const [data,setData] =useState("jaydip")
-const updateData = () =>{
-  setData("makwana")
-}
-
+// const [data,setData] =useState("jaydip")
+// const updateData = () =>{
+//   setData("makwana")
+// }
+  render(){
   return (
     <div className="App">
       <header className="App-header">
@@ -49,14 +49,17 @@ const updateData = () =>{
          {/* <SignIn /> */}
         {/* <Folderjsx /> */}
         {/* <PropsExample /> */}
-        <Statefull />
+        {/* <Statefull />
         <Statefunction />
-        <Componentlifecycle myName="makwana" />
+        <Componentlifecycle myName="makwana" /> */}
         {/* <h3>{data}</h3>
        <button onClick={updateData}>Updata data</button>  */}
+       <h3>High Order Components</h3>
+       <h3>name is:-{this.props.name}</h3>
       </header>
     </div>
   );
+ }
 }
 
-export default App;
+export default Hocomponent (App);

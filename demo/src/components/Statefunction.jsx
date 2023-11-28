@@ -5,13 +5,14 @@ const Statefunction = () => {
     const addNum = () =>{
         setCount(count+1)
     }
-    const subNum = () => {
+    const subNum = () => { 
         setCount(count-1)
     }
     return (
         <div>
              <h3>Functional componet called...</h3>
-             <h4>Count is:{count}</h4>
+             <h4>Count
+                 is:{count}</h4>
              <button onClick={addNum}>Increment</button><br />
              <button onClick={subNum}>Decrement</button>
 
