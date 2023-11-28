@@ -49,9 +49,9 @@ class App extends React.Component {
          {/* <SignIn /> */}
         {/* <Folderjsx /> */}
         {/* <PropsExample /> */}
-        {/* <Statefull />
+        <Statefull />
         <Statefunction />
-        <Componentlifecycle myName="makwana" /> */}
+        <Componentlifecycle myName="makwana" />
         {/* <h3>{data}</h3>
        <button onClick={updateData}>Updata data</button>  */}
        <h3>High Order Components</h3>
