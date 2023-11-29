@@ -1,6 +1,6 @@
 
 import './App.css';
-import Incrementdecrement from './components/Counter';
+import Increment from './components/Counter';
 import Footer from './components/Footer';
 import NavScrollExample from './components/Header';
 import Section from './components/Section';
@@ -14,7 +14,7 @@ function App() {
     <div className="App">
       <header className="App-header">
       </header>
-      <Incrementdecrement /><hr/>
+      <Increment /><hr/>
       <NavScrollExample />
       <Section/>
       <Footer/><hr/>

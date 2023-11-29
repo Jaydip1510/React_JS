@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-const  Incrementdecrement = () => {
+const  Increment = () => {
     const [count, setCount] = useState(0)
     const addNum = () =>{
         setCount(count+2)
@@ -16,4 +16,4 @@ const  Incrementdecrement = () => {
     )
 }
 
-export default Incrementdecrement
+export default Increment
