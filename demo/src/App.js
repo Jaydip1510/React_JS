@@ -12,9 +12,6 @@ import Componentlifecycle from './components/Componentlifecycle';
 import Hocomponent from './components/Hocomponent';
 
 
-
-
-
 const add = ()=>{
   let a = 20;
   const b = 20;
@@ -52,6 +49,7 @@ class App extends React.Component {
         <Statefull />
         <Statefunction />
         <Componentlifecycle myName="makwana" />
+       {/* <Listcomponent/> */}
         {/* <h3>{data}</h3>
        <button onClick={updateData}>Updata data</button> 
        {/* <h3>High Order Components</h3>
