@@ -8,14 +8,13 @@ import reportWebVitals from './reportWebVitals';
 import Footer from './Component/Footer';
 import Section from './Component/Section';
 import Header from './Component/Header';
-import Sidebar from './Component/Sidebar';
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     {/* <App /> */}
     <Header />
-    <Sidebar/>
     <Section />
     <Footer />
   </React.StrictMode>
