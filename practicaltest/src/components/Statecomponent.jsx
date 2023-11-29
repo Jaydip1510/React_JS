@@ -25,6 +25,7 @@ class Statecomponent extends Component {
   render() {
     return (
       <div>
+        <h3>Q3 component called...</h3>
         <p>Name is:- {this.state.name}</p>
         <p>Age is:- {this.state.age}</p>
         <p>Gender is:- {this.state.gender}</p>

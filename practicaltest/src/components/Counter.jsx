@@ -8,7 +8,7 @@ const  Incrementdecrement = () => {
     
     return (
         <div>
-             <h3>Functional component called...</h3>
+             <h3>Q1 component called...</h3>
              <h4>Count is:{count}</h4>
              <button onClick={addNum}>Increment</button><br />
             
