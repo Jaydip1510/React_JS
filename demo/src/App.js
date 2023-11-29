@@ -4,13 +4,13 @@ import React from 'react';
 import Classobject from './components/Classobject';
 import FilterReduceFc from './components/FilterReduceFc';
 import FormComponent from './components/Form';
-import SignIn from './components/Login';
 import Folderjsx from './components/Folderjsx';
 import PropsExample from './components/Props';
 import Statefull from './components/Statefull';
 import Statefunction from './components/Statefunction';
 import Componentlifecycle from './components/Componentlifecycle';
 import Hocomponent from './components/Hocomponent';
+
 
 
 
@@ -46,16 +46,18 @@ class App extends React.Component {
          {/* <FilterReduceFc /> 
          <FormComponent />  */}
          {/* <Classobject /> */}
-         {/* <SignIn /> */}
+        
         {/* <Folderjsx /> */}
         {/* <PropsExample /> */}
         <Statefull />
         <Statefunction />
         <Componentlifecycle myName="makwana" />
         {/* <h3>{data}</h3>
-       <button onClick={updateData}>Updata data</button>  */}
-       <h3>High Order Components</h3>
+       <button onClick={updateData}>Updata data</button> 
+       {/* <h3>High Order Components</h3>
        <h3>name is:-{this.props.name}</h3>
+        */} 
+
       </header>
     </div>
   );

@@ -5,7 +5,7 @@ class Statefull extends Component {
         super()
         this.state = {
             id: 12,
-            name: "raj"6
+            name: "raj"
         }
     }
     render() {
