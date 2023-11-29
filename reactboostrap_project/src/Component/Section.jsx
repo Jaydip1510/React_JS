@@ -9,7 +9,7 @@ import InputGroup from 'react-bootstrap/InputGroup';
 import Row from 'react-bootstrap/Row';
 
 
-function Section () {
+const Section = () => {
 const [validated, setValidated] = useState(false);
 
   const handleSubmit = (event) => {
