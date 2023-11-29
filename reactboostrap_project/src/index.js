@@ -3,16 +3,17 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 // import App from './App';
 import reportWebVitals from './reportWebVitals';
-import Website from './Component/Website';
+
 // import { Offcanvas } from 'react-bootstrap';
 import Footer from './Component/Footer';
 import Section from './Component/Section';
+import Header from './Component/Header';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     {/* <App /> */}
-    <Website />
+    <Header />
     <Section />
     <Footer />
   </React.StrictMode>
