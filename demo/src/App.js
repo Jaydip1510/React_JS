@@ -10,6 +10,8 @@ import Statefull from './components/Statefull';
 import Statefunction from './components/Statefunction';
 import Componentlifecycle from './components/Componentlifecycle';
 import Hocomponent from './components/Hocomponent';
+import {Transeferlist} from './components/Transeferlist';
+
 
 
 const add = ()=>{
@@ -46,10 +48,12 @@ class App extends React.Component {
         
         {/* <Folderjsx /> */}
         {/* <PropsExample /> */}
-        <Statefull />
+        {/* <Statefull />
         <Statefunction />
-        <Componentlifecycle myName="makwana" />
-       {/* <Listcomponent/> */}
+        
+        <Componentlifecycle myName="makwana" /> */}
+        <Transeferlist />
+        {/* <TransferList /> */}
         {/* <h3>{data}</h3>
        <button onClick={updateData}>Updata data</button> 
        {/* <h3>High Order Components</h3>

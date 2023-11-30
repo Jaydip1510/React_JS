@@ -16,7 +16,7 @@ function intersection(a: readonly number[], b: readonly number[]) {
   return a.filter((value) => b.indexOf(value) !== -1);
 }
 
-export default function Listcomponent() {
+function Transeferlist() {
   const [checked, setChecked] = React.useState<readonly number[]>([]);
   const [left, setLeft] = React.useState<readonly number[]>([0, 1, 2, 3]);
   const [right, setRight] = React.useState<readonly number[]>([4, 5, 6, 7]);
@@ -141,3 +141,4 @@ export default function Listcomponent() {
     </Grid>
   );
 }
+export default Transeferlist;

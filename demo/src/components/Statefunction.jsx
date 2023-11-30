@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 const Statefunction = () => {
     const [count, setCount] = useState(0)
@@ -8,6 +8,9 @@ const Statefunction = () => {
     const subNum = () => { 
         setCount(count-1)
     }
+    useEffect(()=>{
+        console.log("useEffect called --- You Clicked"+count);
+    })
     return (
         <div>
              <h3>Functional componet called...</h3>
