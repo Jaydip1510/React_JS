@@ -1,10 +1,8 @@
 import logo from './logo.svg';
 import './App.css';
-import Carousel from 'react-bootstrap/Carousel';
-import ExampleCarouselImage from './components/ExampleCarouselImage';
 import Buttongroupcomponent from './components/Buttongroupcomponent';
 import Validationcomponent from './components/Validationcomponent';
-//import Carouselcomponent from './components/Carouselcomponent';
+import Carouselcomponent from './components/Carouselcomponent';
 
 
 function App() {
@@ -12,7 +10,7 @@ function App() {
     <div className="App">
      
         <img src={logo} className="App-logo" alt="logo" />
-        <Carousel>
+        {/* <Carousel>
       <Carousel.Item>
         <ExampleCarouselImage text="First slide" />
         <Carousel.Caption>
@@ -36,10 +34,10 @@ function App() {
           </p>
         </Carousel.Caption>
       </Carousel.Item>
-    </Carousel>
+    </Carousel> */}
        {/* <Buttongroupcomponent/> */}
         {/* <Validationcomponent/>  */}
-      {/* <Carouselcomponent/> */} 
+      <Carouselcomponent/> 
      
     </div>
   );
