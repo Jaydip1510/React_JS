@@ -5,6 +5,7 @@ import InputGroup from 'react-bootstrap/InputGroup';
 import Row from 'react-bootstrap/Row';
 import * as formik from 'formik';
 import * as yup from 'yup';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function Validationcomponent() {
   const { Formik } = formik;
