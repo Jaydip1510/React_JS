@@ -10,6 +10,7 @@ import Statefull from './components/Statefull';
 import Statefunction from './components/Statefunction';
 import Componentlifecycle from './components/Componentlifecycle';
 import Hocomponent from './components/Hocomponent';
+import Dataargument from './components/Dataargument';
 
 
 
@@ -48,10 +49,11 @@ class App extends React.Component {
         
         {/* <Folderjsx /> */}
         {/* <PropsExample /> */}
-        <Statefull />
+        {/* <Statefull />
         <Statefunction />
         
-        <Componentlifecycle myName="makwana" />
+        <Componentlifecycle myName="makwana" /> */}
+        <Dataargument/>
        
        
         {/* <h3>{data}</h3>
