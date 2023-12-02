@@ -4,6 +4,7 @@ import Buttongroupcomponent from './components/Buttongroupcomponent';
 import Validationcomponent from './components/Validationcomponent';
 import Carouselcomponent from './components/Carouselcomponent';
 import Modelcomponent from './components/Modelcomponent';
+import Spinnercomponent from './components/Spinnercomponent';
 
 
 function App() {
@@ -39,7 +40,8 @@ function App() {
        {/* <Buttongroupcomponent/> */}
         {/* <Validationcomponent/>  */}
       <Carouselcomponent/><br/>
-      <Modelcomponent/>
+      <Modelcomponent/><br/><br/>
+      <Spinnercomponent />
     
      
     </div>
