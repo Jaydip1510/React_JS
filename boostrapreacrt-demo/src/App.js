@@ -3,6 +3,7 @@ import './App.css';
 import Buttongroupcomponent from './components/Buttongroupcomponent';
 import Validationcomponent from './components/Validationcomponent';
 import Carouselcomponent from './components/Carouselcomponent';
+import Modelcomponent from './components/Modelcomponent';
 
 
 function App() {
@@ -37,7 +38,9 @@ function App() {
     </Carousel> */}
        {/* <Buttongroupcomponent/> */}
         {/* <Validationcomponent/>  */}
-      <Carouselcomponent/> 
+      <Carouselcomponent/><br/>
+      <Modelcomponent/>
+    
      
     </div>
   );
