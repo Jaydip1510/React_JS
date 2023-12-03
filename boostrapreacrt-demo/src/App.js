@@ -5,6 +5,8 @@ import Validationcomponent from './components/Validationcomponent';
 import Carouselcomponent from './components/Carouselcomponent';
 import Modelcomponent from './components/Modelcomponent';
 import Spinnercomponent from './components/Spinnercomponent';
+import Paginatincomponent from './components/Paginationcomponent';
+
 
 
 function App() {
@@ -41,7 +43,8 @@ function App() {
         {/* <Validationcomponent/>  */}
       <Carouselcomponent/><br/>
       <Modelcomponent/><br/><br/>
-      <Spinnercomponent />
+      <Spinnercomponent /><br/><br/>
+      <Paginatincomponent/>
     
      
     </div>
