@@ -26,7 +26,7 @@ import Sidebar from "components/Sidebar/Sidebar.js";
 
 import routes from "routes.js";
 
-const Admin = (props) => {
+const AdminLayout = (props) => {
   const mainContent = React.useRef(null);
   const location = useLocation();
 
@@ -88,4 +88,4 @@ const Admin = (props) => {
   );
 };
 
-export default Admin;
+export default AdminLayout;
