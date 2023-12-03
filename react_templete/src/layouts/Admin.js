@@ -20,8 +20,8 @@ import { useLocation, Route, Routes, Navigate } from "react-router-dom";
 // reactstrap components
 import { Container } from "reactstrap";
 // core components
-import AdminNavbar from "components/Navbars/Navbar.js";
-import AdminFooter from "components/Footers/Footer.js";
+import AdminNavbar from "components/Navbars/AdminNavbar.js";
+import AdminFooter from "components/Footers/AdminFooter.js";
 import Sidebar from "components/Sidebar/Sidebar.js";
 
 import routes from "routes.js";
@@ -72,7 +72,7 @@ const Admin = (props) => {
         }}
       />
       <div className="main-content" ref={mainContent}>
-        <Navbar
+        <AdminNavbar
           {...props}
           brandText={getBrandText(props?.location?.pathname)}
         />
@@ -81,7 +81,7 @@ const Admin = (props) => {
           <Route path="*" element={<Navigate to="/admin/index" replace />} />
         </Routes>
         <Container fluid>
-          <Footer />
+          <AdminFooter />
         </Container>
       </div>
     </>
