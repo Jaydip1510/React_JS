@@ -11,6 +11,7 @@ import Statefunction from './components/Statefunction';
 import Componentlifecycle from './components/Componentlifecycle';
 import Hocomponent from './components/Hocomponent';
 import Dataargument from './components/Dataargument';
+import Listcomponent from './components/Listcomponent';
 
 
 
@@ -54,6 +55,7 @@ class App extends React.Component {
     const empdata = emplist.map((i) =>{
       return <li key = {i.id}>{i.name}</li>
     })
+    const num = [10,20,30,40,50,];
   return (
     <div className="App">
       <header className="App-header">
@@ -84,6 +86,7 @@ class App extends React.Component {
          <ul>
           {empdata}
          </ul>
+         <Listcomponent number = {num} />
         {/* <h3>{data}</h3>
        <button onClick={updateData}>Updata data</button> 
        {/* <h3>High Order Components</h3>
