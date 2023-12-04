@@ -13,6 +13,7 @@ import Hocomponent from './components/Hocomponent';
 import Dataargument from './components/Dataargument';
 import Listcomponent from './components/Listcomponent';
 import Userefcomponent from './components/Userefcomponent';
+import Buttoncomponent from './components/Buttoncomponent';
 
 
 
@@ -89,6 +90,7 @@ class App extends React.Component {
          </ul>
          <Listcomponent number = {num} />
          <Userefcomponent/>
+         <Buttoncomponent />
         {/* <h3>{data}</h3>
        <button onClick={updateData}>Updata data</button> 
        {/* <h3>High Order Components</h3>
