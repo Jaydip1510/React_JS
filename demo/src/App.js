@@ -90,7 +90,7 @@ class App extends React.Component {
          </ul>
          <Listcomponent number = {num} />
          <Userefcomponent/>
-         <Buttoncomponent />
+         {/* <Buttoncomponent /> */}
         {/* <h3>{data}</h3>
        <button onClick={updateData}>Updata data</button> 
        {/* <h3>High Order Components</h3>
