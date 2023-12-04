@@ -33,6 +33,27 @@ class App extends React.Component {
 //   setData("makwana")
 // }
   render(){
+    const number = [1,2,3,4,5];
+    const listitem = number.map((number) =>
+         <li>{number}</li>
+    );
+    const emplist = [
+      {
+        id:1204,
+        name:"jaydip"
+      },
+      {
+        id:1510,
+        name:"alpesh"
+      },
+      {
+        id:3075,
+        name:"raj"
+      }
+    ]
+    const empdata = emplist.map((i) =>{
+      return <li key = {i.id}>{i.name}</li>
+    })
   return (
     <div className="App">
       <header className="App-header">
@@ -53,9 +74,16 @@ class App extends React.Component {
         <Statefunction />
         
         <Componentlifecycle myName="makwana" /> */}
-        <Dataargument/>
+        {/* <Dataargument/> */}
        
-       
+         <h3>List & Keys</h3>
+         <ul>
+          {listitem}
+         </ul>
+         <h3>Emp Data</h3>
+         <ul>
+          {empdata}
+         </ul>
         {/* <h3>{data}</h3>
        <button onClick={updateData}>Updata data</button> 
        {/* <h3>High Order Components</h3>
