@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react'
 
-function Userefcomponent() {
+const Userefcomponent = () => {
   const [inputValue,setIntputValue] = useState("");
   const count = useRef(0);
 
