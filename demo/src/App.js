@@ -14,6 +14,7 @@ import Dataargument from './components/Dataargument';
 import Listcomponent from './components/Listcomponent';
 import Userefcomponent from './components/Userefcomponent';
 import Buttoncomponent from './components/Buttoncomponent';
+import Transitionscomponent from './components/Transitionscomponent';
 
 
 
@@ -89,8 +90,9 @@ class App extends React.Component {
           {empdata}
          </ul>
          <Listcomponent number = {num} />
-         <Userefcomponent/>
+         <Userefcomponent/><br/>
          {/* <Buttoncomponent /> */}
+         <Transitionscomponent/>
         {/* <h3>{data}</h3>
        <button onClick={updateData}>Updata data</button> 
        {/* <h3>High Order Components</h3>
