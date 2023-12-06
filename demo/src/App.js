@@ -75,13 +75,13 @@ class App extends React.Component {
         
         {/* <Folderjsx /> */}
         {/* <PropsExample /> */}
-        {/* <Statefull />
+        {/* <Statefull /> */}
         <Statefunction />
         
-        <Componentlifecycle myName="makwana" /> */}
+        {/* <Componentlifecycle myName="makwana" /> */}
         {/* <Dataargument/> */}
        
-         <h3>List & Keys</h3>
+         {/* <h3>List & Keys</h3>
          <ul>
           {listitem}
          </ul>
@@ -90,9 +90,9 @@ class App extends React.Component {
           {empdata}
          </ul>
          <Listcomponent number = {num} />
-         <Userefcomponent/><br/>
+         <Userefcomponent/><br/> */}
          {/* <Buttoncomponent /> */}
-         <Transitionscomponent/>
+         {/* <Transitionscomponent/> */}
         {/* <h3>{data}</h3>
        <button onClick={updateData}>Updata data</button> 
        {/* <h3>High Order Components</h3>
