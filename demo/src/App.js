@@ -19,7 +19,7 @@ import Transitionscomponent from './components/Transitionscomponent';
 
 
 
-const add = ()=>{
+const add = () => {
   let a = 20;
   const b = 20;
   let c = a + b;
@@ -27,61 +27,61 @@ const add = ()=>{
 }
 
 class App extends React.Component {
-// let arr = [10,20,30,40,50,60,70,80,90];
-// let arr1 = arr.map((i)=>{
-//    return <li>{i}</li>
-// })
+  // let arr = [10,20,30,40,50,60,70,80,90];
+  // let arr1 = arr.map((i)=>{
+  //    return <li>{i}</li>
+  // })
 
-// const [data,setData] =useState("jaydip")
-// const updateData = () =>{
-//   setData("makwana")
-// }
-  render(){
-    const number = [1,2,3,4,5];
+  // const [data,setData] =useState("jaydip")
+  // const updateData = () =>{
+  //   setData("makwana")
+  // }
+  render() {
+    const number = [1, 2, 3, 4, 5];
     const listitem = number.map((number) =>
-         <li>{number}</li>
+      <li>{number}</li>
     );
     const emplist = [
       {
-        id:1204,
-        name:"jaydip"
+        id: 1204,
+        name: "jaydip"
       },
       {
-        id:1510,
-        name:"alpesh"
+        id: 1510,
+        name: "alpesh"
       },
       {
-        id:3075,
-        name:"raj"
+        id: 3075,
+        name: "raj"
       }
     ]
-    const empdata = emplist.map((i) =>{
-      return <li key = {i.toString()}>{i.name}</li>
+    const empdata = emplist.map((i) => {
+      return <li key={i.toString()}>{i.name}</li>
     })
-    const num = [10,20,30,40,50,];
-  return (
-    <div className="App">
-      <header className="App-header">
-         {/* <h5>my first react demo</h5>
+    const num = [10, 20, 30, 40, 50,];
+    return (
+      <div className="App">
+        <header className="App-header">
+          {/* <h5>my first react demo</h5>
         <h5>Addition is :- {add()}</h5>
         <h5>Array is :- {arr[2]}</h5>
         <ul>
           {arr1}
         </ul> */}
-         {/* <Firstdemo />  */}
-         {/* <FilterReduceFc /> 
+          {/* <Firstdemo />  */}
+          {/* <FilterReduceFc /> 
          <FormComponent />  */}
-         {/* <Classobject /> */}
-        
-        {/* <Folderjsx /> */}
-        {/* <PropsExample /> */}
-        {/* <Statefull /> */}
-        {/* <Statefunction /> */}
-        
-        {/* <Componentlifecycle myName="makwana" /> */}
-        <Dataargument/>
-       
-         {/* <h3>List & Keys</h3>
+          {/* <Classobject /> */}
+
+          {/* <Folderjsx /> */}
+          {/* <PropsExample /> */}
+          {/* <Statefull /> */}
+          {/* <Statefunction /> */}
+
+          {/* <Componentlifecycle myName="makwana" /> */}
+          <Dataargument />
+
+          <h3>List & Keys</h3>
          <ul>
           {listitem}
          </ul>
@@ -90,19 +90,19 @@ class App extends React.Component {
           {empdata}
          </ul>
          <Listcomponent number = {num} />
-         <Userefcomponent/><br/> */}
-         {/* <Buttoncomponent /> */}
-         {/* <Transitionscomponent/> */}
-       {/* <h3>{data}</h3>
+         <Userefcomponent/><br/>
+          {/* <Buttoncomponent /> */}
+          {/* <Transitionscomponent/> */}
+          {/* <h3>{data}</h3>
        <button onClick={updateData}>Updata data</button> 
        <h3>High Order Components</h3>
        <h3>name is:-{this.props.name}</h3> */}
-         
 
-      </header>
-    </div>
-  );
- }
+
+        </header>
+      </div>
+    );
+  }
 }
 
-export default Hocomponent (App);
+export default Hocomponent(App);
