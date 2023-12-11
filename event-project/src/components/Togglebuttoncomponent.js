@@ -19,7 +19,7 @@ class Togglebuttoncomponent extends Component {
         }
         return (
             <div>
-                <button onClick={changeStatus}>{this.state.status == 0 ? "OFF" : "ON"}</button>
+                <button className='btn btn-warning' onClick={changeStatus}>{this.state.status == 0 ? "OFF" : "ON"}</button>
             </div>
         );
     }
