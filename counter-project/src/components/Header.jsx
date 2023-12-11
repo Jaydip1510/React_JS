@@ -8,7 +8,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 function Header() {
   return (
-    <Navbar expand="lg" className="bg-body-tertiary">
+    <Navbar expand="lg" className="bg-warning">
       <Container fluid>
         
         <Navbar.Brand href="#"><img src="../m.png" height={60}></img></Navbar.Brand>

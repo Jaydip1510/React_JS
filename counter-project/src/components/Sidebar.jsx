@@ -11,7 +11,7 @@ function Sidebar() {
 
   return (
     <>
-      <Button  className='btn-primary m-0' onClick={handleShow} >
+      <Button  className='btn-primary m-0 mt-3' onClick={handleShow} >
        Sidebar
       </Button>
 
@@ -20,9 +20,23 @@ function Sidebar() {
           <Offcanvas.Title>Offcanvas</Offcanvas.Title>
         </Offcanvas.Header>
         <Offcanvas.Body>
-          Some text as placeholder. In real life you can have the elements you
-          have chosen. Like, text, images, lists, etc.
+        <div className="dropdown mt-3 text-center pt-2">
+                                   <a className="nav-link pt-2" href="#">
+                                        HomePage
+                                   </a>
+                                   <a className="nav-link pt-2" href="#">
+                                        AboutUsPage
+                                   </a>
+                                   <a className="nav-link pt-2" href="#">
+                                        BlogPage
+                                   </a>
+                                   <a className="dropdown-item pt-2" href="#">
+                                        ContactPage
+                                   </a>
+                              </div>
         </Offcanvas.Body>
+        
+                             
       </Offcanvas>
     </>
   );

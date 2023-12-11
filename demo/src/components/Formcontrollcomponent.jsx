@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import {Form} from "react-bootstrap/Form"
 
 class Formcontrollcomponent extends Component {
-    constructor(props) {
+    constructor() {
         super()
         this.state = {
             name:'',
@@ -26,7 +26,10 @@ class Formcontrollcomponent extends Component {
         const target = e.target;
         const value = target.type === 'checkbox' ? target.checked : target.value;
         const name = target.name
+        const gender = target.g1
         this.setState({name:e.target.value})
+
+
     }
     render() {
         return (
