@@ -28,6 +28,7 @@ class Formcontrollcomponent extends Component {
         const name = target.name
         const gender = target.g1
         this.setState({name:e.target.value})
+        
 
 
     }
@@ -38,9 +39,9 @@ class Formcontrollcomponent extends Component {
                     <label htmlFor="">Name:-</label>
                     <input type="text" name="name" value={this.state.name} onChange={this.setData} /><br/><br/>
                     <label htmlFor="">Gender:-</label>
-                    <input type="radio" name="g1" value="male" defaultChecked="" onChange={this.setData} />
+                    <input type="radio" name="g1" value="male" defaultChecked="" onSubmit={this.setData} />
                     Male
-                    <input type="radio" name="g1" value="female" onChange={this.setData} />Female<br/><br/>
+                    <input type="radio" name="g1" value="female" onSubmit={this.setData} />Female<br/><br/>
                     <input type="submit" name="submit" />
                 </form>
                 
