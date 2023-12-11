@@ -15,6 +15,7 @@ import Listcomponent from './components/Listcomponent';
 import Userefcomponent from './components/Userefcomponent';
 import Buttoncomponent from './components/Buttoncomponent';
 import Transitionscomponent from './components/Transitionscomponent';
+import Formcontrollcomponent from './components/Formcontrollcomponent';
 
 
 
@@ -79,7 +80,7 @@ class App extends React.Component {
           {/* <Statefunction /> */}
 
           {/* <Componentlifecycle myName="makwana" /> */}
-          <Dataargument />
+          {/* <Dataargument />
 
           <h3>List & Keys</h3>
          <ul>
@@ -90,13 +91,14 @@ class App extends React.Component {
           {empdata}
          </ul>
          <Listcomponent number = {num} />
-         <Userefcomponent/><br/>
+         <Userefcomponent/><br/> */}
           {/* <Buttoncomponent /> */}
           {/* <Transitionscomponent/> */}
           {/* <h3>{data}</h3>
        <button onClick={updateData}>Updata data</button> 
        <h3>High Order Components</h3>
        <h3>name is:-{this.props.name}</h3> */}
+       <Formcontrollcomponent />
 
 
         </header>
