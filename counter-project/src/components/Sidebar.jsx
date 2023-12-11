@@ -11,8 +11,8 @@ function Sidebar() {
 
   return (
     <>
-      <Button  className='btn-primary m-0 mt-3' onClick={handleShow} >
-       Sidebar
+      <Button className='btn-primary m-0 mt-3' onClick={handleShow} >
+        Sidebar
       </Button>
 
       <Offcanvas show={show} onHide={handleClose}>
@@ -20,23 +20,23 @@ function Sidebar() {
           <Offcanvas.Title>Offcanvas</Offcanvas.Title>
         </Offcanvas.Header>
         <Offcanvas.Body>
-        <div className="dropdown mt-3 text-center pt-2">
-                                   <a className="nav-link pt-2" href="#">
-                                        HomePage
-                                   </a>
-                                   <a className="nav-link pt-2" href="#">
-                                        AboutUsPage
-                                   </a>
-                                   <a className="nav-link pt-2" href="#">
-                                        BlogPage
-                                   </a>
-                                   <a className="dropdown-item pt-2" href="#">
-                                        ContactPage
-                                   </a>
-                              </div>
+          <div className="dropdown mt-3 text-center pt-2">
+            <a className="nav-link pt-2" href="#">
+              HomePage
+            </a>
+            <a className="nav-link pt-2" href="#">
+              AboutUsPage
+            </a>
+            <a className="nav-link pt-2" href="#">
+              BlogPage
+            </a>
+            <a className="dropdown-item pt-2" href="#">
+              ContactPage
+            </a>
+          </div>
         </Offcanvas.Body>
-        
-                             
+
+
       </Offcanvas>
     </>
   );
