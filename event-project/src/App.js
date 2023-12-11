@@ -37,9 +37,7 @@ class App extends React.Component {
         <h3>Emp Data</h3>
          <ul>
           {empdata}
-         </ul>
-
-
+         </ul><hr/>
       </div>
     );
   }

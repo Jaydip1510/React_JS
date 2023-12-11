@@ -20,16 +20,7 @@ class Togglebuttoncomponent extends Component {
         }
         return (
             <div>
-                {/* <button onClick={changeStatus}>{this.state.status == 0 ? "OFF" : "ON"}</button> */}
-                <Form>
-                    <Form.Check // prettier-ignore
-                        type="switch"
-                        id="custom-switch"
-                        label={this.state.status == 0 ? "OFF" : "ON"}
-                        onClick={changeStatus}
-                    />
-                </Form><br/>
-                
+                <button onClick={changeStatus}>{this.state.status == 0 ? "OFF" : "ON"}</button>
             </div>
         );
     }
