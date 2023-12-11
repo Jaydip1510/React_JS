@@ -1,0 +1,38 @@
+import React, { Component } from 'react';
+import Form from 'react-bootstrap/Form';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
+class Togglebuttoncomponent extends Component {
+    constructor() {
+        super()
+        this.state = {
+            status: 0
+        }
+    }
+    render() {
+        const changeStatus = () => {
+            this.setState({ status: !this.state.status });
+        }
+        const empData = (id,name) => {
+            console.log("id is:-"+id);
+            console.log("name is:-"+name);
+
+        }
+        return (
+            <div>
+                {/* <button onClick={changeStatus}>{this.state.status == 0 ? "OFF" : "ON"}</button> */}
+                <Form>
+                    <Form.Check // prettier-ignore
+                        type="switch"
+                        id="custom-switch"
+                        label={this.state.status == 0 ? "OFF" : "ON"}
+                        onClick={changeStatus}
+                    />
+                </Form><br/>
+                
+            </div>
+        );
+    }
+}
+
+export default Togglebuttoncomponent;

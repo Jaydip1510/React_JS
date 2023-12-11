@@ -76,10 +76,10 @@ class App extends React.Component {
         {/* <Folderjsx /> */}
         {/* <PropsExample /> */}
         {/* <Statefull /> */}
-        <Statefunction />
+        {/* <Statefunction /> */}
         
         {/* <Componentlifecycle myName="makwana" /> */}
-        {/* <Dataargument/> */}
+        <Dataargument/>
        
          {/* <h3>List & Keys</h3>
          <ul>
@@ -93,10 +93,10 @@ class App extends React.Component {
          <Userefcomponent/><br/> */}
          {/* <Buttoncomponent /> */}
          {/* <Transitionscomponent/> */}
-       <h3>{data}</h3>
+       {/* <h3>{data}</h3>
        <button onClick={updateData}>Updata data</button> 
        <h3>High Order Components</h3>
-       <h3>name is:-{this.props.name}</h3>
+       <h3>name is:-{this.props.name}</h3> */}
          
 
       </header>
