@@ -20,10 +20,10 @@ function Header() {
     <>
     <Navbar expand="lg" className="bg-warning">
       <Container fluid>
-        <Button className='btn-primary m-0 mt-3' onClick={handleShow}>
+        <Button className='btn-primary m-0 mt-0 p-70' onClick={handleShow}>
         <i class="fa-solid fa-bars"></i>
         </Button>
-        <Navbar.Brand href="#"><img src="../m.png" height={60} alt="Logo"></img></Navbar.Brand>
+        <Navbar.Brand href="#"><img src="../m.png"  height={60} alt="Logo"></img></Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
           <Nav
