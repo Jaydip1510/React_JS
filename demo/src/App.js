@@ -100,8 +100,8 @@ class App extends React.Component {
        <button onClick={updateData}>Updata data</button> 
        <h3>High Order Components</h3>
        <h3>name is:-{this.props.name}</h3> */}
-       {/* <Formcontrollcomponent /> */}
-       <Formfunctionbasecomponent />
+       <Formcontrollcomponent />
+       {/* <Formfunctionbasecomponent /> */}
 
 
        
