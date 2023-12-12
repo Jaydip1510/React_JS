@@ -1,3 +1,4 @@
+import React from 'react';
 import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
 import Form from 'react-bootstrap/Form';
@@ -5,13 +6,24 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import 'bootstrap/dist/css/bootstrap.min.css';
+// import Button from 'react-bootstrap/Button';
+import { useState } from 'react';
+import Offcanvas from 'react-bootstrap/Offcanvas';
 
 function Header() {
+  const [show, setShow] = useState(false);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+
   return (
+    <>
     <Navbar expand="lg" className="bg-warning">
       <Container fluid>
-        
-        <Navbar.Brand href="#"><img src="../m.png" height={60}></img></Navbar.Brand>
+        <Button className='btn-primary m-0 mt-3' onClick={handleShow}>
+        <i class="fa-solid fa-bars"></i>
+        </Button>
+        <Navbar.Brand href="#"><img src="../m.png" height={60} alt="Logo"></img></Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
           <Nav
@@ -47,6 +59,30 @@ function Header() {
         </Navbar.Collapse>
       </Container>
     </Navbar>
+         <Offcanvas show={show} onHide={handleClose}>
+         <Offcanvas.Header closeButton>
+           <Offcanvas.Title>Offcanvas</Offcanvas.Title>
+         </Offcanvas.Header>
+         <Offcanvas.Body>
+           <div className="dropdown mt-3 text-center pt-2">
+             <a className="nav-link pt-2" href="#">
+               HomePage
+             </a>
+             <a className="nav-link pt-2" href="#">
+               AboutUsPage
+             </a>
+             <a className="nav-link pt-2" href="#">
+               BlogPage
+             </a>
+             <a className="dropdown-item pt-2" href="#">
+               ContactPage
+             </a>
+           </div>
+         </Offcanvas.Body>
+ 
+ 
+       </Offcanvas>
+       </>
   );
 }
 
