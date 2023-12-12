@@ -64,7 +64,7 @@ class App extends React.Component {
     const num = [10, 20, 30, 40, 50,];
     return (
       <div className="App">
-        <header className="App-header">
+       
           {/* <h5>my first react demo</h5>
         <h5>Addition is :- {add()}</h5>
         <h5>Array is :- {arr[2]}</h5>
@@ -104,7 +104,7 @@ class App extends React.Component {
        <Formfunctionbasecomponent />
 
 
-        </header>
+       
       </div>
     );
   }
