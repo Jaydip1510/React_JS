@@ -20,7 +20,7 @@ function Formfunctionbasecomponent() {
         const name = target.name
         setInputs(i => ({ ...i, [name]: value }))
     }
-    const   getQualData = (e) => {
+      const getQualData = (e) => {
         const value = e.target.value;
         const isChecked = e.target.checked;
 
@@ -51,13 +51,13 @@ function Formfunctionbasecomponent() {
                 <input type="password" name="password" id="" value={inputs.password} onChange={setData} placeholder='Enter Password' />
                 <br />
                 <br />
-                <label htmlFor="">Qualification:-</label>
+                <label htmlFor="" style={{color:"blue",width:200}}>Qualification:-</label>
                 <input type="checkbox" name="qual" value="10th" defaultChecked="" onChange={getQualData} />
-                10th
+                10th&nbsp;&nbsp;
                 <input type="checkbox" name="qual" value="12th" defaultChecked="" onChange={getQualData} />
-                12th
+                12th&nbsp;&nbsp;
                 <input type="checkbox" name="qual" value="BCA" defaultChecked="" onChange={getQualData} />
-                BCA
+                BCA&nbsp;&nbsp;
                 <input type="checkbox" name="qual" value="MCA" defaultChecked="" onChange={getQualData} />
                 MCA
                 <br />
