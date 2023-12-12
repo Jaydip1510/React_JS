@@ -2,21 +2,33 @@ import React, { useState } from 'react'
 
 function Formfunctionbasecomponent() {
     const [inputs, setInputs] = useState({})
-    const [qual, setQual] = useState({})
+    const [qual, setQual] = useState([])
     const submitData = (e) => {
         e.preventDefault();
         console.log("Name is:-" + inputs.name);
         console.log("gender is:-" + inputs.g1);
         console.log("Email is:-" + inputs.email);
+        console.log("qualification is:-"+qual)
         console.log("password is:-" + inputs.password);
         console.log("Country is:-" + inputs.country);
         console.log("Address is:-" + inputs.address);
+
     }
     const setData = (e) => {
         const target = e.target;
         const value = target.type === 'checkbox' ? target.checked : target.value;
         const name = target.name
         setInputs(i => ({ ...i, [name]: value }))
+    }
+    const   getQualData = (e) => {
+        const value = e.target.value;
+        const isChecked = e.target.checked;
+
+        if (isChecked) {
+            setQual(prevQual => [...prevQual, value]); // Add qualification to array
+        } else {
+            setQual(prevQual => prevQual.filter(item => item !== value)); // Remove qualification from array
+        }
     }
     return (
         <div>
@@ -36,10 +48,10 @@ function Formfunctionbasecomponent() {
                 <br />
                 <br />
                 <label htmlFor="" style={{color:"blue",width:200}}>Password:-</label>
-                <input type="password" name="password" id="" value={inputs.password} onChange={setData} />
+                <input type="password" name="password" id="" value={inputs.password} onChange={setData} placeholder='Enter Password' />
                 <br />
                 <br />
-                {/* <label htmlFor="">Qualification:-</label>
+                <label htmlFor="">Qualification:-</label>
                 <input type="checkbox" name="qual" value="10th" defaultChecked="" onChange={getQualData} />
                 10th
                 <input type="checkbox" name="qual" value="12th" defaultChecked="" onChange={getQualData} />
@@ -49,7 +61,7 @@ function Formfunctionbasecomponent() {
                 <input type="checkbox" name="qual" value="MCA" defaultChecked="" onChange={getQualData} />
                 MCA
                 <br />
-                <br /> */}
+                <br />
                 <label htmlFor="" style={{color:"blue",width:200}}>Country:-</label>
                 <select name="country" style={{width:190}} id="" required="" onChange={setData}>
                     <option value="">--Select Country--</option>
