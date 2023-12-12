@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-
+import { Form } from 'react-bootstrap';
 class Togglebuttoncomponent extends Component {
     constructor() {
         super()
@@ -20,7 +20,14 @@ class Togglebuttoncomponent extends Component {
         return (
             <div>
                 <h3 className='mb-3'>Toggle Button</h3>
-                <button className='btn btn-warning' onClick={changeStatus}>{this.state.status == 0 ? "OFF" : "ON"}</button>
+                <Form>
+                    <Form.Check // prettier-ignore
+                        type="switch"
+                        id="custom-switch"
+                        label={this.state.status == 0 ? "OFF" : "ON"}
+                        onClick={changeStatus}
+                    />
+                </Form><br/>
             </div>
         );
     }
