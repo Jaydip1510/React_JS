@@ -4,6 +4,7 @@ import React from 'react';
 import Togglebuttoncomponent from './components/Togglebuttoncomponent';
 import Arraycomponent from './components/Arraycomponent';
 import Conditionalcomponent from './components/Conditionalcomponent';
+import Statuscomponent from './components/Statuscomponent';
 
 
 class App extends React.Component {
@@ -39,7 +40,8 @@ class App extends React.Component {
          <ul>
           {empdata}
          </ul><hr/>
-        <Conditionalcomponent />
+        <Conditionalcomponent /><hr/>
+        <Statuscomponent />
       </div>
     );
   }
