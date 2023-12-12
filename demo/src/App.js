@@ -16,6 +16,8 @@ import Userefcomponent from './components/Userefcomponent';
 import Buttoncomponent from './components/Buttoncomponent';
 import Transitionscomponent from './components/Transitionscomponent';
 import Formcontrollcomponent from './components/Formcontrollcomponent';
+import Formfunctionbasecomponent from './components/Formfunctionbasecomponent';
+
 
 
 
@@ -98,7 +100,8 @@ class App extends React.Component {
        <button onClick={updateData}>Updata data</button> 
        <h3>High Order Components</h3>
        <h3>name is:-{this.props.name}</h3> */}
-       <Formcontrollcomponent />
+       {/* <Formcontrollcomponent /> */}
+       <Formfunctionbasecomponent />
 
 
         </header>
