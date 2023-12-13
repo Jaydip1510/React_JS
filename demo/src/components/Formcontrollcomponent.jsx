@@ -9,7 +9,7 @@ class Formcontrollcomponent extends Component {
             g1: '',
             qual: [],
             email: '',
-            password: '',
+            password: '', 
             country: '',
             address: ''
 

@@ -21,18 +21,13 @@ function Formfunctionbasecomponent() {
         setInputs(i => ({ ...i, [name]: value }))
     }
       const getQualData = (e) => {
-        const value = e.target.value;
-        const isChecked = e.target.checked;
-
-        if (isChecked) {
-            setQual(prevQual => [...prevQual, value]); // Add qualification to array
-        } else {
-            setQual(prevQual => prevQual.filter(item => item !== value)); // Remove qualification from array
-        }
+        qual.push(e.target.value)
+        setQual(qual)
     }
     return (
         <div>
             <form name="frm" onSubmit={submitData}>
+                <table border={2} align='center' className='mt-5' style={{width:"700px",height:"500px"}} cellPadding={0} cellSpacing={0}>
                 <label htmlFor=""  style={{color:"blue",width:200}}>Name:-</label>
                 <input type="text" name="name" className='mt-5' style={{width:200}} value={inputs.name} onChange={setData} placeholder='Enter Your Name' />
                 <br />
@@ -77,6 +72,7 @@ function Formfunctionbasecomponent() {
                 <br />
                 <br />
                 <input type="submit" className='btn btn-info' defaultValue="submit" />
+                </table>
             </form>
         </div>
     )
