@@ -15,6 +15,10 @@ const Formvalidationcomponent = () => {
         alert('Invalid Form, First Name can not be empty')
         return
       }
+      if (lastName.length == 0) {
+        alert('Invalid Form, First Name can not be empty')
+        return
+      }
   
       // Check if the Email is an Empty string or not.
   

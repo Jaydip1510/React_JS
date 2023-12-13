@@ -18,6 +18,7 @@ import Transitionscomponent from './components/Transitionscomponent';
 import Formcontrollcomponent from './components/Formcontrollcomponent';
 import Formfunctionbasecomponent from './components/Formfunctionbasecomponent';
 import Formvalidationcomponent from './components/Formvalidationcomponent';
+import Formvalidation from './components/Formvalidation';
 
 
 
@@ -103,7 +104,8 @@ class App extends React.Component {
        <h3>name is:-{this.props.name}</h3> */}
        {/* <Formcontrollcomponent /> */}
        {/* <Formfunctionbasecomponent /> */}
-       <Formvalidationcomponent />
+       {/* <Formvalidationcomponent /> */}
+       <Formvalidation />
 
        
       </div>
