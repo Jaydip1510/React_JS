@@ -17,6 +17,7 @@ import Buttoncomponent from './components/Buttoncomponent';
 import Transitionscomponent from './components/Transitionscomponent';
 import Formcontrollcomponent from './components/Formcontrollcomponent';
 import Formfunctionbasecomponent from './components/Formfunctionbasecomponent';
+import Formvalidationcomponent from './components/Formvalidationcomponent';
 
 
 
@@ -101,8 +102,8 @@ class App extends React.Component {
        <h3>High Order Components</h3>
        <h3>name is:-{this.props.name}</h3> */}
        {/* <Formcontrollcomponent /> */}
-       <Formfunctionbasecomponent />
-
+       {/* <Formfunctionbasecomponent /> */}
+       <Formvalidationcomponent />
 
        
       </div>
