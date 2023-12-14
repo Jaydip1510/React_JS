@@ -114,7 +114,7 @@ const Validationform = () => {
             ) : null}
             <form onSubmit={handleSubmit}>
                 <table border="nono" align='center' className='mt-5 bg-info' style={{ width: "700px", height: "600px" }} cellPadding={0} cellSpacing={0}>
-                    <div className="mt-5">
+                    <div className="mt-5" align="center">
                         <label style={{ width: 100 }} for="name">Name:-</label>
                         <input
                             type="text"
