@@ -22,7 +22,64 @@ const Validationform = () => {
         if (inputValues.password.length < 5) {
             errors.password = "Password is too short";
         }
-        if (!inputValues.age || inputValues.age < 18) {
+        // if (inputValues.password.length < 8) {
+        //     errors.password = "Password is too short";
+        //     return
+        //   }
+      
+        //   // variable to count upper case characters in the password.
+        //   let countUpperCase = 0
+        //   // variable to count lowercase characters in the password.
+        //   let countLowerCase = 0
+        //   // variable to count digit characters in the password.
+        //   let countDigit = 0
+        //   // variable to count special characters in the password.
+        //   let countSpecialCharacters = 0
+      
+        //   for (let i = 0; i < inputValues.password.length; i++) {
+        //     const specialChars = [
+        //       '!',
+        //       '@',
+        //       '#',
+        //       '$',
+        //       '%',
+        //       '^',
+        //       '&',
+        //       '*',
+        //       '(',
+        //       ')',
+        //       '_',
+        //       '-',
+        //       '+',
+        //       '=',
+        //       '[',
+        //       '{',
+        //       ']',
+        //       '}',
+        //       ':',
+        //       ';',
+        //       '<',
+        //       '>',
+        //     ]
+      
+        //     if (specialChars.includes(inputValues.password[i])) {
+        //       // this means that the character is special, so increment countSpecialCharacters
+        //       countSpecialCharacters++
+        //     } else if (!isNaN(inputValues.password[i] * 1)) {
+        //       // this means that the character is a digit, so increment countDigit
+        //       countDigit++
+        //     } else {
+        //       if (inputValues.password[i] == inputValues.password[i].toUpperCase()) {
+        //         // this means that the character is an upper case character, so increment countUpperCase
+        //         countUpperCase++
+        //       }
+        //       if (inputValues.password[i] == inputValues.password[i].toLowerCase()) {
+        //         // this means that the character is lowercase, so increment countUpperCase
+        //         countLowerCase++
+        //       }
+        //     }
+        //   }
+         if (!inputValues.age || inputValues.age < 18) {
             errors.age = "Minimum age is 18";
         }
         if (inputValues.address.length < 15) {
