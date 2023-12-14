@@ -20,6 +20,7 @@ import Formfunctionbasecomponent from './components/Formfunctionbasecomponent';
 import Formvalidationcomponent from './components/Formvalidationcomponent';
 import Formvalidation from './components/Formvalidation';
 import Materialtransitioncomponent from './components/Materialtransitioncomponent';
+import Formvalidationcontrol from './components/Formvalidationcontrol';
 
 
 
@@ -66,7 +67,7 @@ class App extends React.Component {
     })
     const num = [10, 20, 30, 40, 50,];
     return (
-      <div className="App">
+      <div>
        
           {/* <h5>my first react demo</h5>
         <h5>Addition is :- {add()}</h5>
@@ -107,7 +108,8 @@ class App extends React.Component {
        {/* <Formfunctionbasecomponent /> */}
        {/* <Formvalidationcomponent /> */}
        {/* <Formvalidation /> */}
-      <Materialtransitioncomponent/>
+      {/* <Materialtransitioncomponent/> */}
+      <Formvalidationcontrol />
 
        
       </div>
