@@ -113,7 +113,7 @@ const Validationform = () => {
                 <span className="success">Successfully submitted ✓</span>
             ) : null}
             <form onSubmit={handleSubmit}>
-                <table border={2} align='center' className='mt-5 bg-info' style={{ width: "500px", height: "400px" }} cellPadding={0} cellSpacing={0}>
+                <table border="nono" align='center' className='mt-5 bg-info' style={{ width: "700px", height: "600px" }} cellPadding={0} cellSpacing={0}>
                     <div className="mt-5">
                         <label style={{ width: 100 }} for="name">Name:-</label>
                         <input
@@ -121,7 +121,7 @@ const Validationform = () => {
                             name="name"
                             value={inputFields.name}
                             onChange={handleChange}
-                            style={{ height: 25, width: 175, border: errors.name ? "1px solid red" : null }}
+                            style={{ height: 40, width: 250, border: errors.name ? "1px solid red" : null }}
                         ></input><br /><br />
                         {errors.name ? (
                             <p className="error">Name should be at least 10 characters long</p>
@@ -132,7 +132,7 @@ const Validationform = () => {
                             name="email"
                             value={inputFields.email}
                             onChange={handleChange}
-                            style={{ height: 25, width: 175, border: errors.email ? "1px solid red" : null }}
+                            style={{ height: 40, width: 250, border: errors.email ? "1px solid red" : null }}
                         ></input><br /><br />
                         {errors.email ? (
                             <p className="error">Email should be at least 15 characters long</p>
@@ -143,7 +143,7 @@ const Validationform = () => {
                             name="password"
                             value={inputFields.password}
                             onChange={handleChange}
-                            style={{ height: 25, width: 175, border: errors.password ? "1px solid red" : null }}
+                            style={{ height: 40, width: 250, border: errors.password ? "1px solid red" : null }}
                         ></input><br /><br />
                         {errors.password ? (
                             <p className="error">
@@ -156,7 +156,7 @@ const Validationform = () => {
                             name="age"
                             value={inputFields.age}
                             onChange={handleChange}
-                            style={{ height: 25, width: 175, border: errors.age ? "1px solid red" : null }}
+                            style={{ height: 40, width: 250, border: errors.age ? "1px solid red" : null }}
                         ></input><br /><br />
                         {errors.age ? <p className="error">Minimum age is 18</p> : null}
                         <label style={{ width: 100 }} for="age">Address:-</label>
@@ -166,7 +166,7 @@ const Validationform = () => {
                         cols={20}
                         value={inputFields.address}
                         onChange={handleChange}
-                        style={{ height: 25, width: 175, border: errors.address ? "1px solid red" : null }}
+                        style={{ height: 40, width: 250, border: errors.address ? "1px solid red" : null }}
                         /><br/><br/>
                         {errors.address ? (
                             <p className="error">address should be at least 15 characters long</p>

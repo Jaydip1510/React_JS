@@ -61,7 +61,7 @@ input {
   vertical-align: bottom;
   position: relative;
   top: -1px;
-  *overflow: hidden;
+  overflow: hidden;
 }
 
 form {
