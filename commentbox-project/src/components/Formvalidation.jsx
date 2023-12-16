@@ -110,10 +110,10 @@ const Formvalidation = () => {
                 <span className="success">Successfully submitted ✓</span>
             ) : null}
             <form onSubmit={handleSubmit}>
-                <h1 style={{ color: "green" }}>Registration Form</h1>
+                <h1 style={{ color: "green",fontWeight:"bold" }}>Registration Form</h1>
                 <table border="nono" align='center' className='mt-3 bg-warning' style={{ width: "700px", height: "600px" }} cellPadding={0} cellSpacing={0}>
                     <div className="mt-5" align="center">
-                        <label style={{ width: 100, color: 'blue' }} for="name">Name:-</label>
+                        <label style={{ width: 100, color: 'blue',fontWeight:"bold" }} for="name">Name:-</label>
                         <input
                             type="text"
                             name="name"
@@ -125,7 +125,7 @@ const Formvalidation = () => {
                             <p style={{ color: "red" }}>Name should be at least 10 characters long</p>
                         ) : null}
 
-                        <label style={{ width: 100, color: 'blue' }} for="age">Age:-</label>
+                        <label style={{ width: 100, color: 'blue',fontWeight:"bold" }} for="age">Age:-</label>
                         <input
                             type="number"
                             name="age"
@@ -135,7 +135,7 @@ const Formvalidation = () => {
                         ></input><br /><br />
                         {errors.age ? <p style={{ color: "red" }}>Minimum age is 18</p> : null}
 
-                        <label style={{ width: 100, color: 'blue' }} >Gender:-</label>
+                        <label style={{ width: 100, color: 'blue',fontWeight:"bold" }} >Gender:-</label>
                         <label>
                             <input
                                 type="radio"
@@ -175,7 +175,7 @@ const Formvalidation = () => {
                         ) : null}<br /><br />
 
 
-                        <label style={{ width: 100, color: 'blue' }} for="email">Email:-</label>
+                        <label style={{ width: 100, color: 'blue',fontWeight:"bold" }} for="email">Email:-</label>
                         <input
                             type="email"
                             name="email"
@@ -188,7 +188,7 @@ const Formvalidation = () => {
                         ) : null}
 
 
-                        <label style={{ width: 100, color: 'blue' }} for="password">Password:-</label>
+                        <label style={{ width: 100, color: 'blue',fontWeight:"bold" }} for="password">Password:-</label>
                         <input
                             type="password"
                             name="password"
@@ -203,7 +203,7 @@ const Formvalidation = () => {
                         ) : null}
 
 
-                        <label style={{ width: 100, color: 'blue', }} for="address">Address:-</label>
+                        <label style={{ width: 100, color: 'blue',fontWeight:"bold" }} for="address">Address:-</label>
                         <textarea
                             name="address"
                             rows={2}
@@ -216,8 +216,8 @@ const Formvalidation = () => {
                             <p style={{ color: "red" }}>address should be at least 15 characters long</p>
                         ) : null}
 
-                        <label style={{ width: 100, color: 'blue' }}>Qualification:-</label>
-                        <label>
+                        <label style={{ width: 100, color: 'blue',fontWeight:"bold",marginRight: 20 }}>Qualification:-</label>
+                        
                             <input
                                 type="checkbox"
                                 name="qualification"
@@ -227,7 +227,6 @@ const Formvalidation = () => {
                                 style={{ marginRight: 5 }}
                             />
                             SSC
-                        </label>
 
                         <label style={{ marginLeft: 10 }}>
                             <input
