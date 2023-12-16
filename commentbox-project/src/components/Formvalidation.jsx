@@ -7,8 +7,8 @@ const Formvalidation = () => {
         password: "",
         age: null,
         address: "",
-        gender:"",
-        qualification:[]
+        gender: "",
+        qualification: []
     });
     const [errors, setErrors] = useState({});
     const [submitting, setSubmitting] = useState(false);
@@ -65,7 +65,7 @@ const Formvalidation = () => {
         if (!inputValues.gender) {
             errors.gender = "Please select a gender";
         }
-        if(!inputValues.qualification){
+        if (!inputValues.qualification) {
             errors.qualification = "Please select a qualification";
         }
 
@@ -74,7 +74,7 @@ const Formvalidation = () => {
     const handleQualificationChange = (e) => {
         const { value, checked } = e.target;
         let updatedQualifications = [...inputFields.qualification];
-    
+
         if (checked) {
             updatedQualifications.push(value);
         } else {
@@ -110,7 +110,7 @@ const Formvalidation = () => {
                 <span className="success">Successfully submitted ✓</span>
             ) : null}
             <form onSubmit={handleSubmit}>
-                <h1 style={{color:"blue"}}>Registration Form</h1>
+                <h1 style={{ color: "blue" }}>Registration Form</h1>
                 <table border="nono" align='center' className='mt-3 bg-warning' style={{ width: "700px", height: "600px" }} cellPadding={0} cellSpacing={0}>
                     <div className="mt-5" align="center">
                         <label style={{ width: 100 }} for="name">Name:-</label>
@@ -218,43 +218,55 @@ const Formvalidation = () => {
                         ) : null}
 
                         <label style={{ width: 100 }}>Qualification:-</label>
-                            <label>
-                                <input
-                                    type="checkbox"
-                                    name="qualification"
-                                    value="High School"
-                                    checked={inputFields.qualification.includes("High School")}
-                                    onChange={handleQualificationChange}
-                                    style={{ marginRight: 5 }}
-                                />
-                                High School
-                            </label>
-                            <label style={{ marginLeft: 10 }}>
-                                <input
-                                    type="checkbox"
-                                    name="qualification"
-                                    value="Bachelor's Degree"
-                                    checked={inputFields.qualification.includes("Bachelor's Degree")}
-                                    onChange={handleQualificationChange}
-                                    style={{ marginRight: 5 }}
-                                />
-                                Bachelor's Degree
-                            </label>
-                            <label style={{ marginLeft: 10 }}>
-                                <input
-                                    type="checkbox"
-                                    name="qualification"
-                                    value="Master's Degree"
-                                    checked={inputFields.qualification.includes("Master's Degree")}
-                                    onChange={handleQualificationChange}
-                                    style={{ marginRight: 5 }}
-                                />
-                                Master's Degree
-                            </label>
-                            {/* Add more qualification options as needed */}
+                        <label>
+                            <input
+                                type="checkbox"
+                                name="qualification"
+                                value="SSC"
+                                checked={inputFields.qualification.includes("SSC")}
+                                onChange={handleQualificationChange}
+                                style={{ marginRight: 5 }}
+                            />
+                            SSC
+                        </label>
+
+                        <label style={{ marginLeft: 10 }}>
+                            <input
+                                type="checkbox"
+                                name="qualification"
+                                value="HSC"
+                                checked={inputFields.qualification.includes("HSC")}
+                                onChange={handleQualificationChange}
+                                style={{ marginRight: 5 }}
+                            />
+                            HSC
+                        </label>
+                        <label style={{ marginLeft: 10 }}>
+                            <input
+                                type="checkbox"
+                                name="qualification"
+                                value="BCA"
+                                checked={inputFields.qualification.includes("BCA")}
+                                onChange={handleQualificationChange}
+                                style={{ marginRight: 5 }}
+                            />
+                            BCA
+                        </label>
+                        <label style={{ marginLeft: 10 }}>
+                            <input
+                                type="checkbox"
+                                name="qualification"
+                                value="MCA"
+                                checked={inputFields.qualification.includes("MCA")}
+                                onChange={handleQualificationChange}
+                                style={{ marginRight: 5 }}
+                            />
+                            MCA
+                        </label>
+                        {/* Add more qualification options as needed */}
                         {errors.qualification ? (
                             <p style={{ color: "red" }}>Please select at least one qualification</p>
-                        ) : null}
+                        ) : null}<br /><br />
                     </div>
                     <button type="submit" className="btn btn-success">Submit</button>
                 </table>
