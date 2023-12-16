@@ -39,7 +39,7 @@ const Commentbox = () => {
         ) : (
           <ul>
             {commentsList.map((c, index) => (
-              <li key={index}>{c}</li>
+              <p key={index}>{c}</p>
             ))}
           </ul>
         )}
