@@ -21,40 +21,40 @@ const Formvalidation = () => {
         if (inputValues.email.length < 15) {
             errors.email = "Email is too short";
         }
-        // if (inputValues.password.length < 8) {
-        //     errors.password = "Password is too short";
-        // }
-
         if (inputValues.password.length < 8) {
             errors.password = "Password is too short";
-        } else {
-            let countUpperCase = 0;
-            let countLowerCase = 0;
-            let countDigit = 0;
-            let countSpecialCharacters = 0;
-            const specialChars = ['!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '_', '-', '+', '=', '[', '{', ']', '}', ':', ';', '<', '>'];
-
-            for (let i = 0; i < inputValues.password.length; i++) {
-                const char = inputValues.password[i];
-
-                if (specialChars.includes(char)) {
-                    countSpecialCharacters++;
-                } else if (!isNaN(char * 1)) {
-                    countDigit++;
-                } else {
-                    if (char === char.toUpperCase()) {
-                        countUpperCase++;
-                    }
-                    if (char === char.toLowerCase()) {
-                        countLowerCase++;
-                    }
-                }
-            }
-
-            if (countUpperCase < 1 || countLowerCase < 1 || countDigit < 1 || countSpecialCharacters < 1) {
-                errors.password = "Password must contain at least 1 uppercase letter, 1 lowercase letter, 1 digit, and 1 special character";
-            }
         }
+
+        // if (inputValues.password.length < 8) {
+        //     errors.password = "Password is too short";
+        // } else {
+        //     let countUpperCase = 0;
+        //     let countLowerCase = 0;
+        //     let countDigit = 0;
+        //     let countSpecialCharacters = 0;
+        //     const specialChars = ['!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '_', '-', '+', '=', '[', '{', ']', '}', ':', ';', '<', '>'];
+
+        //     for (let i = 0; i < inputValues.password.length; i++) {
+        //         const char = inputValues.password[i];
+
+        //         if (specialChars.includes(char)) {
+        //             countSpecialCharacters++;
+        //         } else if (!isNaN(char * 1)) {
+        //             countDigit++;
+        //         } else {
+        //             if (char === char.toUpperCase()) {
+        //                 countUpperCase++;
+        //             }
+        //             if (char === char.toLowerCase()) {
+        //                 countLowerCase++;
+        //             }
+        //         }
+        //     }
+
+        //     if (countUpperCase < 1 || countLowerCase < 1 || countDigit < 1 || countSpecialCharacters < 1) {
+        //         errors.password = "Password must contain at least 1 uppercase letter, 1 lowercase letter, 1 digit, and 1 special character";
+        //     }
+        // }
 
         if (!inputValues.age || inputValues.age < 18) {
             errors.age = "Minimum age is 18";
@@ -65,8 +65,8 @@ const Formvalidation = () => {
         if (!inputValues.gender) {
             errors.gender = "Please select a gender";
         }
-        if (!inputValues.qualification) {
-            errors.qualification = "Please select a qualification";
+        if (!inputValues.qualification || inputValues.qualification.length === 0) {
+            errors.qualification = "Please select at least one qualification";
         }
 
         return errors;
