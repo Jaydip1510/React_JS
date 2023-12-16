@@ -18,14 +18,17 @@ const Commentbox = () => {
 
   return (
     <div>
-      <form onSubmit={handleSubmit} style={{margin:50,}}>
-      <table border={2} align='center' className='mt-5' style={{height:250,width:250}}>
+      <form onSubmit={handleSubmit} style={{margin:50}}>
+      <table border={2} align='center' className='mt-5 bg-warning' style={{height:250,width:400}}>
         <textarea
+          rows={3}
+          cols={40}
+          className='mt-5'
           placeholder="Write your comment here..."
           value={comment}
           onChange={handleInputChange}
         ></textarea><br/><br/>
-        <button type="submit">Submit</button>
+        <button className='btn btn-success' type="submit">Submit</button>
         </table>
       </form>
 
