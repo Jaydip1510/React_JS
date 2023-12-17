@@ -15,6 +15,7 @@ const Localstorege = () => {
    };
    return (
       <div className="App">
+        <table border={2} align='center' className='mt-5 bg-warning' cellPadding={5} cellSpacing={5} style={{height:100,width:400}}>
          <label htmlFor="">Name:-</label>
          <input
             style={{height:30,width:200,marginRight:20,marginLeft:20}}
@@ -46,8 +47,9 @@ const Localstorege = () => {
             </div>
          )}
          <div>
-            <button onClick={remove}>Remove</button>
+            <button className='mb-5' onClick={remove}>Remove</button>
          </div>
+        </table>
       </div>
    );
 };
