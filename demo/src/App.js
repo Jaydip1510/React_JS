@@ -22,6 +22,7 @@ import Formvalidation from './components/Formvalidation';
 import Materialtransitioncomponent from './components/Materialtransitioncomponent';
 import Formvalidationcontrol from './components/Formvalidationcontrol';
 import Validationform from './components/Validationform';
+import Localstorege from './components/Localstorege';
 
 
 
@@ -111,7 +112,9 @@ class App extends React.Component {
        {/* <Formvalidation /> */}
       {/* <Materialtransitioncomponent/> */}
       {/* <Formvalidationcontrol /> */}
-      <Validationform />
+
+      {/*<Validationform /> */}
+      <Localstorege/>
 
        
       </div>
