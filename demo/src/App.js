@@ -24,6 +24,7 @@ import Formvalidationcontrol from './components/Formvalidationcontrol';
 import Validationform from './components/Validationform';
 import Localstorege from './components/Localstorege';
 import Localstoragedemo from './components/Localstoragedemo';
+import Drawercomponent from './components/Drawercomponent';
 
 
 
@@ -118,6 +119,7 @@ class App extends React.Component {
       {/* <Localstorege/> */}
       {/* <Localstoragedemo/> */}
       {/* <Formfunctionbasecomponent /> */}
+      <Drawercomponent/>
       
 
        
