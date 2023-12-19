@@ -108,7 +108,7 @@ class App extends React.Component {
        <h3>High Order Components</h3>
        <h3>name is:-{this.props.name}</h3> */}
        {/* <Formcontrollcomponent /> */}
-       <Formfunctionbasecomponent />
+       
        {/* <Formvalidationcomponent /> */}
        {/* <Formvalidation /> */}
       {/* <Materialtransitioncomponent/> */}
@@ -117,6 +117,8 @@ class App extends React.Component {
       {/*<Validationform /> */}
       {/* <Localstorege/> */}
       {/* <Localstoragedemo/> */}
+      {/* <Formfunctionbasecomponent /> */}
+      
 
        
       </div>
