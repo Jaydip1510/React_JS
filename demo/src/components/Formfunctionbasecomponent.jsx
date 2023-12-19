@@ -1,20 +1,17 @@
 import React, { useState } from 'react'
 
 function Formfunctionbasecomponent() {
-    const [inputs, setInputs] = useState({})
-    const [qual, setQual] = useState([])
+    const [alldata,setAlldata] = useState([]);
+    const [inputs, setInputs] = useState({});
+    const [qual, setQual] = useState([]);
     const submitData = (e) => {
         e.preventDefault();
-        console.log("Name is:-" + inputs.name);
-        console.log("gender is:-" + inputs.g1);
-        console.log("Email is:-" + inputs.email);
-        console.log("qualification is:-"+qual)
-        console.log("password is:-" + inputs.password);
-        console.log("Country is:-" + inputs.country);
-        console.log("Address is:-" + inputs.address);
-
+        alldata.push(inputs);
+        localStorage.setItem("UserInfo",JSON.stringify(alldata));
     }
+    const empdata =JSON.parse(localStorage.getItem("UserInfo"));
     const setData = (e) => {
+        
         const target = e.target;
         const value = target.type === 'checkbox' ? target.checked : target.value;
         const name = target.name
@@ -34,12 +31,12 @@ function Formfunctionbasecomponent() {
                 <br />
                 <label htmlFor="" style={{color:"blue",width:200}}>Gender:-</label>
                 <input type="radio" name="g1"   id="" value="male" defaultValue="" onChange={setData} />
-                Male &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                Male &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 <input type="radio" name="g1" id="" value="female" defaultValue="" onChange={setData} />
                 Female
                 <br /><br />
                 <label htmlFor="" style={{color:"blue",width:200}}>Email:-</label>
-                <input type="email" name="email" id="" value={inputs.email} onChange={setData} placeholder='Enter Email Address' />
+                <input type="email" style={{height:30,width:190}} name="email" id="" value={inputs.email} onChange={setData} placeholder='Enter Email Address' />
                 <br />
                 <br />
                 <label htmlFor="" style={{color:"blue",width:200}}>Password:-</label>
@@ -71,9 +68,36 @@ function Formfunctionbasecomponent() {
                 <textarea name="address" rows={2} cols={20} defaultValue={''} onChange={setData} />
                 <br />
                 <br />
-                <input type="submit" className='btn btn-info' defaultValue="submit" />
+                <button type="submit" className='btn btn-info' defaultValue="submit">button</button>
                 </table>
-            </form>
+            </form><br/><br/>
+            <table border={2}>
+               <tr>
+                  <th>Id</th>
+                  <th>Name</th>
+                  <th>Gender</th>
+                  <th>Email</th>
+                  <th>Password</th>
+                  <th>Qualification</th>
+                  <th>Address</th>
+               </tr>
+               {empdata.map((i,index) =>{
+                     return (
+                        <tr>
+                            <td>{index+1}</td>
+                            <td>{i.name}</td>
+                            <td>{i.gender}</td>
+                            <td>{i.email}</td>
+                            <td>{i.password}</td>
+                            <td>{i.qual}</td>
+                            <td>{i.address}</td>
+                        </tr>
+                     )
+                  })
+}
+                              
+            </table>
+
         </div>
     )
 }

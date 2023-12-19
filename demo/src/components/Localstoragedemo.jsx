@@ -27,6 +27,14 @@ const Localstoragedemo = () => {
         qual.push(e.target.value);
 
     }
+    const remove = () => {
+        localStorage.removeItem('UserName');
+        localStorage.removeItem('UserAge');
+        localStorage.removeItem('UserSalary');
+        localStorage.removeItem('UserEmail');
+        localStorage.removeItem('UserQual');
+        localStorage.removeItem('UserAddress');
+     };
   return (
     <div className='App'>
       <form name="frm" onSubmit={submitData}>
@@ -62,7 +70,8 @@ const Localstoragedemo = () => {
         <input type="checkbox" name="q1" value="MCA" defaultChecked="" onChange={getQualData} />
         MCA
         <br/><br/>
-        <button type="submit" className="btn btn-warning">Submit</button>
+        <button type="submit" className="btn btn-warning">Submit</button>&nbsp;&nbsp;&nbsp;&nbsp;
+        <button type="button" className="btn btn-success" onClick={remove}>Remove</button>
         </table>
       </form>
     </div>
