@@ -79,7 +79,7 @@ function Formfunctionbasecomponent() {
                     <tr>
                         <th>Id</th>
                         <th>Name</th>
-                        {/* <th>Gender</th> */}
+                        <th>Gender</th> 
                         <th>Email</th>
                         <th>Password</th>
                         {/* <th>Qualification</th> */}
@@ -90,7 +90,7 @@ function Formfunctionbasecomponent() {
                             <tr>
                                 <td>{index + 1}</td>
                                 <td>{i.name}</td>
-                                {/* <td>{i.gender}</td> */}
+                                <td>{i.g1}</td>
                                 <td>{i.email}</td>
                                 <td>{i.password}</td>
                                 {/* <td>{i.qual}</td> */}
