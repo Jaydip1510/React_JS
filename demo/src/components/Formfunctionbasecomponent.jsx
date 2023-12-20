@@ -18,7 +18,7 @@ function Formfunctionbasecomponent() {
         // Clear qualifications after submission
         setQual([]); // Reset qual to empty array
     }
-    const empdata = JSON.parse(localStorage.getItem("UserInfo"));
+   const empdata = JSON.parse(localStorage.getItem("UserInfo"));
     const setData = (e) => {
 
         const target = e.target;
@@ -30,7 +30,7 @@ function Formfunctionbasecomponent() {
         qual.push(e.target.value)
         setQual(qual)
     }
-
+    
     return (
         <div className='container-fluid'>
             <div className='row'>
@@ -95,7 +95,7 @@ function Formfunctionbasecomponent() {
                                 <th>Password</th>
                                 <th>Country</th>
                                 <th>Address</th>
-                                <th>Action</th>
+                                
                             </tr>
                         </thead>
                         {empdata && empdata.length > 0 ? (
@@ -110,7 +110,6 @@ function Formfunctionbasecomponent() {
                                             <td>{i.password}</td>
                                             <td>{i.country}</td>
                                             <td>{i.address}</td>
-                                            <td><button type="button">Delete</button></td>
                                         </tr>
                                     </tbody>
                                 )
