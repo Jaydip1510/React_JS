@@ -7,7 +7,7 @@ function Formfunctionbasecomponent() {
     const submitData = (e) => {
         e.preventDefault();
         alldata.push(inputs);
-        localStorage.setItem("UserInfo", JSON.stringify(alldata));
+        localStorage.setItem("UserInfo",JSON.stringify(alldata));
     }
     const empdata = JSON.parse(localStorage.getItem("UserInfo"));
     const setData = (e) => {
@@ -28,7 +28,7 @@ function Formfunctionbasecomponent() {
                     <form name="frm" onSubmit={submitData}>
 
                         <label htmlFor="" style={{ color: "blue", width: 200 }}>Name:-</label>
-                        <input type="text" name="name" className='mt-5' style={{height: 30,width: 200 }} value={inputs.name} onChange={setData} placeholder='Enter Your Name' />
+                        <input type="text" name="name" className='mt-5' style={{ height: 30, width: 200 }} value={inputs.name} onChange={setData} placeholder='Enter Your Name' />
                         <br />
                         <br />
                         <label htmlFor="" style={{ color: "blue", width: 200 }}>Gender:-</label>
@@ -74,33 +74,35 @@ function Formfunctionbasecomponent() {
 
                     </form>
                 </div>
-              <div className='col-7 bg-warning pt-5 d-flex justify-content-center align-items-start padding-top'>
-                <table className='table table-striped' border={2} cellpadding="8">
-                    <tr>
-                        <th>Id</th>
-                        <th>Name</th>
-                        <th>Gender</th> 
-                        <th>Email</th>
-                        <th>Password</th>
-                        {/* <th>Qualification</th> */}
-                        <th>Address</th>
-                    </tr>
-                    {empdata.map((i, index) => {
-                        return (
-                            <tr>
-                                <td>{index + 1}</td>
-                                <td>{i.name}</td>
-                                <td>{i.g1}</td>
-                                <td>{i.email}</td>
-                                <td>{i.password}</td>
-                                {/* <td>{i.qual}</td> */}
-                                <td>{i.address}</td>
-                            </tr>
-                        )
-                    })
-                    }
+                <div className='col-7 bg-warning pt-5 d-flex justify-content-center align-items-start padding-top'>
+                     <table className='table table-striped' border={2} cellpadding="8">
+                         <tr style={{ textAlign: "center" }}>
+                            <th>Id</th>
+                            <th>Name</th>
+                            <th>Gender</th>
+                            <th>Email</th>
+                            <th>Password</th>
+                            <th>Country</th>
+                           
+                            <th>Address</th>
+                        </tr> 
+                        {
+                            empdata.map((i, index) => {
+                                return (
+                                    <tr style={{ textAlign: "center" }}>
+                                        <td>{index + 1}</td>
+                                        <td>{i.name}</td>
+                                        <td>{i.g1}</td>
+                                        <td>{i.email}</td>
+                                        <td>{i.password}</td>
+                                        <td>{i.country}</td>
+                                        <td>{i.address}</td>
+                                    </tr>
+                                )
+                            })
+                        }
 
-                </table>
+                    </table> 
                 </div>
             </div>
 
