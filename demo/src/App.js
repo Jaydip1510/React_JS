@@ -24,6 +24,7 @@ import Formvalidationcontrol from './components/Formvalidationcontrol';
 import Validationform from './components/Validationform';
 import Localstorege from './components/Localstorege';
 import Localstoragedemo from './components/Localstoragedemo';
+import Alldatacomponent from './components/Alldatacomponent';
 
 
 
@@ -118,8 +119,8 @@ class App extends React.Component {
       {/*<Validationform /> */}
       {/* <Localstorege/> */}
       {/* <Localstoragedemo/> */}
-      <Formfunctionbasecomponent />
-   
+      {/* <Formfunctionbasecomponent /> */}
+      <Alldatacomponent/>
 
        
       </div>

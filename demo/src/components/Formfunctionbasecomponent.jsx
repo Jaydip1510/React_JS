@@ -21,6 +21,7 @@ function Formfunctionbasecomponent() {
         qual.push(e.target.value)
         setQual(qual)
     }
+    
     return (
         <div className='container-fluid'>
             <div className='row'>
@@ -75,7 +76,7 @@ function Formfunctionbasecomponent() {
                     </form>
                 </div>
                 <div className='col-7 bg-warning pt-5 d-flex justify-content-center align-items-start padding-top'>
-                     <table className='table table-striped' border={2} cellpadding="8">
+                    <table className='table table-striped' border={2} cellpadding="8">
                          <tr style={{ textAlign: "center" }}>
                             <th>Id</th>
                             <th>Name</th>
@@ -86,8 +87,7 @@ function Formfunctionbasecomponent() {
                            
                             <th>Address</th>
                         </tr> 
-                        {
-                            empdata.map((i, index) => {
+                        {empdata.map((i,index) => {
                                 return (
                                     <tr style={{ textAlign: "center" }}>
                                         <td>{index + 1}</td>
@@ -99,8 +99,7 @@ function Formfunctionbasecomponent() {
                                         <td>{i.address}</td>
                                     </tr>
                                 )
-                            })
-                        }
+                        })}
 
                     </table> 
                 </div>
