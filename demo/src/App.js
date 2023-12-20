@@ -115,12 +115,12 @@ class App extends React.Component {
        {/* <Formvalidation /> */}
       {/* <Materialtransitioncomponent/> */}
       {/* <Formvalidationcontrol /> */}
-
+      {/* <Alldatacomponent/> */}
       {/*<Validationform /> */}
       {/* <Localstorege/> */}
       {/* <Localstoragedemo/> */}
-      {/* <Formfunctionbasecomponent /> */}
-      <Alldatacomponent/>
+      <Formfunctionbasecomponent />
+      
 
        
       </div>
