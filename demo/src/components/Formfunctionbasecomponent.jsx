@@ -3,25 +3,28 @@ import React, { useState } from 'react'
 function Formfunctionbasecomponent() {
     const [inputs, setInputs] = useState({});
     const [qual, setQual] = useState([]);
+    const [alluserdata, setUserdata] = useState(JSON.parse(localStorage.getItem('UserInfo')))
     const submitData = (e) => {
         var tmpData = [];
         e.preventDefault();
         var empdata = JSON.parse(localStorage.getItem("UserInfo"));
         var tmpData = empdata && empdata.length > 0 ? [...empdata] : [];
+        inputs.qual = qual
         tmpData.push(inputs);
         localStorage.setItem("UserInfo", JSON.stringify(tmpData));
-        // Clear form inputs after submission
-        document.getElementById('frm').reset(); // Reset the form
-        // Clear form inputs after submission
-        setInputs({}); // Reset inputs to empty object
-
-        // Clear qualifications after submission
-        setQual([]); // Reset qual to empty array
+         // Clear form inputs after submission
+         setInputs({}); // Reset inputs to empty object
+         // Clear qualifications after submission
+         setQual([]); // Reset qual to empty array
+        const form = document.getElementById('frm') // Reset the form
+        if (form) {
+            form.reset();
+        }
     }
    const empdata = JSON.parse(localStorage.getItem("UserInfo"));
     const setData = (e) => {
-
         const target = e.target;
+        console.log("Name = "+target.name+" , Value"+target.value);
         const value = target.type === 'checkbox' ? target.checked : target.value;
         const name = target.name
         setInputs(i => ({ ...i, [name]: value }))
@@ -30,32 +33,38 @@ function Formfunctionbasecomponent() {
         qual.push(e.target.value)
         setQual(qual)
     }
-    
+    const deleteinfo = (id) =>{
+        let dt = alluserdata.filter((i, index) => {
+            return index !== id;
+        });
+        localStorage.setItem('UserInfo', JSON.stringify(dt));
+        setUserdata(dt);
+    }
     return (
         <div className='container-fluid'>
             <div className='row'>
-                <div className='col-5 bg-secondary'>
+                <div className='col-4 bg-secondary'>
                     <form name="frm" id='frm' onSubmit={submitData}>
 
-                        <label htmlFor="" style={{ color: "blue", width: 200 }}>Name:-</label>
+                        <label htmlFor="" style={{ color: "blue" }}>Name:-</label>
                         <input type="text" name="name" className='mt-5' style={{ height: 30, width: 200 }} value={inputs.name} onChange={setData} placeholder='Enter Your Name' />
                         <br />
                         <br />
-                        <label htmlFor="" style={{ color: "blue", width: 200 }}>Gender:-</label>
+                        <label htmlFor="" style={{ color: "blue" }}>Gender:-</label>
                         <input type="radio" name="g1" id="" value="male" defaultValue="" onChange={setData} />
                         Male &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         <input type="radio" name="g1" id="" value="female" defaultValue="" onChange={setData} />
                         Female
                         <br /><br />
-                        <label htmlFor="" style={{ color: "blue", width: 200 }}>Email:-</label>
+                        <label htmlFor="" style={{ color: "blue" }}>Email:-</label>
                         <input type="email" style={{ height: 30, width: 190 }} name="email" id="" value={inputs.email} onChange={setData} placeholder='Enter Email Address' />
                         <br />
                         <br />
-                        <label htmlFor="" style={{ color: "blue", width: 200 }}>Password:-</label>
+                        <label htmlFor="" style={{ color: "blue"}}>Password:-</label>
                         <input type="password" style={{ height: 30, width: 190 }} name="password" id="" value={inputs.password} onChange={setData} placeholder='Enter Password' />
                         <br />
                         <br />
-                        <label htmlFor="" style={{ color: "blue", width: 200 }}>Qualification:-</label>
+                        <label htmlFor="" style={{ color: "blue" }}>Qualification:-</label>
                         <input type="checkbox" name="qual" value="10th" defaultChecked="" onChange={getQualData} />
                         10th&nbsp;&nbsp;
                         <input type="checkbox" name="qual" value="12th" defaultChecked="" onChange={getQualData} />
@@ -66,7 +75,7 @@ function Formfunctionbasecomponent() {
                         MCA
                         <br />
                         <br />
-                        <label htmlFor="" style={{ color: "blue", width: 200 }}>Country:-</label>
+                        <label htmlFor="" style={{ color: "blue" }}>Country:-</label>
                         <select name="country" style={{ width: 190 }} id="" required="" onChange={setData}>
                             <option value="">--Select Country--</option>
                             <option value="IND">IND</option>
@@ -76,7 +85,7 @@ function Formfunctionbasecomponent() {
                         </select>
                         <br />
                         <br />
-                        <label htmlFor="" style={{ color: "blue", width: 200 }}>Address:-</label>
+                        <label htmlFor="" style={{ color: "blue"}}>Address:-</label>
                         <textarea name="address" rows={2} cols={20} defaultValue={''} onChange={setData} />
                         <br />
                         <br />
@@ -84,7 +93,7 @@ function Formfunctionbasecomponent() {
 
                     </form>
                 </div>
-                <div className='col-7 bg-warning pt-5 d-flex justify-content-center align-items-start padding-top'>
+                <div className='col-8 bg-warning pt-5 d-flex justify-content-center align-items-start padding-top'>
                     <table className='table table-striped'>
                         <thead>
                             <tr style={{ textAlign: "center" }}>
@@ -94,7 +103,9 @@ function Formfunctionbasecomponent() {
                                 <th>Email</th>
                                 <th>Password</th>
                                 <th>Country</th>
+                                <th>qualifications</th>
                                 <th>Address</th>
+                                <th>Action</th>
                                 
                             </tr>
                         </thead>
@@ -109,7 +120,9 @@ function Formfunctionbasecomponent() {
                                             <td>{i.email}</td>
                                             <td>{i.password}</td>
                                             <td>{i.country}</td>
+                                            <td>{i.qual}</td>
                                             <td>{i.address}</td>
+                                            <td><button type="button" className='btn btn-danges bg-danger' onClick={()=>deleteinfo(index)}>Delete</button></td>
                                         </tr>
                                     </tbody>
                                 )
