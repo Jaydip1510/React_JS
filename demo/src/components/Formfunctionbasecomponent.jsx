@@ -40,6 +40,12 @@ function Formfunctionbasecomponent() {
         localStorage.setItem('UserInfo', JSON.stringify(dt));
         setUserdata(dt);
     }
+    const editinfo = (id) => {
+        let dt = alluserdata.filter((i, index) => {
+            return index == id;
+        });
+        setInputs(dt[0])
+    }
     return (
         <div className='container-fluid'>
             <div className='row'>
@@ -119,7 +125,7 @@ function Formfunctionbasecomponent() {
                                             <td>{i.country}</td>
                                             <td>{i.qual}</td>
                                             <td>{i.address}</td>
-                                            <td><button className='btn btn-success bg-success'>Edit</button><button type="button" className='btn btn-danges bg-danger' onClick={()=>deleteinfo(index)}>Delete</button></td>
+                                            <td><button className='btn btn-success bg-success' onClick={()=>editinfo(index)}>Edit</button><button type="button" className='btn btn-danges bg-danger' onClick={()=>deleteinfo(index)}>Delete</button></td>
                                         </tr>
                                     </tbody>
                                 )
