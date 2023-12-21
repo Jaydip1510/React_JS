@@ -12,11 +12,11 @@ function Formfunctionbasecomponent() {
         inputs.qual = qual
         tmpData.push(inputs);
         localStorage.setItem("UserInfo", JSON.stringify(tmpData));
-         // Clear form inputs after submission
-         setInputs({}); // Reset inputs to empty object
-         // Clear qualifications after submission
-         setQual([]); // Reset qual to empty array
-        const form = document.getElementById('frm') // Reset the form
+
+         setInputs({}); 
+         
+         setQual([]); 
+        const form = document.getElementById('frm') 
         if (form) {
             form.reset();
         }
