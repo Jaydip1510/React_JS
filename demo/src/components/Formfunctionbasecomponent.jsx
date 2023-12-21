@@ -120,7 +120,6 @@ function Formfunctionbasecomponent() {
                     </table>
                 </div>
             </div>
-
         </div>
     )
 }
