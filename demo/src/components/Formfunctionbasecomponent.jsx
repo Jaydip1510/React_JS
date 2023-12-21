@@ -43,30 +43,28 @@ function Formfunctionbasecomponent() {
     return (
         <div className='container-fluid'>
             <div className='row'>
-                <div className='col-4 bg-secondary'>
+                <div className='col-3 bg-secondary'>
                     <form name="frm" id='frm' onSubmit={submitData}>
 
-                        <label htmlFor="" style={{ color: "blue" }}>Name:-</label>
+                        <label htmlFor="" style={{ color: "blue",width:100 }}>Name:-</label>
                         <input type="text" name="name" className='mt-5' style={{ height: 30, width: 200 }} value={inputs.name} onChange={setData} placeholder='Enter Your Name' />
                         <br />
                         <br />
-                        <label htmlFor="" style={{ color: "blue" }}>Gender:-</label>
+                        <label htmlFor="" style={{ color: "blue",width:100 }}>Gender:-</label>
                         <input type="radio" name="g1" id="" value="male" defaultValue="" onChange={setData} />
                         Male &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         <input type="radio" name="g1" id="" value="female" defaultValue="" onChange={setData} />
                         Female
                         <br /><br />
-                        <label htmlFor="" style={{ color: "blue" }}>Email:-</label>
+                        <label htmlFor="" style={{ color: "blue",width:100 }}>Email:-</label>
                         <input type="email" style={{ height: 30, width: 190 }} name="email" id="" value={inputs.email} onChange={setData} placeholder='Enter Email Address' />
                         <br />
                         <br />
-                        <label htmlFor="" style={{ color: "blue"}}>Password:-</label>
+                        <label htmlFor="" style={{ color: "blue",width:100}}>Password:-</label>
                         <input type="password" style={{ height: 30, width: 190 }} name="password" id="" value={inputs.password} onChange={setData} placeholder='Enter Password' />
                         <br />
                         <br />
-                        <label htmlFor="" style={{ color: "blue" }}>Qualification:-</label>
-                        <input type="checkbox" name="qual" value="10th" defaultChecked="" onChange={getQualData} />
-                        10th&nbsp;&nbsp;
+                        <label htmlFor="" style={{ color: "blue",width:100 }}>Qualification:-</label>
                         <input type="checkbox" name="qual" value="12th" defaultChecked="" onChange={getQualData} />
                         12th&nbsp;&nbsp;
                         <input type="checkbox" name="qual" value="BCA" defaultChecked="" onChange={getQualData} />
@@ -75,7 +73,7 @@ function Formfunctionbasecomponent() {
                         MCA
                         <br />
                         <br />
-                        <label htmlFor="" style={{ color: "blue" }}>Country:-</label>
+                        <label htmlFor="" style={{ color: "blue",width:100 }}>Country:-</label>
                         <select name="country" style={{ width: 190 }} id="" required="" onChange={setData}>
                             <option value="">--Select Country--</option>
                             <option value="IND">IND</option>
@@ -85,15 +83,14 @@ function Formfunctionbasecomponent() {
                         </select>
                         <br />
                         <br />
-                        <label htmlFor="" style={{ color: "blue"}}>Address:-</label>
+                        <label htmlFor="" style={{ color: "blue",width:100}}>Address:-</label>
                         <textarea name="address" rows={2} cols={20} defaultValue={''} onChange={setData} />
                         <br />
                         <br />
                         <button type="submit" className='btn btn-info' defaultValue="submit">button</button>
-
                     </form>
                 </div>
-                <div className='col-8 bg-warning pt-5 d-flex justify-content-center align-items-start padding-top'>
+                <div className='col-9 bg-warning pt-5 d-flex justify-content-center align-items-start padding-top'>
                     <table className='table table-striped'>
                         <thead>
                             <tr style={{ textAlign: "center" }}>
@@ -122,7 +119,7 @@ function Formfunctionbasecomponent() {
                                             <td>{i.country}</td>
                                             <td>{i.qual}</td>
                                             <td>{i.address}</td>
-                                            <td><button type="button" className='btn btn-danges bg-danger' onClick={()=>deleteinfo(index)}>Delete</button></td>
+                                            <td><button className='btn btn-success bg-success'>Edit</button><button type="button" className='btn btn-danges bg-danger' onClick={()=>deleteinfo(index)}>Delete</button></td>
                                         </tr>
                                     </tbody>
                                 )
