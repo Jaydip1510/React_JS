@@ -34,10 +34,8 @@ function Formfunctionbasecomponent() {
         setQual(qual)
     }
     const deleteinfo = (id) => {
-
-        let updatedData = [...alluserdata];
+        let updatedData = JSON.parse(localStorage.getItem('UserInfo'));
         updatedData.splice(id, 1);
-    
         localStorage.setItem('UserInfo', JSON.stringify(updatedData));
         setUserdata(updatedData);
     }
