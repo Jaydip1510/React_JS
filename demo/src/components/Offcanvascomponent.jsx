@@ -26,14 +26,16 @@ function OffCanvasExample({ name, ...props }) {
   );
 }
 
-function Offcanvascomponent() {
+function OffcanvasComponent() {
+  const placements = ['start', 'end', 'top', 'bottom'];
+
   return (
     <>
-      {['start', 'end', 'top', 'bottom'].map((placement, idx) => (
+      {placements.map((placement, idx) => (
         <OffCanvasExample key={idx} placement={placement} name={placement} />
       ))}
     </>
   );
 }
 
-render(<Offcanvascomponent />);
+export default OffcanvasComponent;
