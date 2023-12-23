@@ -10,7 +10,6 @@ function Localstoragecomponent() {
     const [editMode, setEditMode] = useState(false); 
     const [editIndex, setEditIndex] = useState(null); 
     const submitData = (e) => {
-        var tmpData = [];
         e.preventDefault();
         const updatedData = [...alluserdata];
 
