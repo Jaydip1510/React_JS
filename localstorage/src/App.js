@@ -6,8 +6,8 @@ import Sessionstoragecomponent from './components/Sessionstoragecomponent';
 function App() {
   return (
     <div>
-      {/* <Localstoragecomponent/> */}
-      <Sessionstoragecomponent/>
+      <Localstoragecomponent/>
+      {/* <Sessionstoragecomponent/> */}
     </div>
   );
 }
