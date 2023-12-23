@@ -121,9 +121,9 @@ class App extends React.Component {
       {/*<Validationform /> */}
       {/* <Localstorege/> */}
       {/* <Localstoragedemo/> */}
-      {/* <Formfunctionbasecomponent /> */}
+      <Formfunctionbasecomponent />
       {/* <Sessioncomponent/> */}
-      <Offcanvascomponent/>
+      {/* <Offcanvascomponent/> */}
       
 
        
