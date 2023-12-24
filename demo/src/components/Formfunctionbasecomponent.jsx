@@ -7,7 +7,6 @@ function Formfunctionbasecomponent() {
     const [editMode, setEditMode] = useState(false); // Define edit mode state
     const [editIndex, setEditIndex] = useState(null); // Define edit index state
     const submitData = (e) => {
-        var tmpData = [];
         e.preventDefault();
         // var empdata = JSON.parse(localStorage.getItem("UserInfo"));
         // var tmpData = empdata && empdata.length > 0 ? [...empdata] : [];
@@ -47,15 +46,19 @@ function Formfunctionbasecomponent() {
     const empdata = JSON.parse(localStorage.getItem("UserInfo"));
     const setData = (e) => {
         const target = e.target;
-        console.log("Name = " + target.name + " , Value" + target.value);
         const value = target.type === 'checkbox' ? target.checked : target.value;
         const name = target.name
         setInputs(i => ({ ...i, [name]: value }))
     }
     const getQualData = (e) => {
-        qual.push(e.target.value)
-        setQual(qual)
+       const { value, checked } = e.target;
+       if (checked) {
+        setQual(prevQual => [...prevQual, value]); // Add the qualification if checked
+       } else {
+        setQual(prevQual => prevQual.filter(item => item !== value)); // Remove the qualification if unchecked
+       }
     }
+   
     const deleteinfo = (id) => {
         let updatedData = JSON.parse(localStorage.getItem('UserInfo'));
         updatedData.splice(id, 1);
