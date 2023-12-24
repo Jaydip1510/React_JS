@@ -51,14 +51,29 @@ function Formfunctionbasecomponent() {
         setInputs(i => ({ ...i, [name]: value }))
     }
     const getQualData = (e) => {
-       const { value, checked } = e.target;
-       if (checked) {
-        setQual(prevQual => [...prevQual, value]); // Add the qualification if checked
-       } else {
-        setQual(prevQual => prevQual.filter(item => item !== value)); // Remove the qualification if unchecked
-       }
+        //    const { value, checked } = e.target;
+        //    if (checked) {
+        //     setQual(prevQual => [...prevQual, value]); // Add the qualification if checked
+        //    } else {
+        //     setQual(prevQual => prevQual.filter(item => item !== value)); // Remove the qualification if unchecked
+        //    }
+        const { value, checked } = e.target;
+
+        if (checked) {
+            setQual((prevQual) => [...prevQual, value]);
+            setInputs((prevInputs) => ({
+                ...prevInputs,
+                qual: [...(prevInputs.qual || []), value],
+            }));
+        } else {
+            setQual((prevQual) => prevQual.filter((item) => item !== value));
+            setInputs((prevInputs) => ({
+                ...prevInputs,
+                qual: (prevInputs.qual || []).filter((item) => item !== value),
+            }));
+        }
     }
-   
+
     const deleteinfo = (id) => {
         let updatedData = JSON.parse(localStorage.getItem('UserInfo'));
         updatedData.splice(id, 1);
