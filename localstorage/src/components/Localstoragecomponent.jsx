@@ -7,8 +7,8 @@ function Localstoragecomponent() {
         const storedData = JSON.parse(localStorage.getItem('EmpInfo'));
         return storedData || [];
     });
-    const [editMode, setEditMode] = useState(false); 
-    const [editIndex, setEditIndex] = useState(null); 
+    const [editMode, setEditMode] = useState(false);
+    const [editIndex, setEditIndex] = useState(null);
     const submitData = (e) => {
         e.preventDefault();
         const updatedData = [...alluserdata];
@@ -42,8 +42,21 @@ function Localstoragecomponent() {
         setInputs(i => ({ ...i, [name]: value }))
     }
     const getQualData = (e) => {
-        qual.push(e.target.value)
-        setQual(qual)
+        const { value, checked } = e.target;
+
+        if (checked) {
+            setQual((prevQual) => [...prevQual, value]);
+            setInputs((prevInputs) => ({
+                ...prevInputs,
+                qual: [...(prevInputs.qual || []), value],
+            }));
+        } else {
+            setQual((prevQual) => prevQual.filter((item) => item !== value));
+            setInputs((prevInputs) => ({
+                ...prevInputs,
+                qual: (prevInputs.qual || []).filter((item) => item !== value),
+            }));
+        }
     }
     const deleteinfo = (id) => {
         let updatedData = JSON.parse(localStorage.getItem('EmpInfo'));
@@ -86,11 +99,11 @@ function Localstoragecomponent() {
                         <br />
                         <br />
                         <label htmlFor="" style={{ color: "blue", width: 100 }}>Qualification:-</label>
-                        <input type="checkbox" name="qual" value="12th" defaultChecked="" checked={inputs.qual && inputs.qual.includes('12th')} onChange={getQualData} />
+                        <input type="checkbox" name="qual" value="12th" checked={inputs.qual && inputs.qual.includes('12th')} onChange={getQualData} />
                         12th&nbsp;&nbsp;
-                        <input type="checkbox" name="qual" value="BCA" defaultChecked="" checked={inputs.qual && inputs.qual.includes('BCA')} onChange={getQualData} />
+                        <input type="checkbox" name="qual" value="BCA" checked={inputs.qual && inputs.qual.includes('BCA')} onChange={getQualData} />
                         BCA&nbsp;&nbsp;
-                        <input type="checkbox" name="qual" value="MCA" defaultChecked="" checked={inputs.qual && inputs.qual.includes('MCA')} onChange={getQualData} />
+                        <input type="checkbox" name="qual" value="MCA" checked={inputs.qual && inputs.qual.includes('MCA')} onChange={getQualData} />
                         MCA
                         <br />
                         <br />
