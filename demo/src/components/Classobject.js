@@ -31,7 +31,9 @@ class Classobject extends Component {
         return (
             <div>
                 <h5>Array list</h5>
+                <h4>A is:- {a}</h4>
                 <h4>B is :- {b}</h4>
+                <h4>C is :- {c}</h4>
                 <ul>
                     {
                         arr2.map((i)=>{
