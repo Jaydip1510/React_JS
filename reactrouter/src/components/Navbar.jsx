@@ -1,7 +1,8 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 
 function Navbar() {
+  const naviget = useNavigate();
   return (
     <div>
       <ul>
@@ -18,6 +19,8 @@ function Navbar() {
             <Link to="/blog">Blog</Link>
         </li>
       </ul>
+      <button onClick={()=>naviget(-1)}>Back</button>
+      <button onClick={()=>naviget(1)}>Next</button>
     </div>
   )
 }
