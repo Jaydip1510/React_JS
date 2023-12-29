@@ -70,7 +70,7 @@ function Create() {
                             setage(e.target.value)
                         }
                         type="number"
-                        placeholder="Age"
+                        placeholder="Enter Age"
                         required
                     />
                 </Form.Group>
@@ -83,7 +83,7 @@ function Create() {
                             setsalary(e.target.value)
                         }
                         type="text"
-                        placeholder="salary"
+                        placeholder="Enter Salary"
                         required
                     />
                 </Form.Group>
