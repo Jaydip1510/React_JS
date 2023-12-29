@@ -9,10 +9,11 @@ function Home() {
  
     // You may skip this part if you're
     // using react-context api or redux
-    function setID(id, name, age) {
+    function setID(id, name, age,salary) {
         localStorage.setItem("id", id);
         localStorage.setItem("Name", name);
         localStorage.setItem("Age", age);
+        localStorage.setItem("Salary",salary);
     }
  
     // Deleted function - functionality
@@ -39,6 +40,7 @@ function Home() {
                     <tr>
                         <th>Name</th>
                         <th>Age</th>
+                        <th>Salary</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -50,6 +52,7 @@ function Home() {
                             <tr>
                                 <td>{item.Name}</td>
                                 <td>{item.Age}</td>
+                                <td>{item.Salary}</td>
  
                                 {/* getting theid,name, and 
                                     age for storing these
@@ -62,7 +65,8 @@ function Home() {
                                                 setID(
                                                     item.id,
                                                     item.Name,
-                                                    item.Age
+                                                    item.Age,
+                                                    item.Salary
                                                 )
                                             }
                                             variant="info"

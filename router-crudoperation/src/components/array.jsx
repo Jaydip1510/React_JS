@@ -1,4 +1,3 @@
-const array = [
-];
+const array = [];
  
 export default array;

@@ -11,6 +11,7 @@ function Edit() {
     const [name, setname] = useState("");
     const [age, setage] = useState("");
     const [id, setid] = useState("");
+    const [salary, setsalary] = useState("");
  
     // Used for navigation with logic in javascript
     let history = useNavigate();
@@ -27,7 +28,7 @@ function Edit() {
     const handelSubmit = (e) => {
         // Preventing from reload
         e.preventDefault();
-        if (name == "" || age == "") {
+        if (name == "" || age == "" || salary == "") {
             alert("invalid input");
             return;
         }
@@ -40,6 +41,7 @@ function Edit() {
         // existing for updation
         a.Name = name;
         a.Age = age;
+        a.Salary = salary;
        
  
         // Redirecting to main page
@@ -52,6 +54,7 @@ function Edit() {
         setname(localStorage.getItem("Name"));
         setage(localStorage.getItem("Age"));
         setid(localStorage.getItem("id"));
+        setsalary(localStorage.getItem("Salary"));
     }, []);
  
     return (
@@ -88,6 +91,19 @@ function Edit() {
                         }
                         type="number"
                         placeholder="Age"
+                    />
+                </Form.Group>
+                <Form.Group
+                    className="mb-3"
+                    controlId="formBasicPassword"
+                >
+                    <Form.Control
+                        value={salary}
+                        onChange={(e) =>
+                            setsalary(e.target.value)
+                        }
+                        type="text"
+                        placeholder="salary"
                     />
                 </Form.Group>
  

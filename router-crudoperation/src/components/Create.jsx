@@ -10,6 +10,7 @@ function Create() {
     // fetching a value in jsx
     const [name, setname] = useState("");
     const [age, setage] = useState("");
+    const [salary,setsalary] = useState("");
  
     // Using useNavigation for redirecting to pages
     let history = useNavigate();
@@ -24,12 +25,13 @@ function Create() {
         // Fetching a value from usestate and
         // pushing to javascript object
         let a = name,
-            b = age;
-        if (name == "" || age == "") {
+            b = age,
+            c = salary;
+        if (name == "" || age == "" || salary == "") {
             alert("invalid input");
             return;
         }
-        array.push({ id: uni, Name: a, Age: b });
+        array.push({ id: uni, Name: a, Age: b, Salary: c});
  
         // Redirecting to home page after creation done
         history("/");
@@ -69,6 +71,19 @@ function Create() {
                         }
                         type="number"
                         placeholder="Age"
+                        required
+                    />
+                </Form.Group>
+                <Form.Group
+                    className="mb-3"
+                    controlId="formBasicAge"
+                >
+                    <Form.Control
+                        onChange={(e) =>
+                            setsalary(e.target.value)
+                        }
+                        type="text"
+                        placeholder="salary"
                         required
                     />
                 </Form.Group>
