@@ -16,8 +16,8 @@ function Navbar() {
                 <Link to='/table'>Table</Link>
             </li>
         </ul>
-        <button onClick={()=>abc(-1)}>Back</button>
-        <button onClick={()=>abc(1)}>Next</button>
+        <button className='btn btn-primary' onClick={()=>abc(-1)}>Back</button>&nbsp;
+        <button className='btn btn-secondary' onClick={()=>abc(1)}>Next</button>
 
     </div>
   )

@@ -96,7 +96,7 @@ function Form() {
         <br />
         <br />
 
-        <input type="submit" value="save" />
+        <input  className="btn btn-success" type="submit" value="save" />
       </form>
     </div>
   );
