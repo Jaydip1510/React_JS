@@ -124,7 +124,7 @@ function Localstoragecomponent() {
                         <button type="submit" className='btn btn-info' defaultValue="submit">button</button>
                     </form>
                 </div>
-                <div className='col-9 bg-warning pt-5 d-flex justify-content-center align-items-start padding-top'>
+                <div className='col-9 bg-warning pt-5 d-flex justify-content-center align-items-center padding-top'>
                     <table className='table table-striped'>
                         <thead>
                             <tr style={{ textAlign: "center" }}>
