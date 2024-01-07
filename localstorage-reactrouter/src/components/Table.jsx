@@ -35,7 +35,7 @@ function Table() {
                     <td>{i.name}</td>
                     <td>{i.age}</td>
                     <td>{i.email}</td>
-                    <td><button className="btn btn-danger" type="button" onClick={() => deleteinfo(index)}>Delete</button></td>
+                    <td><button type="button" onClick={() => deleteinfo(index)}>Delete</button></td>
                   </tr>
                 );
               })
