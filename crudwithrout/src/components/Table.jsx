@@ -184,6 +184,8 @@ function Table() {
         return i.name == val;
       })
       setEmpdata(dt);
+    }else{
+      setEmpdata(alldt);
     }
   }
   const sortInfo = (val) =>{
