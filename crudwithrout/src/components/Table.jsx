@@ -54,13 +54,13 @@ function Table() {
     });
   };
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setInputs((prevInputs) => ({
-      ...prevInputs,
-      [name]: value,
-    }));
-  };
+  // const handleChange = (e) => {
+  //   const { name, value } = e.target;
+  //   setInputs((prevInputs) => ({
+  //     ...prevInputs,
+  //     [name]: value,
+  //   }));
+  // };
   const setData = (e) => {
     const target = e.target;
     const value = target.type === 'checkbox' ? target.checked : target.value;
@@ -211,6 +211,10 @@ function Table() {
           <input type="radio" name="g1" id="" checked={inputs.g1 === 'female'} value="female" defaultValue="" onChange={setData} />
           Female
           <br /><br />
+          <label htmlFor="" style={{ color: "blue", width: 100 }}>Age:-</label>
+          <input type="text" style={{ height: 30, width: 190 }} name="age" id="" value={inputs.age} onChange={setData} placeholder='Enter Your Age' />
+          <br />
+          <br />
           <label htmlFor="" style={{ color: "blue", width: 100 }}>Email:-</label>
           <input type="email" style={{ height: 30, width: 190 }} name="email" id="" value={inputs.email} onChange={setData} placeholder='Enter Email Address' />
           <br />
