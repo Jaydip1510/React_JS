@@ -139,8 +139,8 @@ function Table() {
     const value = target.type === 'checkbox' ? target.checked : target.value;
     const name = target.name
     setInputs(i => ({ ...i, [name]: value }))
-}
-const getQualData = (e) => {
+  }
+  const getQualData = (e) => {
     //    const { value, checked } = e.target;
     //    if (checked) {
     //     setQual(prevQual => [...prevQual, value]); // Add the qualification if checked
@@ -150,70 +150,107 @@ const getQualData = (e) => {
     const { value, checked } = e.target;
 
     if (checked) {
-        setQual((prevQual) => [...prevQual, value]);
-        setInputs((prevInputs) => ({
-            ...prevInputs,
-            qual: [...(prevInputs.qual || []), value],
-        }));
+      setQual((prevQual) => [...prevQual, value]);
+      setInputs((prevInputs) => ({
+        ...prevInputs,
+        qual: [...(prevInputs.qual || []), value],
+      }));
     } else {
-        setQual((prevQual) => prevQual.filter((item) => item !== value));
-        setInputs((prevInputs) => ({
-            ...prevInputs,
-            qual: (prevInputs.qual || []).filter((item) => item !== value),
-        }));
+      setQual((prevQual) => prevQual.filter((item) => item !== value));
+      setInputs((prevInputs) => ({
+        ...prevInputs,
+        qual: (prevInputs.qual || []).filter((item) => item !== value),
+      }));
     }
-}
+  }
 
-const searchDetail = (val) =>{
-    if(val !== ''){
-       let dt = empdata.filter((i)=>{
-        if(i.name.includes(val)){
-          return i;
-        }
-       })
-       setEmpdata(dt);
-    }else{
-      setEmpdata(JSON.parse(localStorage.getItem('UserInfo')));
-    }
-}
-
-const filterDetail = (val) => {
-    if(val !== ''){
-      let dt = empdata.filter((i)=>{
-        if(i.name == val){
+  const searchDetail = (val) => {
+    if (val !== '') {
+      let dt = empdata.filter((i) => {
+        if (i.name.includes(val)) {
           return i;
         }
       })
       setEmpdata(dt);
-    }else{
+    } else {
       setEmpdata(JSON.parse(localStorage.getItem('UserInfo')));
     }
-}
+  }
+
+  const filterDetail = (val) => {
+    if (val !== '') {
+      let dt = empdata.filter((i) => {
+        if (i.name == val) {
+          return i;
+        }
+      })
+      setEmpdata(dt);
+    } else {
+      setEmpdata(JSON.parse(localStorage.getItem('UserInfo')));
+    }
+  }
+  const sortInfo = (val) =>{
+    let dt;
+    if(val == "desc"){
+      dt = [...empdata].sort((p,q)=>{
+        return q.name > p.name ? 1 : -1
+      })
+    }else if(val == "asc"){
+      dt = [...empdata].sort((p,q)=>{
+        return p.name < q.name ? 1 : -1
+      })
+    }
+    setEmpdata(dt);
+  }
+  const sortnum = (val) =>{
+    let dt;
+    if(val == "desc"){
+      dt = [...empdata].sort((p,q)=>{
+        return q.age > p.age ? 1 : -1
+      })
+    }else if(val == "asc"){
+      dt = [...empdata].sort((p,q)=>{
+        return p.age < q.age ? 1 : -1
+      })
+    }
+    setEmpdata(dt);
+  }
   return (
     <div className="App">
-      <h5>User Table</h5><br/>
-      <input type="text" name="searchName" placeholder="Enter any want to search" onChange={(e)=>searchDetail(e.target.value)}/>&nbsp;&nbsp;&nbsp;&nbsp;
-      <select name="Name" onChange={(i)=>filterDetail(i.target.value)}>
-      <option>--Select Name--</option>
+      <h5>User Table</h5><br />
+      <input type="text" name="searchName" placeholder="Enter any want to search" onChange={(e) => searchDetail(e.target.value)} />&nbsp;&nbsp;&nbsp;&nbsp;
+      <select name="Name" onChange={(i) => filterDetail(i.target.value)}>
+        <option>--Select Name--</option>
         {
-          empdata.map((i)=>{
+          empdata.map((i) => {
             return <option value={i.name}>{i.name}</option>
           })
         }
       </select>
-      <br/><br/>
+      <label htmlFor="">Name:-</label>
+      <select name="srname" onChange={(e) => sortInfo(e.target.value)}>
+        <option value="asc">Ascending</option>
+        <option value="desc">Descending</option>
+      </select>
+      <label htmlFor="">Age:-</label>
+      <select name="srage" onChange={(e) => sortnum(e.target.value)}>
+        <option value="asc">Ascending</option>
+        <option value="desc">Descending</option>
+      </select>
+      <br /><br />
       <table border={2} className="table table-striped">
         <thead>
           <tr>
-          <td>Id</td>
-          <td>Name</td>
-          <td>Gender</td>
-          <td>Email</td>
-          <td>Password</td>
-          <td>Country</td>
-          <td>Qualification</td>
-          <td>Address</td>
-          <td>Action</td>
+            <td>Id</td>
+            <td>Name</td>
+            <td>Gender</td>
+            <td>Age</td>
+            <td>Email</td>
+            <td>Password</td>
+            <td>Country</td>
+            <td>Qualification</td>
+            <td>Address</td>
+            <td>Action</td>
           </tr>
         </thead>
         <tbody>
@@ -223,6 +260,7 @@ const filterDetail = (val) => {
               <td>{index + 1}</td>
               <td>{i.name}</td>
               <td>{i.g1}</td>
+              <td>{i.age}</td>
               <td>{i.email}</td>
               <td>{i.password}</td>
               <td>{i.country}</td>
@@ -243,47 +281,47 @@ const filterDetail = (val) => {
       {/* Form for editing */}
       {editIndex !== null && (
         <form onSubmit={updateData}>
-        <label htmlFor="" style={{ color: "blue", width: 100 }}>Name:-</label>
-                        <input type="text" name="name" className='mt-5' style={{ height: 30, width: 200 }} value={inputs.name} onChange={setData} placeholder='Enter Your Name' />
-                        <br />
-                        <br />
-                        <label htmlFor="" style={{ color: "blue", width: 100 }}>Gender:-</label>
-                        <input type="radio" name="g1" id="" value="male" defaultValue="" checked={inputs.g1 === 'male'} onChange={setData} />
-                        Male &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        <input type="radio" name="g1" id="" checked={inputs.g1 === 'female'} value="female" defaultValue="" onChange={setData} />
-                        Female
-                        <br /><br />
-                        <label htmlFor="" style={{ color: "blue", width: 100 }}>Email:-</label>
-                        <input type="email" style={{ height: 30, width: 190 }} name="email" id="" value={inputs.email} onChange={setData} placeholder='Enter Email Address' />
-                        <br />
-                        <br />
-                        <label htmlFor="" style={{ color: "blue", width: 100 }}>Password:-</label>
-                        <input type="password" style={{ height: 30, width: 190 }} name="password" id="" value={inputs.password} onChange={setData} placeholder='Enter Password' />
-                        <br />
-                        <br />
-                        <label htmlFor="" style={{ color: "blue", width: 100 }}>Qualification:-</label>
-                        <input type="checkbox" name="qual" value="12th" defaultChecked="" checked={inputs.qual && inputs.qual.includes('12th')} onChange={getQualData} />
-                        12th&nbsp;&nbsp;
-                        <input type="checkbox" name="qual" value="BCA" defaultChecked="" checked={inputs.qual && inputs.qual.includes('BCA')} onChange={getQualData} />
-                        BCA&nbsp;&nbsp;
-                        <input type="checkbox" name="qual" value="MCA" defaultChecked="" checked={inputs.qual && inputs.qual.includes('MCA')} onChange={getQualData} />
-                        MCA
-                        <br />
-                        <br />
-                        <label htmlFor="" style={{ color: "blue", width: 100 }}>Country:-</label>
-                        <select name="country" style={{ width: 190 }} id="" value={inputs.country} required="" onChange={setData}>
-                            <option value="">--Select Country--</option>
-                            <option value="IND">IND</option>
-                            <option value="USA">USA</option>
-                            <option value="AUS">AUS</option>
-                            <option value="SA">SA</option>
-                        </select>
-                        <br />
-                        <br />
-                        <label htmlFor="" style={{ color: "blue", width: 100 }}>Address:-</label>
-                        <textarea name="address" rows={2} cols={20} value={inputs.address ? inputs.address : ''} defaultValue={''} onChange={setData} />
-                        <br />
-                        <br />
+          <label htmlFor="" style={{ color: "blue", width: 100 }}>Name:-</label>
+          <input type="text" name="name" className='mt-5' style={{ height: 30, width: 200 }} value={inputs.name} onChange={setData} placeholder='Enter Your Name' />
+          <br />
+          <br />
+          <label htmlFor="" style={{ color: "blue", width: 100 }}>Gender:-</label>
+          <input type="radio" name="g1" id="" value="male" defaultValue="" checked={inputs.g1 === 'male'} onChange={setData} />
+          Male &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <input type="radio" name="g1" id="" checked={inputs.g1 === 'female'} value="female" defaultValue="" onChange={setData} />
+          Female
+          <br /><br />
+          <label htmlFor="" style={{ color: "blue", width: 100 }}>Email:-</label>
+          <input type="email" style={{ height: 30, width: 190 }} name="email" id="" value={inputs.email} onChange={setData} placeholder='Enter Email Address' />
+          <br />
+          <br />
+          <label htmlFor="" style={{ color: "blue", width: 100 }}>Password:-</label>
+          <input type="password" style={{ height: 30, width: 190 }} name="password" id="" value={inputs.password} onChange={setData} placeholder='Enter Password' />
+          <br />
+          <br />
+          <label htmlFor="" style={{ color: "blue", width: 100 }}>Qualification:-</label>
+          <input type="checkbox" name="qual" value="12th" defaultChecked="" checked={inputs.qual && inputs.qual.includes('12th')} onChange={getQualData} />
+          12th&nbsp;&nbsp;
+          <input type="checkbox" name="qual" value="BCA" defaultChecked="" checked={inputs.qual && inputs.qual.includes('BCA')} onChange={getQualData} />
+          BCA&nbsp;&nbsp;
+          <input type="checkbox" name="qual" value="MCA" defaultChecked="" checked={inputs.qual && inputs.qual.includes('MCA')} onChange={getQualData} />
+          MCA
+          <br />
+          <br />
+          <label htmlFor="" style={{ color: "blue", width: 100 }}>Country:-</label>
+          <select name="country" style={{ width: 190 }} id="" value={inputs.country} required="" onChange={setData}>
+            <option value="">--Select Country--</option>
+            <option value="IND">IND</option>
+            <option value="USA">USA</option>
+            <option value="AUS">AUS</option>
+            <option value="SA">SA</option>
+          </select>
+          <br />
+          <br />
+          <label htmlFor="" style={{ color: "blue", width: 100 }}>Address:-</label>
+          <textarea name="address" rows={2} cols={20} value={inputs.address ? inputs.address : ''} defaultValue={''} onChange={setData} />
+          <br />
+          <br />
           <button className="btn btn-success" type="submit">Update</button>
         </form>
       )}

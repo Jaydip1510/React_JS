@@ -81,6 +81,10 @@ function Formfunctionbasecomponent() {
                         <input type="radio" name="g1" id="" checked={inputs.g1 === 'female'} value="female" defaultValue="" onChange={setData} />
                         Female
                         <br /><br />
+                        <label htmlFor="" style={{ color: "blue", width: 100 }}>Age:-</label>
+                        <input type="text" style={{ height: 30, width: 190 }} name="age" id="" value={inputs.age} onChange={setData} placeholder='Enter Your Age' />
+                        <br />
+                        <br />
                         <label htmlFor="" style={{ color: "blue", width: 100 }}>Email:-</label>
                         <input type="email" style={{ height: 30, width: 190 }} name="email" id="" value={inputs.email} onChange={setData} placeholder='Enter Email Address' />
                         <br />
@@ -114,45 +118,6 @@ function Formfunctionbasecomponent() {
                         <br />
                         <button type="submit" className='btn btn-info' defaultValue="submit">button</button>
                     </form>
-                </div>
-                <div className='col-9 bg-warning pt-5 d-flex justify-content-center align-items-start padding-top'>
-                    {/* <table className='table table-striped'>
-                        <thead>
-                            <tr style={{ textAlign: "center" }}>
-                                <th>Id</th>
-                                <th>Name</th>
-                                <th>Gender</th>
-                                <th>Email</th>
-                                <th>Password</th>
-                                <th>Country</th>
-                                <th>qualifications</th>
-                                <th>Address</th>
-                                <th>Action</th>
-
-                            </tr>
-                        </thead>
-                        {empdata && empdata.length > 0 ? (
-                            empdata.map((i, index) => {
-                                return (
-                                    <tbody>
-                                        <tr style={{ textAlign: "center" }}>
-                                            <td>{index + 1}</td>
-                                            <td>{i.name}</td>
-                                            <td>{i.g1}</td>
-                                            <td>{i.email}</td>
-                                            <td>{i.password}</td>
-                                            <td>{i.country}</td>
-                                            <td>{i.qual}</td>
-                                            <td>{i.address}</td>
-                                            <td><button className='btn btn-success bg-success' onClick={() => editinfo(index)}>Edit</button><button type="button" className='btn btn-danges bg-danger' onClick={() => deleteinfo(index)}>Delete</button></td>
-                                        </tr>
-                                    </tbody>
-                                )
-                            })
-                        ) : ""
-                        }
-
-                    </table> */}
                 </div>
             </div>
         </div>
