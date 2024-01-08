@@ -53,14 +53,6 @@ function Table() {
       address: "",
     });
   };
-
-  // const handleChange = (e) => {
-  //   const { name, value } = e.target;
-  //   setInputs((prevInputs) => ({
-  //     ...prevInputs,
-  //     [name]: value,
-  //   }));
-  // };
   const setData = (e) => {
     const target = e.target;
     const value = target.type === 'checkbox' ? target.checked : target.value;
@@ -188,7 +180,7 @@ function Table() {
               <td>{i.address}</td>
               <td>
                 {editIndex === index ? (
-                  <button onClick={updateData}>Update</button>
+                  <button className="btn btn-info" onClick={updateData}>Update</button>
                 ) : (
                   <button className="btn btn-success" onClick={() => editinfo(index)}>Edit</button>
                 )}
@@ -246,7 +238,7 @@ function Table() {
           <textarea name="address" rows={2} cols={20} value={inputs.address ? inputs.address : ''} defaultValue={''} onChange={setData} />
           <br />
           <br />
-          <button className="btn btn-success" type="submit">Update</button>
+          <button className="btn btn-info" type="submit">Update</button>
         </form>
       )}
     </div>
