@@ -178,15 +178,12 @@ function Table() {
   }
 
   const filterDetail = (val) => {
+    const alldt = JSON.parse(localStorage.getItem('UserInfo'));
     if (val !== '') {
-      let dt = empdata.filter((i) => {
-        if (i.name == val) {
-          return i;
-        }
+      let dt = alldt.filter((i) => {
+        return i.name == val;
       })
       setEmpdata(dt);
-    } else {
-      setEmpdata(JSON.parse(localStorage.getItem('UserInfo')));
     }
   }
   const sortInfo = (val) =>{
@@ -226,12 +223,12 @@ function Table() {
             return <option value={i.name}>{i.name}</option>
           })
         }
-      </select>
+      </select>&nbsp;&nbsp;
       <label htmlFor="">Name:-</label>
       <select name="srname" onChange={(e) => sortInfo(e.target.value)}>
         <option value="asc">Ascending</option>
         <option value="desc">Descending</option>
-      </select>
+      </select>&nbsp;&nbsp;
       <label htmlFor="">Age:-</label>
       <select name="srage" onChange={(e) => sortnum(e.target.value)}>
         <option value="asc">Ascending</option>
