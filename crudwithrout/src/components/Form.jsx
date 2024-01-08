@@ -11,10 +11,9 @@ function Formfunctionbasecomponent() {
     const submitData = (e) => {
         e.preventDefault();
       
-        // Retrieve data from localStorage and parse it as an array if it exists, otherwise, use an empty array
         const retrievedData = JSON.parse(localStorage.getItem('UserInfo')) || [];
       
-        const updatedData = [...retrievedData]; // Create a copy of retrievedData
+        const updatedData = [...retrievedData]; 
       
         if (editMode && editIndex !== null) {
           updatedData[editIndex] = { ...inputs, qual: [...qual] };
@@ -43,12 +42,6 @@ function Formfunctionbasecomponent() {
         setInputs(i => ({ ...i, [name]: value }))
     }
     const getQualData = (e) => {
-        //    const { value, checked } = e.target;
-        //    if (checked) {
-        //     setQual(prevQual => [...prevQual, value]); // Add the qualification if checked
-        //    } else {
-        //     setQual(prevQual => prevQual.filter(item => item !== value)); // Remove the qualification if unchecked
-        //    }
         const { value, checked } = e.target;
 
         if (checked) {
