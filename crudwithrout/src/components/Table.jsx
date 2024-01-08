@@ -101,6 +101,7 @@ function Table() {
       setEmpdata(alldt);
     }
   }
+  
   const sortInfo = (val) =>{
     let dt;
     if(val == "desc"){
