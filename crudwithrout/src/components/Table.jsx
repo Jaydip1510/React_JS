@@ -164,9 +164,44 @@ const getQualData = (e) => {
     }
 }
 
+const searchDetail = (val) =>{
+    if(val !== ''){
+       let dt = empdata.filter((i)=>{
+        if(i.name.includes(val)){
+          return i;
+        }
+       })
+       setEmpdata(dt);
+    }else{
+      setEmpdata(JSON.parse(localStorage.getItem('UserInfo')));
+    }
+}
+
+const filterDetail = (val) => {
+    if(val !== ''){
+      let dt = empdata.filter((i)=>{
+        if(i.name == val){
+          return i;
+        }
+      })
+      setEmpdata(dt);
+    }else{
+      setEmpdata(JSON.parse(localStorage.getItem('UserInfo')));
+    }
+}
   return (
     <div className="App">
-      <h5>User Table</h5>
+      <h5>User Table</h5><br/>
+      <input type="text" name="searchName" placeholder="Enter any want to search" onChange={(e)=>searchDetail(e.target.value)}/>&nbsp;&nbsp;&nbsp;&nbsp;
+      <select name="Name" onChange={(i)=>filterDetail(i.target.value)}>
+      <option>--Select Name--</option>
+        {
+          empdata.map((i)=>{
+            return <option value={i.name}>{i.name}</option>
+          })
+        }
+      </select>
+      <br/><br/>
       <table border={2} className="table table-striped">
         <thead>
           <tr>
