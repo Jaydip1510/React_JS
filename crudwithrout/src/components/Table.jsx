@@ -141,12 +141,6 @@ function Table() {
     setInputs(i => ({ ...i, [name]: value }))
   }
   const getQualData = (e) => {
-    //    const { value, checked } = e.target;
-    //    if (checked) {
-    //     setQual(prevQual => [...prevQual, value]); // Add the qualification if checked
-    //    } else {
-    //     setQual(prevQual => prevQual.filter(item => item !== value)); // Remove the qualification if unchecked
-    //    }
     const { value, checked } = e.target;
 
     if (checked) {
