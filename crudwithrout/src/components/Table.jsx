@@ -6,6 +6,7 @@ function Table() {
   const [alluserdata, setUserdata] = useState(
     JSON.parse(localStorage.getItem("UserInfo"))
   );
+  const empdata1 = JSON.parse(localStorage.getItem("UserInfo"));
   const [editIndex, setEditIndex] = useState(null);
   const [inputs, setInputs] = useState({
     name: "",
@@ -110,7 +111,7 @@ function Table() {
       })
     }else if(val == "asc"){
       dt = [...empdata].sort((p,q)=>{
-        return p.name < q.name ? 1 : -1
+        return p.name > q.name ? 1 : -1
       })
     }
     setEmpdata(dt);
@@ -135,7 +136,7 @@ function Table() {
       <select name="Name" onChange={(i) => filterDetail(i.target.value)}>
         <option>--Select Name--</option>
         {
-          empdata.map((i) => {
+          empdata1.map((i) => {
             return <option value={i.name}>{i.name}</option>
           })
         }
