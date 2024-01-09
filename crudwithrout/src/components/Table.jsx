@@ -92,14 +92,11 @@ function Table() {
   }
 
   const filterDetail = (val) => {
-    const alldt = JSON.parse(localStorage.getItem('UserInfo'));
     if (val !== '') {
-      let dt = alldt.filter((i) => {
+      let dt = empdata1.filter((i) => {
         return i.name == val;
-      })
+      })  
       setEmpdata(dt);
-    }else{
-      setEmpdata(alldt);
     }
   }
   
