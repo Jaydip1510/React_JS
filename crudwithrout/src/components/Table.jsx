@@ -97,8 +97,6 @@ function Table() {
        dt = empdata1.filter((i) => {
         return i.name == val;
       }) ; 
-    }else{
-       dt = empdata1;
     }
     setEmpdata(dt);
   }
