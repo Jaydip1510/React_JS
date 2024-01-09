@@ -132,6 +132,7 @@ function Table() {
     <div className="App">
       <h5>User Table</h5><br />
       <input type="text" name="searchName" placeholder="Enter any want to search" onChange={(e) => searchDetail(e.target.value)} />&nbsp;&nbsp;&nbsp;&nbsp;
+      
       <select name="Name" onChange={(i) => filterDetail(i.target.value)}>
         <option>--Select Name--</option>
         {
@@ -140,17 +141,20 @@ function Table() {
           })
         }
       </select>&nbsp;&nbsp;
+
       <label htmlFor="">Name:-</label>
       <select name="srname" onChange={(e) => sortInfo(e.target.value)}>
         <option value="asc">Ascending</option>
         <option value="desc">Descending</option>
       </select>&nbsp;&nbsp;
+
       <label htmlFor="">Age:-</label>
       <select name="srage" onChange={(e) => sortnum(e.target.value)}>
         <option value="asc">Ascending</option>
         <option value="desc">Descending</option>
       </select>
       <br /><br />
+
       <table border={2} className="table table-striped">
         <thead>
           <tr>
@@ -166,6 +170,7 @@ function Table() {
             <td>Action</td>
           </tr>
         </thead>
+
         <tbody>
           {empdata.map((i, index) => (
             <tr key={index} style={{ textAlign: "center" }}>
@@ -191,6 +196,7 @@ function Table() {
           ))}
         </tbody>
       </table>
+      
       {/* Form for editing */}
       {editIndex !== null && (
         <form onSubmit={updateData}>
