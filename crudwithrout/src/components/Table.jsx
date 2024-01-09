@@ -92,13 +92,17 @@ function Table() {
   }
 
   const filterDetail = (val) => {
+    let dt;
     if (val !== '') {
-      let dt = empdata1.filter((i) => {
+       dt = empdata1.filter((i) => {
         return i.name == val;
-      })  
-      setEmpdata(dt);
+      }) ; 
+    }else{
+       dt = empdata1;
     }
+    setEmpdata(dt);
   }
+ 
   
   const sortInfo = (val) =>{
     let dt;
