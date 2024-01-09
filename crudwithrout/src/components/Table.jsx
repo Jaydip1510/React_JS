@@ -124,7 +124,7 @@ function Table() {
       })
     }else if(val == "asc"){
       dt = [...empdata].sort((p,q)=>{
-        return p.age < q.age ? 1 : -1
+        return p.age > q.age ? 1 : -1
       })
     }
     setEmpdata(dt);
