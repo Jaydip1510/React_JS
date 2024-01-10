@@ -190,6 +190,7 @@ function Table() {
                 ) : (
                   <button className="btn btn-success" onClick={() => editinfo(index)}>Edit</button>
                 )}
+                &nbsp;
                 <button className="btn btn-danger" onClick={() => deleteinfo(index)}>Delete</button>
               </td>
             </tr>
