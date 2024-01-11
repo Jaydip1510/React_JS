@@ -36,7 +36,6 @@ function Localstoragecomponent() {
     const empdata = JSON.parse(localStorage.getItem("EmpInfo"));
     const setData = (e) => {
         const target = e.target;
-        console.log("Name = " + target.name + " , Value" + target.value);
         const value = target.type === 'checkbox' ? target.checked : target.value;
         const name = target.name
         setInputs(i => ({ ...i, [name]: value }))
