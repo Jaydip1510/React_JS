@@ -31,7 +31,7 @@ const Table = () => {
   return (
     <div>
       <h3><u>User Table</u></h3>
-      <input type="text" name='searchName' placeholder='Enter Any search data' onChange={(e)=>searchData(e.target.value)}/>
+      <input type="text" name='searchName' placeholder='Enter any want to search' onChange={(e)=>searchData(e.target.value)}/>
       <br/>
       <br/>
       <table border={2} className='table table-striped'>
