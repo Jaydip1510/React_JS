@@ -15,10 +15,25 @@ const Table = () => {
     setUserdata(updatedData);
     localStorage.setItem('empdata', JSON.stringify(updatedData));
   };
+  const searchData = (val) => {
+   if(val !== ''){
+    let dt = userdata.filter((i)=>{
+       if(i.name.includes(val)){
+        return i;
+       }
+    })
+    setUserdata(dt);
+   }else{
+    setUserdata(JSON.parse(localStorage.getItem('empdata')));
+   }
+  }
 
   return (
     <div>
-      <h3>User Table</h3>
+      <h3><u>User Table</u></h3>
+      <input type="text" name='searchName' placeholder='Enter Any search data' onChange={(e)=>searchData(e.target.value)}/>
+      <br/>
+      <br/>
       <table border={2} className='table table-striped'>
         <thead>
           <tr>
