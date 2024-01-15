@@ -43,7 +43,7 @@ const Form = () => {
         <br />
         <br/>
 
-        <button className='btn btn-success' type="submit">Submit</button>
+        <button className='btn btn-warning' type="submit">Submit</button>
       </form>
     </div>
   );
