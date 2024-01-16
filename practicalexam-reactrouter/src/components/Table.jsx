@@ -17,7 +17,7 @@ const Table = () => {
   };
 
   const editInfo = (index) => {
-    setEditIndex(index);
+       setEditIndex(index);
   }
   const searchData = (val) => {
     if(val !== ''){
