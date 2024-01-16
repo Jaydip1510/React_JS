@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 const Form = () => {
-  const [formData, setFormData] = useState({ name: '', age: '', email: '', password: '' });
+  const [formData, setFormData] = useState({ name: '', age: '',g1:'', email: '', password: '' });
   const navigate = useNavigate();
 
   const handleChange = (e) => {
@@ -15,7 +15,7 @@ const Form = () => {
     const storedData = JSON.parse(localStorage.getItem('empdata')) || [];
     const updatedData = [...storedData, formData];
     localStorage.setItem('empdata', JSON.stringify(updatedData));
-    setFormData({ name: '', age: '', email: '', password: '' });
+    setFormData({ name: '', age: '',g1:'', email: '', password: '' });
     navigate('/table');
   };
 
@@ -31,6 +31,12 @@ const Form = () => {
         <label htmlFor="age">Age:</label>
         <input type="number" name="age" value={formData.age} onChange={handleChange} />
         <br />
+        <br/>
+
+        <label htmlFor="">Gender:-</label>
+        <input type="radio" name="g1" id="" value="Male" onChange={handleChange}/>Male 
+        <input type="radio" name="g1" id="" value="Female" onChange={handleChange} />Female
+        <br/>
         <br/>
 
         <label htmlFor="email">Email:</label>

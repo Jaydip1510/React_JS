@@ -40,6 +40,7 @@ const Table = () => {
             <td>Id</td>
             <td>Name</td>
             <td>Age</td>
+            <td>Gender</td>
             <td>Email</td>
             <td>Password</td>
             <td>Action</td>
@@ -51,6 +52,7 @@ const Table = () => {
               <td>{index + 1}</td>
               <td>{i.name}</td>
               <td>{i.age}</td>
+              <td>{i.g1}</td>
               <td>{i.email}</td>
               <td>{i.password}</td>
               <td>
