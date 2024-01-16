@@ -1,7 +1,8 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 
 function Navbar() {
+  const navigate = useNavigate();
   return (
     <div>
       <ul>
@@ -15,6 +16,8 @@ function Navbar() {
             <Link to="/table">Table</Link>
         </li>
       </ul>
+      <button className='btn btn-success' type='button' onClick={() =>navigate(-1)}>Back</button>&nbsp;&nbsp;
+      <button className='btn btn-info' type='button' onClick={() =>navigate(1)}>Next</button>
     </div>
   )
 }
