@@ -16,24 +16,24 @@ const Table = () => {
     localStorage.setItem('empdata', JSON.stringify(updatedData));
   };
   const searchData = (val) => {
-   if(val !== ''){
-    let dt = userdata.filter((i)=>{
-       if(i.name.includes(val)){
-        return i;
-       }
-    })
-    setUserdata(dt);
-   }else{
-    setUserdata(JSON.parse(localStorage.getItem('empdata')));
-   }
+    if (val !== '') {
+      let dt = userdata.filter((i) => {
+        if (i.name.includes(val)) {
+          return i;
+        }
+      })
+      setUserdata(dt);
+    } else {
+      setUserdata(JSON.parse(localStorage.getItem('empdata')));
+      // ';lkhjcc bvnṃ? 7tr32eqw23456789=-0943ewsz4er5ty   }
+    }
   }
-
   return (
     <div>
       <h3><u>User Table</u></h3>
-      <input type="text" name='searchName' placeholder='Enter any want to search' onChange={(e)=>searchData(e.target.value)}/>
-      <br/>
-      <br/>
+      <input type="text" name='searchName' placeholder='Enter any want to search' onChange={(e) => searchData(e.target.value)} />
+      <br />
+      <br />
       <table border={2} className='table table-striped'>
         <thead>
           <tr>
