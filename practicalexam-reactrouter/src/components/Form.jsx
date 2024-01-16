@@ -7,12 +7,10 @@ const Form = () => {
   const location = useLocation();
 
   useEffect(() => {
-    // Check if there is route state and update form data
     if (location.state && location.state.formData) {
       const { formData: selectedData } = location.state;
       setFormData(selectedData);
     } else {
-      // If there is no route state, reset form data
       setFormData({ name: '', age: '', g1: '', email: '', password: '' });
     }
   }, [location.state]);
