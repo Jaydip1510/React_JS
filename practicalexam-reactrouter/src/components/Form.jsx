@@ -1,10 +1,21 @@
-import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import React, { useState,useEffect } from 'react';
+import { useNavigate,useLocation } from 'react-router-dom';
 
 const Form = () => {
   const [formData, setFormData] = useState({ name: '', age: '', g1: '', email: '', password: '' });
   const navigate = useNavigate();
+  const location = useLocation();
 
+  useEffect(() => {
+    // Check if there is route state and update form data
+    if (location.state && location.state.formData) {
+      const { formData: selectedData } = location.state;
+      setFormData(selectedData);
+    } else {
+      // If there is no route state, reset form data
+      setFormData({ name: '', age: '', g1: '', email: '', password: '' });
+    }
+  }, [location.state]);
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((i) => ({ ...i, [name]: value }));
@@ -35,8 +46,8 @@ const Form = () => {
           <br />
 
           <label htmlFor="">Gender:-</label>
-          <input type="radio" name="g1" id="" value="Male" onChange={handleChange} />Male
-          <input type="radio" name="g1" id="" value="Female" onChange={handleChange} />Female
+          <input type="radio" name="g1" id="" value="Male" checked={formData.g1 === 'Male'} onChange={handleChange} />Male
+          <input type="radio" name="g1" id="" value="Female" checked={formData.g1 === 'Female'} onChange={handleChange} />Female
           <br />
           <br />
 

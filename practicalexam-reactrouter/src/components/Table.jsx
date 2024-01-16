@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const Table = () => {
   const [userdata, setUserdata] = useState([]);
   const [editIndex, setEditIndex] = useState(null);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const storedData = JSON.parse(localStorage.getItem('empdata')) || [];
@@ -17,27 +19,27 @@ const Table = () => {
   };
 
   const editInfo = (index) => {
-       setEditIndex(index);
-  }
+    setEditIndex(index);
+    navigate('/form', { state: { editIndex: index, formData: userdata[index] } });
+  };
+
   const searchData = (val) => {
-    if(val !== ''){
-      let dt = userdata.filter((i)=>{
-        if(i.name.includes(val)){
-          return i;
-        }
-      })
+    if (val !== '') {
+      let dt = userdata.filter((i) => i.name.includes(val));
       setUserdata(dt);
-    }else{
+    } else {
       setUserdata(JSON.parse(localStorage.getItem('empdata')));
     }
-  }
+  };
 
   return (
     <div>
-      <h3><u>Registration Table</u></h3>
-      <input type="text" placeholder='Enter Any want to search' onChange={(e)=>searchData(e.target.value)}/>
-      <br/>
-      <br/>
+      <h3>
+        <u>Registration Table</u>
+      </h3>
+      <input type="text" placeholder='Enter Any want to search' onChange={(e) => searchData(e.target.value)} />
+      <br />
+      <br />
       <table border={2} className='table table-striped'>
         <thead>
           <tr>
@@ -62,7 +64,8 @@ const Table = () => {
               <td>
                 <button className="btn btn-danger" onClick={() => deleteInfo(index)}>
                   Delete
-                </button>&nbsp;
+                </button>
+                &nbsp;
                 <button className="btn btn-success" onClick={() => editInfo(index)}>
                   Edit
                 </button>
