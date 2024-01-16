@@ -24,14 +24,17 @@ const Table = () => {
   };
 
   const searchData = (val) => {
-    if (val !== '') {
-      let dt = userdata.filter((i) => i.name.includes(val));
-      setUserdata(dt);
-    } else {
-      setUserdata(JSON.parse(localStorage.getItem('empdata')));
-    }
-  };
-
+   if(val !==''){
+     let dt = userdata.filter((i)=>{
+        if(i.name.includes(val)){
+          return i;
+        }
+     })
+     setUserdata(dt); 
+   }else{
+    setUserdata(JSON.parse(localStorage.getItem('empdata')));
+   }
+  }
   return (
     <div>
       <h3>
