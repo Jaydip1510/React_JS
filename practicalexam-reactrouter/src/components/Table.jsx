@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 
 const Table = () => {
   const [userdata, setUserdata] = useState([]);
+  const [editIndex, setEditIndex] = useState(null);
 
   useEffect(() => {
     const storedData = JSON.parse(localStorage.getItem('empdata')) || [];
@@ -14,6 +15,10 @@ const Table = () => {
     setUserdata(updatedData);
     localStorage.setItem('empdata', JSON.stringify(updatedData));
   };
+
+  const editInfo = (index) => {
+    setEditIndex(index);
+  }
   const searchData = (val) => {
     if(val !== ''){
       let dt = userdata.filter((i)=>{
@@ -57,6 +62,9 @@ const Table = () => {
               <td>
                 <button className="btn btn-danger" onClick={() => deleteInfo(index)}>
                   Delete
+                </button>&nbsp;
+                <button className="btn btn-success" onClick={() => editInfo(index)}>
+                  Edit
                 </button>
               </td>
             </tr>

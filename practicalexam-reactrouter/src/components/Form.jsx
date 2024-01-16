@@ -7,7 +7,7 @@ const Form = () => {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData((prevData) => ({ ...prevData, [name]: value }));
+    setFormData((i) => ({ ...i, [name]: value }));
   };
 
   const saveData = (e) => {
