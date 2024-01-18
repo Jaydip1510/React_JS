@@ -15,5 +15,5 @@ function Redux() {
     </div>
   )
 }
-
 export default Redux
+

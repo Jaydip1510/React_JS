@@ -6,6 +6,6 @@ export const add = () => {
 
 export const sub = () => {
     return {
-         type:'Decrement'
+        type:'Decrement'
     }
 }
