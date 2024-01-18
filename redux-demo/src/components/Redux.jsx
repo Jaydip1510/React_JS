@@ -7,7 +7,7 @@ function Redux() {
     const dispatch = useDispatch()
   return (
     <div>
-          <h3>count is :-</h3> {cnt}<br/><br/>
+          <h3 style={{color:'blue'}}>count is :-</h3> <b style={{fontSize:30}}>{cnt}</b><br/><br/>
           <button onClick={()=> dispatch(add())}>Incerment</button>&nbsp;&nbsp;
           <button onClick={()=> dispatch(sub())}>Decrement</button>      
     </div>
