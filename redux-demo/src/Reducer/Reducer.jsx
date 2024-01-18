@@ -1,17 +1,37 @@
-import {add,sub} from '../Action/Action'
+// import {add,sub} from '../Action/Action'
+// const dt = {
+//     cnt :0
+// }
+
+// const Reducer = (state=dt, action) =>{
+//     if(action.type == 'Increment'){
+//         return {...state, cnt:state.cnt +1};
+//     }
+
+//     if(action.type == 'Decrement'){
+//         return {...state, cnt:state.cnt -1};   
+//     }
+//     return state;
+// }
+
+// export default Reducer;
 const dt = {
-    cnt :0
+    cnt: 0
 }
 
-const Reducer = (state=dt, action) =>{
-    if(action.type == 'Increment'){
-        return {...state, cnt:state.cnt +1};
+const Reducer = (state = dt, action) => {
+    switch (action.type) {
+        case 'Increment':
+            return { ...state, cnt: state.cnt + 1 };
+        case 'Decrement':
+            return { ...state, cnt: state.cnt - 1 };
+        case 'Multiply':
+            return { ...state, cnt: state.cnt * action.value };
+        case 'Divide':
+            return { ...state, cnt: state.cnt / action.value };
+        default:
+            return state;
     }
-
-    if(action.type == 'Decrement'){
-        return {...state, cnt:state.cnt -1};   
-    }
-    return state;
 }
 
 export default Reducer;
