@@ -8,7 +8,7 @@ import UserTable from './Components/UserTable';
 function App() {
   return (
     <div className="App">
-      <h3>Registration Form</h3>
+      <h3 className='nm'>Registration Form</h3>
       <Provider store={Store}>
         <RegisterForm/>
         <UserTable/>

@@ -9,7 +9,7 @@
 .frm{
     height: 470px;
     width: 450px;
-    border: solid 2px green;
+    border: solid 2px blue;
     margin-bottom: 40px;
 }
 .frm1{
@@ -21,7 +21,9 @@ label{
     margin-top: 20px;
     font-weight: 800;
 }
-
+.nm{
+    color: rgb(0, 255, 42);
+}
 .i1{
      margin-left: 10px;
 }
