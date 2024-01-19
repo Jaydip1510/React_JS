@@ -32,11 +32,11 @@ const Calculator = () => {
                 />
             </div>
             <div><br/><br/>
-                <button onClick={() => dispatch(add())}>Addition</button>&nbsp;&nbsp;
-                <button onClick={() => dispatch(subtract())}>Minus</button>&nbsp;&nbsp;
-                <button onClick={() => dispatch(multiply())}>multiply</button>&nbsp;&nbsp;
-                <button onClick={() => dispatch(divide())}>Division/</button>
-            </div>
+                <button className='btn btn-success' onClick={() => dispatch(add())}>Addition</button>&nbsp;&nbsp;
+                <button className='btn btn-info' onClick={() => dispatch(subtract())}>Minus</button>&nbsp;&nbsp;
+                <button className='btn btn-warning' onClick={() => dispatch(multiply())}>multiply</button>&nbsp;&nbsp;
+                <button className='btn btn-primary' onClick={() => dispatch(divide())}>Division</button>
+            </div><br/>
             <div>
                 <h3>Result: {result}</h3>
             </div>
