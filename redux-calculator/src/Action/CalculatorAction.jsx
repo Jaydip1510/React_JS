@@ -1,19 +1,25 @@
-export const add = (operand) => ({
-    type: 'ADD',
-    payload: operand
+export const setFirstValue = (value) => ({
+    type:"SET_FIRST_VALUE",
+    payload: value,
 });
 
-export const subtract = (operand) => ({
-    type: 'SUBTRACT',
-    payload: operand
+export const setSecondValue = (value) => ({
+    type:"SET_SECOND_VALUE",
+    payload: value,
 });
 
-export const multiply = (operand) => ({
-    type: 'MULTIPLY',
-    payload: operand
+export const  add = () => ({ 
+    type:'ADD_VALUES',
 });
 
-export const divide = (operand) => ({
-    type: 'DIVIDE',
-    payload: operand
+export const subtract = () => ({
+    type:'SUBTRACT_VALUES',
+})
+
+export const multiply = () => ({
+    type:'MULTIPLY_VALUES',
+});
+
+export const divide = () => ({
+    type:'DIVIDE_VALUES',
 });
