@@ -15,30 +15,34 @@ const Calculator = () => {
     return (
         <div>
             <h2>Calculator</h2>
-            <div>
-                <label htmlFor="">First Value</label>
-                <input
-                    type="text"
-                    value={firstValue}
-                    onChange={(e) => dispatch(setFirstValue(e.target.value))}
-                    placeholder="Enter the first number"
-                /><br/><br/>
-                <label htmlFor="">Second Value</label>
-                <input
-                    type="text"
-                    value={secondValue}
-                    onChange={(e) => dispatch(setSecondValue(e.target.value))}
-                    placeholder="Enter the second number"
-                />
-            </div>
-            <div><br/><br/>
-                <button className='btn btn-success' onClick={() => dispatch(add())}>Addition</button>&nbsp;&nbsp;
-                <button className='btn btn-info' onClick={() => dispatch(subtract())}>Minus</button>&nbsp;&nbsp;
-                <button className='btn btn-warning' onClick={() => dispatch(multiply())}>multiply</button>&nbsp;&nbsp;
-                <button className='btn btn-primary' onClick={() => dispatch(divide())}>Division</button>
-            </div><br/>
-            <div>
-                <h3>Result: {result}</h3>
+            <div className='pqr'>
+
+                <div className='abc'>
+                    <label htmlFor="" className='lbl'>First Value:-</label>
+                    <input
+                        type="text"
+                        value={firstValue}
+                        onChange={(e) => dispatch(setFirstValue(e.target.value))}
+                        placeholder="Enter the first number"
+                    /><br /><br />
+                    <label htmlFor="">Second Value:-</label>
+                    <input
+                        type="text"
+                        value={secondValue}
+                        onChange={(e) => dispatch(setSecondValue(e.target.value))}
+                        placeholder="Enter the second number"
+                    />
+
+                    <div><br /><br />
+                        <button className='btn btn-success' onClick={() => dispatch(add())}>Addition</button>&nbsp;&nbsp;
+                        <button className='btn btn-info' onClick={() => dispatch(subtract())}>Minus</button>&nbsp;&nbsp;
+                        <button className='btn btn-warning' onClick={() => dispatch(multiply())}>multiply</button>&nbsp;&nbsp;
+                        <button className='btn btn-primary' onClick={() => dispatch(divide())}>Division</button>
+                    </div><br />
+                    <div>
+                        <h3>Result: {result}</h3>
+                    </div>
+                </div>
             </div>
         </div>
     );
