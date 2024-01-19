@@ -19,6 +19,23 @@
 }
 label{
     margin-top: 20px;
+    font-weight: 800;
+}
+
+.i1{
+     margin-left: 10px;
+}
+.i2{
+     margin-left: 25px;
+}
+.i3{
+    margin-right: 5px;
+}
+.i4{
+    margin-left: 10px;
+}
+.i5{
+    margin-right: 15px;
 }
 
 @media (prefers-reduced-motion: no-preference) {

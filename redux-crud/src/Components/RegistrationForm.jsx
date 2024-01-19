@@ -7,7 +7,7 @@ const RegisterForm = () => {
     const [formData, setFormData] = useState({
         name: '',
         age: '',
-        gender: '', // Updated to store gender as a string
+        gender: '',
         address: '',
         email: '',
         password: '',
@@ -24,7 +24,6 @@ const RegisterForm = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         const newUser = {
-            id: new Date().getTime(),
             name: formData.name,
             age: formData.age,
             gender: formData.gender,
@@ -49,52 +48,40 @@ const RegisterForm = () => {
         <div className='frm1'>
             <div className='frm'>
                 <form onSubmit={handleSubmit}>
-                    <label>Name:</label>
-                    <input type="text" name="name" value={formData.name} onChange={handleInputChange} required />
+                    <label>Name:-</label>
+                    <input className='i1' type="text" name="name" value={formData.name} onChange={handleInputChange} required />
                     <br /><br />
-                    <label>Age:</label>
-                    <input type="text" name="age" value={formData.age} onChange={handleInputChange} required />
+                    <label>Age:-</label>
+                    <input className='i2' type="text" name="age" value={formData.age} onChange={handleInputChange} required />
                     <br /><br />
-                    <label>Gender:</label>
-                    <label>
-                        <input
-                            type="radio"
-                            name="gender"
-                            value="male"
-                            checked={formData.gender === 'male'}
-                            onChange={handleGenderChange}
-                        />
-                        Male
-                    </label>
-                    <label>
-                        <input
-                            type="radio"
-                            name="gender"
-                            value="female"
-                            checked={formData.gender === 'female'}
-                            onChange={handleGenderChange}
-                        />
-                        Female
-                    </label>
-                    <label>
-                        <input
-                            type="radio"
-                            name="gender"
-                            value="other"
-                            checked={formData.gender === 'other'}
-                            onChange={handleGenderChange}
-                        />
-                        Other
-                    </label>
+                    <label>Gender:-</label>
+                    <input
+                      
+                        type="radio"
+                        name="gender"
+                        value="male"
+                        checked={formData.gender === 'male'}
+                        onChange={handleGenderChange}
+                    />
+                    Male&nbsp;&nbsp;
+                    <input
+                       
+                        type="radio"
+                        name="gender"
+                        value="female"
+                        checked={formData.gender === 'female'}
+                        onChange={handleGenderChange}
+                    />
+                    Female
                     <br /><br />
-                    <label>Address:</label>
-                    <input type="text" name="address" value={formData.address} onChange={handleInputChange} required />
+                    <label>Address:-</label>
+                    <input className='i3' type="text" name="address" value={formData.address} onChange={handleInputChange} required />
                     <br /><br />
-                    <label>Email:</label>
-                    <input type="email" name="email" value={formData.email} onChange={handleInputChange} required />
+                    <label>Email:-</label>
+                    <input className='i4' type="email" name="email" value={formData.email} onChange={handleInputChange} required />
                     <br /><br />
-                    <label>Password:</label>
-                    <input type="password" name="password" value={formData.password} onChange={handleInputChange} required />
+                    <label>Password:-</label>
+                    <input className='i5' type="password" name="password" value={formData.password} onChange={handleInputChange} required />
                     <br /><br />
                     <button className='btn btn-success' type="submit">Register</button><br /><br />
                 </form>
