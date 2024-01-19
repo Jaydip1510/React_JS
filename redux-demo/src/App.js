@@ -8,6 +8,7 @@ import Calculator from './components/Redux';
 function App() {
   return (
     <div className="App">
+      <h3>Redux Couter</h3>
       <Provider store={Store}>
        <Redux/>
       </Provider>
