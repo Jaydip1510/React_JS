@@ -11,7 +11,7 @@ const UserTable = () => {
     };
   
     return (
-      <table>
+      <table className='table table-striped border'>
         <thead>
           <tr>
             <th>Name</th>
@@ -33,7 +33,7 @@ const UserTable = () => {
               <td>{user.email}</td>
               <td>{user.password}</td>
               <td>
-                <button onClick={() => handleDelete(user.id)}>Delete</button>
+                <button className='btn btn-danger' onClick={() => handleDelete(user.id)}>Delete</button>
               </td>
             </tr>
           ))}

@@ -6,6 +6,20 @@
   height: 40vmin;
   pointer-events: none;
 }
+.frm{
+    height: 470px;
+    width: 450px;
+    border: solid 2px green;
+    margin-bottom: 40px;
+}
+.frm1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+label{
+    margin-top: 20px;
+}
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
