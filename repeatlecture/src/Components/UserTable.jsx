@@ -1,31 +1,46 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react';
 
 function UserTable() {
-    const [getalldata,setGetalldata] = useState([]);
+  const [getalldata, setGetalldata] = useState([]);
+
+  useEffect(() => {
+    const userData = JSON.parse(localStorage.getItem('UserDetail')) || [];
+    setGetalldata(userData);
+  }, []);
+
+  const handleDelete = (index) => {
+    const updatedData = [...getalldata];
+    updatedData.splice(index, 1);
+    localStorage.setItem('UserDetail', JSON.stringify(updatedData));
+    setGetalldata(updatedData);
+  };
+
   return (
     <div>
-        <table>
-            <tr>
-                <td>ID</td>
-                <td>Name</td>
-                <td>Email</td>
-                <td>Password</td>
-                <td>Action</td>
+      <table border={1} align='center'>
+        <thead>
+          <tr>
+            <td>ID</td>
+            <td>Name</td>
+            <td>Email</td>
+            <td>Password</td>
+            <td>Action</td>
+          </tr>
+        </thead>
+        <tbody>
+          {getalldata.map((user, index) => (
+            <tr key={index}>
+              <td>{index + 1}</td>
+              <td>{user.name}</td>
+              <td>{user.email}</td>
+              <td>{user.password}</td>
+              <td> <button onClick={() => handleDelete(index)}>Delete</button></td>
             </tr>
-            {
-                getalldata.map((i,index) => {
-                     <tr>
-                        <td>{index+1}</td>
-                        <td>{i.name}</td>
-                        <td>{i.email}</td>
-                        <td>{i.password}</td>
-                        <td><input type="button" value="" /></td>
-                     </tr>
-                })
-            }
-        </table>
+          ))}
+        </tbody>
+      </table>
     </div>
-  )
+  );
 }
 
-export default UserTable
+export default UserTable;
