@@ -8,11 +8,11 @@ function App() {
   return (
     <div className="App">
       <h3><u>User Form</u></h3>
-      <Link to='/userform'>User Form</Link><br/>
+      <Link to='/userform/:id'>User Form</Link><br/>
       <Link to='/usertable'>User Table</Link>
       <Routes>
           <Route path='/usertable' element={<UserTable/>}></Route>
-          <Route path='/userform' element={<RegistrationForm/>}></Route>
+          <Route path='/userform/:id' element={<RegistrationForm/>}></Route>
       </Routes>
     </div>
   );

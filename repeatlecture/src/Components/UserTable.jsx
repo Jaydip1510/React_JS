@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
 function UserTable() {
   const [getalldata, setGetalldata] = useState([]);
@@ -34,7 +35,7 @@ function UserTable() {
               <td>{user.name}</td>
               <td>{user.email}</td>
               <td>{user.password}</td>
-              <td> <button onClick={() => handleDelete(index)}>Delete</button></td>
+              <td> <button onClick={() => handleDelete(index)}>Delete</button><button><Link to={"/userform/index/?"}>Edit</Link></button></td>
             </tr>
           ))}
         </tbody>
