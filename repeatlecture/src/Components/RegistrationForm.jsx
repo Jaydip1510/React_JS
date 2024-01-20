@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom'
 
 const RegistrationForm = () => {
     const [user,setUser] = useState({})
-    const [allUserData,setAllUserData] = useState(JSON.parse(localStorage.getItem('UsetDetail')))
+    const [allUserData,setAllUserData] = useState([])
     const navigate = useNavigate();
     const saveData = (i) => {
        i.preventDefault();

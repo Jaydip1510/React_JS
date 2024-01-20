@@ -1,10 +1,10 @@
 import React, { useState } from 'react'
 
 function UserTable() {
-    const [getalldata,setGetalldata] = useState(JSON.parse(localStorage.getItem('UsetDetail')));
+    const [getalldata,setGetalldata] = useState([]);
   return (
     <div>
-        <table border={1} align=''>
+        <table>
             <tr>
                 <td>ID</td>
                 <td>Name</td>
@@ -19,7 +19,7 @@ function UserTable() {
                         <td>{i.name}</td>
                         <td>{i.email}</td>
                         <td>{i.password}</td>
-                        <td><input type="button" value="" />Edit</td>
+                        <td><input type="button" value="" /></td>
                      </tr>
                 })
             }
