@@ -11,6 +11,8 @@ const UserTable = () => {
   };
 
   return (
+    <div>
+        <h3 style={{color:"orange"}}>User Table</h3>
       <table className='table table-striped border'>
           <thead>
               <tr>
@@ -41,6 +43,7 @@ const UserTable = () => {
               ))}
           </tbody>
       </table>
+      </div>
   );
   };
   
