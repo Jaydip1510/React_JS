@@ -12,7 +12,7 @@ const UserTable = () => {
 
   return (
     <div>
-        <h3 style={{color:"orange"}}>User Table</h3>
+        <h3 style={{color:"orange"}}><b>User Table</b></h3>
       <table className='table table-striped border'>
           <thead>
               <tr>
