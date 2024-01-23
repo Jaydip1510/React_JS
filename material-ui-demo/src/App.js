@@ -6,6 +6,7 @@ import Selectcomponent from './components/Selectcomponent';
 import Transferlist from './components/Transferlist';
 import Snakbarcomponent from './components/Snakbarcomponent';
 import Transitioncomponent from './components/Transitioncomponet';
+import Drawercomponent from './components/Drawercomponent';
 function App() {
   return (
     <div className="App">
@@ -16,7 +17,8 @@ function App() {
         <Selectcomponent/> */}
         {/* <Transferlist /> */}
         {/* <Snakbarcomponent/> */}
-        <Transitioncomponent/>
+        {/* <Transitioncomponent/> */}
+        <Drawercomponent/>
         
       </header>
     </div>
