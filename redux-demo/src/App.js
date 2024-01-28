@@ -7,7 +7,11 @@ import Calculator from './components/Redux';
 import FirstComponent from './components/FirstComponent';
 
 function App() {
-  const name = "jaydip makwana"
+  const name = {
+      id:101,
+      name:'jaydip',
+      age:26
+  }
   return (
     <div className="App">
       {/* <h3>Redux Couter</h3>

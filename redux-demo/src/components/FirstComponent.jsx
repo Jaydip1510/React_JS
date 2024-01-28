@@ -5,7 +5,7 @@ function FirstComponent(props) {
     <div>
         <h3>First Component</h3>
         <ct.Provider value={props.name}>
-          name is:- {props.name}
+          name is:- {props.name.name}
           <FourComponent/>
         </ct.Provider>
     </div>
@@ -31,10 +31,11 @@ const ThirdComponent = (props) => {
 }
 
 const FourComponent = (props) => {
+  const contextValue = useContext(ct);
   return (
     <div>
-        <h3>Four Component</h3>
-          name={useContext(ct)}
+      <h3>Four Component</h3>
+      name={contextValue.age} 
     </div>
   );
 }
