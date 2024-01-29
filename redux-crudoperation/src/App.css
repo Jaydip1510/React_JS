@@ -24,6 +24,16 @@ label{
      margin-top: 20px;
      background-color: skyblue;
 }
+
+.g1{
+     margin-left:-20px ;
+}
+.g2{
+     margin-left: 20px;
+}
+.g3{
+     margin-left: 20px;
+}
 .txt1{
       margin-left:15px;
 }
