@@ -4,8 +4,8 @@ function FirstComponent(props) {
   return (
     <div>
         <h3>First Component</h3>
-        <ct.Provider value={props.name}>
-          name is:- {props.name.name}
+        <ct.Provider value={props}>
+          name is:- {props.name[0].name}
           <FourComponent/>
         </ct.Provider>
     </div>
@@ -35,7 +35,11 @@ const FourComponent = (props) => {
   return (
     <div>
       <h3>Four Component</h3>
-      name={contextValue.age} 
+      {
+        contextValue.name.map((i)=>{
+            return <h3>age is:-{i.age}</h3>
+        })
+      }
     </div>
   );
 }
