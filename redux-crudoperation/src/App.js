@@ -18,6 +18,7 @@ function App() {
     setAge('');
     setGender('');
     setEmail('');
+    setPassword('');
   }
   const DeleteRecord = (id) => {
     dispatch(DeleteData({ id }));
