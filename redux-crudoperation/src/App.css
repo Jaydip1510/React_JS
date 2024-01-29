@@ -1,10 +1,31 @@
-.App {
+.frm1 {
   text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.App{
+  text-align: center;
+}
+label{
+    margin-top: 30px;
+    font-weight: bold;
 }
 
 .App-logo {
   height: 40vmin;
   pointer-events: none;
+}
+.frm{
+     height: 400px;
+     width: 400px;
+     border: solid 2px orangered;
+     border-radius: 20px;
+     margin-top: 20px;
+     background-color: skyblue;
+}
+.txt1{
+      margin-left:15px;
 }
 
 @media (prefers-reduced-motion: no-preference) {
