@@ -8,13 +8,16 @@ function App() {
   const [name, setName] = useState('');
   const [age, setAge] = useState('');
   const [gender,setGender] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
   const Alldt = useSelector(state => state.Data)
   const dispatch = useDispatch();
   const SetData = () => {
-    dispatch(AddData({ id: Date.now(), name: name, age: age,gender:gender }));
+    dispatch(AddData({ id: Date.now(), name: name, age: age,gender:gender,email:email,password:password}));
     setName('');
     setAge('');
     setGender('');
+    setEmail('');
   }
   const DeleteRecord = (id) => {
     dispatch(DeleteData({ id }));
@@ -36,7 +39,13 @@ function App() {
             <label>Male</label>
             <input className="g3" type="radio" name="gender" value="female" checked={gender === 'female'} onChange={() => setGender('female')} />
             <label>Female</label>
-            <br /><br />
+            <br />
+            <label>Email:-</label>
+            <input type="email" name="email" value={email} onChange={(i)=>setEmail(i.target.value)} />
+            <br/>
+            <label>Pwd:-</label>
+            <input type="password" name="password" value={password} onChange={(i)=>setPassword(i.target.value)} />
+            <br/><br/>
             <input type="button" className='btn btn-success' value="Save" onClick={SetData} />
           </form>
         </div>
@@ -49,6 +58,8 @@ function App() {
             <td>Name</td>
             <td>Age</td>
             <td>Gender</td>
+            <td>Email</td>
+            <td>Password</td>
             <td>Action</td>
           </tr>
         </thead>
@@ -60,6 +71,8 @@ function App() {
                 <td>{i.name}</td>
                 <td>{i.age}</td>
                 <td>{i.gender}</td>
+                <td>{i.email}</td>
+                <td>{i.password}</td>
                 <td><input type="button" className='btn btn-danger' value="Delete" onClick={() => DeleteRecord(i.id)} /></td>
               </tr>
 
