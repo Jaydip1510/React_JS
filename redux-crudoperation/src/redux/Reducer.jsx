@@ -10,11 +10,10 @@ const DataReducer = (state = initialState, action) => {
             return { ...state, Data: [...state.Data, action.payload] };
         };
         case 'deleteData':
-            const updatedData = state.Data.filter((item) => item.id !== action.payload.id);
-            return {
-                ...state,
-                Data: updatedData,
-            };
+            const DeleteData = state.Data.filter((e) =>{
+                 return e.id != action.payload;
+            });
+            return{...state,Data:DeleteData}
         default: return state
     }
 }

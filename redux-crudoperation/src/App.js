@@ -20,9 +20,6 @@ function App() {
     setEmail('');
     setPassword('');
   }
-  const DeleteRecord = (id) => {
-    dispatch(DeleteData({ id }));
-  };
   return (
     <div className='App'>
       <h3 style={{ color: "green" }}><u>Redux CrudOperation</u></h3>
@@ -74,7 +71,7 @@ function App() {
                 <td>{i.gender}</td>
                 <td>{i.email}</td>
                 <td>{i.password}</td>
-                <td><input type="button" className='btn btn-danger' value="Delete" onClick={() => DeleteRecord(i.id)} /></td>
+                <td><input type="button" className='btn btn-danger' value="Delete" onClick={() =>dispatch(deleteData(i.id))} /></td>
               </tr>
 
             })
