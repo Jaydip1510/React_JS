@@ -17,12 +17,27 @@ label{
   pointer-events: none;
 }
 .frm{
-     height: 400px;
-     width: 400px;
+     height: 460px;
+     width: 450px;
      border: solid 2px orangered;
      border-radius: 20px;
      margin-top: 20px;
      background-color: skyblue;
+}
+.ql1{
+    margin-right: 10px;
+}
+.p1{
+    margin-left: 10px;
+}
+.q3{
+    margin-left: 20px;
+}
+.q2{
+  margin-left: 20px;
+}
+.q1{
+  margin-left: 10px;
 }
 
 .g1{

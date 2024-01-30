@@ -10,16 +10,28 @@ function App() {
   const [gender,setGender] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [qual, setQual] = useState([]);
+
   const Alldt = useSelector(state => state.Data)
   const dispatch = useDispatch();
+
   const SetData = () => {
-    dispatch(AddData({ id: Date.now(), name: name, age: age,gender:gender,email:email,password:password}));
+    dispatch(AddData({ id: Date.now(), name: name, age: age,gender:gender,email:email,password:password,qual:qual}));
     setName('');
     setAge('');
     setGender('');
     setEmail('');
     setPassword('');
+    setQual('');
   }
+  function Qualification(qualification) {
+    if (qual.includes(qualification)) {
+      setQual(qual.filter(q => q !== qualification));
+    } else {
+      setQual([...qual, qualification]);
+    }
+  }
+
   return (
     <div className='App'>
       <h3 style={{ color: "green" }}><u>Redux CrudOperation</u></h3>
@@ -42,8 +54,16 @@ function App() {
             <input type="email" name="email" value={email} onChange={(i)=>setEmail(i.target.value)} />
             <br/>
             <label>Pwd:-</label>
-            <input type="password" name="password" value={password} onChange={(i)=>setPassword(i.target.value)} />
+            <input type="password" className='p1' name="password" value={password} onChange={(i)=>setPassword(i.target.value)} />
             <br/><br/>
+            <label className='ql1'>Qual:-</label>
+              <input type="checkbox" className='q1' value="SSC" checked={qual.includes('SSC')} onChange={() => Qualification('SSC')} />
+              SSC
+              <input type="checkbox" className='q2' value="HSC" checked={qual.includes('HSC')} onChange={() => Qualification('HSC')} />
+              HSC
+              <input type="checkbox" className='q3' value="BCA" checked={qual.includes('BCA')} onChange={() => Qualification('BCA')} />
+              BCA
+              <br /><br />
             <input type="button" className='btn btn-success' value="Save" onClick={SetData} />
           </form>
         </div>
@@ -58,6 +78,7 @@ function App() {
             <td>Gender</td>
             <td>Email</td>
             <td>Password</td>
+            <td>Qual</td>
             <td>Action</td>
           </tr>
         </thead>
@@ -71,7 +92,8 @@ function App() {
                 <td>{i.gender}</td>
                 <td>{i.email}</td>
                 <td>{i.password}</td>
-                <td><input type="button" className='btn btn-danger' value="Delete" onClick={() =>dispatch(deleteData(i.id))} /></td>
+                <td>{i.qual}</td>
+                <td><input type="button" className='btn btn-danger' value="Delete" onClick={() =>dispatch(DeleteData(i.id))} /></td>
               </tr>
 
             })
