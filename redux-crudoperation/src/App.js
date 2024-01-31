@@ -17,11 +17,7 @@ function App() {
   const dispatch = useDispatch();
 
   const SetData = () => {
-    if (editalldata) {
-      dispatch(EditData({ id: editalldata.id, name:name, age:age, gender:gender, email:email, password:password, qual:qual }));
-    } else {
       dispatch(AddData({ id: Date.now(), name:name, age:age, gender:gender, email:email, password:password, qual:qual }));
-    }
     setName('');
     setAge('');
     setGender('');
