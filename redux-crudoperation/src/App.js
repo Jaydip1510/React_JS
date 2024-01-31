@@ -2,7 +2,7 @@ import logo from './logo.svg';
 import './App.css';
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { AddData, DeleteData } from './redux/Action';
+import { AddData, DeleteData, EditData } from './redux/Action';
 
 function App() {
   const [name, setName] = useState('');
@@ -12,11 +12,16 @@ function App() {
   const [password, setPassword] = useState('');
   const [qual, setQual] = useState([]);
 
-  const Alldt = useSelector(state => state.Data)
+  const Alldt = useSelector(state => state.Data);
+  const editalldata = useSelector((state) => state.edituser);
   const dispatch = useDispatch();
 
   const SetData = () => {
-    dispatch(AddData({ id: Date.now(), name: name, age: age,gender:gender,email:email,password:password,qual:qual}));
+    if (editalldata) {
+      dispatch(EditData({ id: editalldata.id, name:name, age:age, gender:gender, email:email, password:password, qual:qual }));
+    } else {
+      dispatch(AddData({ id: Date.now(), name:name, age:age, gender:gender, email:email, password:password, qual:qual }));
+    }
     setName('');
     setAge('');
     setGender('');
@@ -39,10 +44,10 @@ function App() {
         <div className='frm'>
           <form>
             <label>Name:-</label>
-            <input type="text" name="name" value={name} onChange={(i) => setName(i.target.value)} />
+            <input type="text" name="name" value={editalldata?editalldata.name:name} onChange={(i) => setName(i.target.value)} />
             <br />
             <label>Age:-</label>
-            <input className="txt1" type="text" name="age" value={age} onChange={(i) => setAge(i.target.value)} />
+            <input className="txt1" type="text" name="age" value={editalldata?editalldata.age:age} onChange={(i) => setAge(i.target.value)} />
             <br />
             <label className='g1'>Gender:-</label>
             <input className="g2" type="radio" name="gender" value="male" checked={gender === 'male'} onChange={() => setGender('male')} />
@@ -51,10 +56,10 @@ function App() {
             <label>Female</label>
             <br />
             <label>Email:-</label>
-            <input type="email" name="email" value={email} onChange={(i)=>setEmail(i.target.value)} />
+            <input type="email" name="email" value={editalldata?editalldata.email:email} onChange={(i)=>setEmail(i.target.value)} />
             <br/>
             <label>Pwd:-</label>
-            <input type="password" className='p1' name="password" value={password} onChange={(i)=>setPassword(i.target.value)} />
+            <input type="password" className='p1' name="password" value={editalldata?editalldata.password:password} onChange={(i)=>setPassword(i.target.value)} />
             <br/><br/>
             <label className='ql1'>Qual:-</label>
               <input type="checkbox" className='q1' value="SSC" checked={qual.includes('SSC')} onChange={() => Qualification('SSC')} />
@@ -93,7 +98,7 @@ function App() {
                 <td>{i.email}</td>
                 <td>{i.password}</td>
                 <td>{i.qual}</td>
-                <td><input type="button" className='btn btn-danger' value="Delete" onClick={() =>dispatch(DeleteData(i.id))} /></td>
+                <td><input type="button" className='btn btn-success' value="Edit" onClick={()=>dispatch(EditData(i.id))}/>&nbsp;<input type="button" className='btn btn-danger' value="Delete" onClick={() =>dispatch(DeleteData(i.id))} /></td>
               </tr>
 
             })

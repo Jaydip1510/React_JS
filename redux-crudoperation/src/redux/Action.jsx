@@ -12,3 +12,7 @@ export const UpdateData = (id) => ({
       type:"updateData",
       payload:id
 });
+export const EditData = (id) => ({
+       type:"editData",
+       payload:id
+ });

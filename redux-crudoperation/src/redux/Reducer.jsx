@@ -1,7 +1,8 @@
-import { AddData, DeleteData, UpdateData } from "./Action";
+import { AddData, DeleteData, UpdateData,EditData } from "./Action";
 
 const initialState = {
-    Data: []
+    Data: [],
+    edituser:{},
 }
 
 const DataReducer = (state = initialState, action) => {
@@ -9,11 +10,18 @@ const DataReducer = (state = initialState, action) => {
         case "addData": {
             return { ...state, Data: [...state.Data, action.payload] };
         };
-        case 'deleteData':
+        case 'deleteData':{
             const DeleteData = state.Data.filter((e) =>{
                  return e.id != action.payload;
             });
             return{...state,Data:DeleteData}
+        }
+        case 'editData':{
+            const EditData = state.Data.filter((e) =>{
+                return e.id == action.payload;
+           });
+           return{...state,edituser:EditData[0]}; 
+        }
         default: return state
     }
 }
