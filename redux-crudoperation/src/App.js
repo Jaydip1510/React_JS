@@ -24,6 +24,7 @@ function App() {
     setEmail('');
     setPassword('');
     setQual('');
+    dispatch(EditData(null));
   }
   function Qualification(qualification) {
     if (qual.includes(qualification)) {
