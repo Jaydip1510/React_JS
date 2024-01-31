@@ -17,7 +17,7 @@ function App() {
   const dispatch = useDispatch();
 
   const SetData = () => {
-      dispatch(AddData({ id: Date.now(), name:name, age:age, gender:gender, email:email, password:password, qual:qual }));
+    dispatch(AddData({ id: Date.now(), name:name, age:age, gender:gender, email:email, password:password, qual:qual }));
     setName('');
     setAge('');
     setGender('');
