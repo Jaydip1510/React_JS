@@ -5,7 +5,7 @@ export const addData = (val) => ({
 })
 
 export const deleteData = (val) => ({
-    type:"DELETE_DATA",
+    type:"Delete_User",
     payload:val,
 })
 
