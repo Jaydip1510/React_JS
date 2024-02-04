@@ -10,6 +10,6 @@ export const deleteData = (val) => ({
 })
 
 export const updateData = (val) => ({
-    type:"UPDATE_DATA",
+    type:"Update_User",
     payload:val,
 })

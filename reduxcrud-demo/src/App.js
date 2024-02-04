@@ -84,7 +84,7 @@ function App() {
           <input type="password" name="password" value={input.password} onChange={handleChange} />
           <br /><br />
 
-          <input type="submit" value="Save" />
+          <input type="submit" value={id !== "" ? "Update Data" :"Save"} />
         </form>
       </div>
       <br /><br />
