@@ -113,7 +113,7 @@ function App() {
                     <td>{i.age}</td>
                     <td>{i.email}</td>
                     <td>{i.password}</td>
-                    <td><button className='btn btn-success' onClick={() => EditData(index)}>Edit</button>&nbsp;<button className='btn btn-danger' onClick={() => DeleteData(index)}>Delete</button></td>
+                    <td><button style={{fontWeight:"bold"}} className='btn btn-outline-success' onClick={() => EditData(index)}>Edit</button>&nbsp;<button style={{fontWeight:"bold"}} className='btn btn-outline-danger' onClick={() => DeleteData(index)}>Delete</button></td>
                   </tr>
                 )
               })
