@@ -41,7 +41,7 @@ function App() {
         email: selectedData.email || '',
         password: selectedData.password || '',
       })
-     
+
     }
   };
   const UpdateUser = (e) => {
@@ -64,58 +64,60 @@ function App() {
     setId('');
   };
   return (
-    <div className="App">
-      <div>
-        <h2>Crud Operation</h2>
-        <form onSubmit={id !== "" ? UpdateUser:handleSubmit}>
-          <label>Name:-</label>
-          <input type="text" name="name" value={input.name} onChange={handleChange} />
-          <br /><br />
+    <div>
+       <h2 style={{textAlign:"center"}}><u>User Form</u></h2>
+      <div className="frm1">
+        <div className='frm'>
+          <form onSubmit={id !== "" ? UpdateUser : handleSubmit}>
+            <label>Name:-</label>
+            <input type="text" name="name" value={input.name} onChange={handleChange} />
+            <br /><br />
 
-          <label>Age:-</label>
-          <input type="text" name="age" value={input.age} onChange={handleChange} />
-          <br /><br />
+            <label>Age:-</label>
+            <input type="text" name="age" value={input.age} onChange={handleChange} />
+            <br /><br />
 
-          <label>Email:-</label>
-          <input type="email" name="email" value={input.email} onChange={handleChange} />
-          <br /><br />
+            <label>Email:-</label>
+            <input type="email" name="email" value={input.email} onChange={handleChange} />
+            <br /><br />
 
-          <label>Password:-</label>
-          <input type="password" name="password" value={input.password} onChange={handleChange} />
-          <br /><br />
+            <label>Password:-</label>
+            <input type="password" name="password" value={input.password} onChange={handleChange} />
+            <br /><br />
 
-          <input type="submit" className='btn btn-warning' value={id !== "" ? "Update Data" :"Save"} />
-        </form>
+            <input type="submit" className='btn btn-warning' value={id !== "" ? "Update Data" : "Save"} />
+          </form>
+        </div>
       </div>
       <br /><br />
-      <div>
+      <div className='t1'>
         <h2>User Table</h2>
         <table border={2} className='table table-striped'>
           <thead>
-          <tr style={{fontWeight:"bold"}}>
-            <td>Id</td>
-            <td>Name</td>
-            <td>Age</td>
-            <td>Email</td>
-            <td>Password</td>
-            <td>Action</td>
-          </tr>
+            <tr style={{ fontWeight: "bold" }}>
+              <td>Id</td>
+              <td>Name</td>
+              <td>Age</td>
+              <td>Email</td>
+              <td>Password</td>
+              <td>Action</td>
+            </tr>
           </thead>
           <tbody>
-          {
-            userinfo.map((i, index) => {
-              return (
-                <tr>
-                  <td>{index + 1}</td>
-                  <td>{i.name}</td>
-                  <td>{i.age}</td>
-                  <td>{i.email}</td>
-                  <td>{i.password}</td>
-                  <td><button className='btn btn-success' onClick={() => EditData(index)}>Edit</button>&nbsp;<button className='btn btn-danger' onClick={() => DeleteData(index)}>Delete</button></td>
-                </tr>
-              )
-            })
-          }
+            {
+              userinfo.map((i, index) => {
+                return (
+                  <tr>
+                    <td>{index + 1}</td>
+                    <td>{i.name}</td>
+                    <td>{i.age}</td>
+                    <td>{i.email}</td>
+                    <td>{i.password}</td>
+                    <td><button className='btn btn-success' onClick={() => EditData(index)}>Edit</button>&nbsp;<button className='btn btn-danger' onClick={() => DeleteData(index)}>Delete</button></td>
+                  </tr>
+                )
+              })
+            }
           </tbody>
         </table>
       </div>

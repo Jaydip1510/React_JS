@@ -6,6 +6,23 @@
   height: 40vmin;
   pointer-events: none;
 }
+label{
+     margin-top: 20px;
+}
+.frm{
+      height: 400px;
+      width: 500px;
+      border: solid 2px green;
+}
+.frm1{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+}
+.t1{
+     text-align: center;
+}
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
