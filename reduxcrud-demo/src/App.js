@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
@@ -6,7 +5,7 @@ import { addData, deleteData, updateData } from './Redux/Action';
 
 function App() {
   const userinfo = useSelector((state) => state.userData || []);
-  const [id, setId] = useState("");
+  const [id_idx, setId] = useState("");
   const dispatch = useDispatch();
   const [input, setInput] = useState({
     name: '',
@@ -42,19 +41,20 @@ function App() {
         email: selectedData.email || '',
         password: selectedData.password || '',
       })
+     
     }
   };
-  const UpdateUser = (e, index) => {
+  const UpdateUser = (e) => {
     e.preventDefault();
 
-    const updatavalue = {
-      id: index,
+    const updatevalue = {
+      id: id_idx,
       name: input.name,
       age: input.age,
       email: input.email,
       password: input.password,
     };
-    dispatch(updateData(updatavalue));
+    dispatch(updateData(updatevalue));
     setInput({
       name: '',
       age: '',
@@ -67,7 +67,7 @@ function App() {
     <div className="App">
       <div>
         <h2>Crud Operation</h2>
-        <form onSubmit={id !== "" ? UpdateUser:handleSubmit}>
+        <form onSubmit={id_idx !== "" ? UpdateUser:handleSubmit}>
           <label>Name:-</label>
           <input type="text" name="name" value={input.name} onChange={handleChange} />
           <br /><br />
@@ -84,7 +84,7 @@ function App() {
           <input type="password" name="password" value={input.password} onChange={handleChange} />
           <br /><br />
 
-          <input type="submit" value={id !== "" ? "Update Data" :"Save"} />
+          <input type="submit" value={id_idx !== "" ? "Update Data" :"Save"} />
         </form>
       </div>
       <br /><br />

@@ -16,13 +16,13 @@ const Reducer = (state = initialState, action) => {
                 ),
             }
         }
-        case 'Update_User': 
+        case 'Update_User': {
             return {
-                ...state, userData: state.userData.map((i) =>
-                    i.id === action.payload.id ? action.payload : i
+                ...state, userData: state.userData.map((i,index) =>
+                    index == action.payload.id ? action.payload : i
                 ),
             };
-        
+        }
         default:
             return state;
     }
