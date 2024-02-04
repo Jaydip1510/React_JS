@@ -6,13 +6,28 @@
   height: 40vmin;
   pointer-events: none;
 }
+.tt1{
+     margin-left: 10px;
+}
+.t2{
+    margin-left: 25px;
+}
+.t3{
+    margin-left: 15px;
+}
+.t4{
+    margin-left: 25px;
+}
 label{
      margin-top: 20px;
+     font-weight: bold;
 }
 .frm{
-      height: 400px;
-      width: 500px;
-      border: solid 2px green;
+      height: 350px;
+      width: 400px;
+      border: solid 2px orangered;
+      border-radius: 30px;
+      background-color: skyblue;
 }
 .frm1{
       display: flex;
