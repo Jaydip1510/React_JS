@@ -84,14 +84,15 @@ function App() {
           <input type="password" name="password" value={input.password} onChange={handleChange} />
           <br /><br />
 
-          <input type="submit" value={id !== "" ? "Update Data" :"Save"} />
+          <input type="submit" className='btn btn-warning' value={id !== "" ? "Update Data" :"Save"} />
         </form>
       </div>
       <br /><br />
       <div>
         <h2>User Table</h2>
-        <table border={2}>
-          <tr>
+        <table border={2} className='table table-striped'>
+          <thead>
+          <tr style={{fontWeight:"bold"}}>
             <td>Id</td>
             <td>Name</td>
             <td>Age</td>
@@ -99,6 +100,8 @@ function App() {
             <td>Password</td>
             <td>Action</td>
           </tr>
+          </thead>
+          <tbody>
           {
             userinfo.map((i, index) => {
               return (
@@ -108,11 +111,12 @@ function App() {
                   <td>{i.age}</td>
                   <td>{i.email}</td>
                   <td>{i.password}</td>
-                  <td><button onClick={() => EditData(index)}>Edit</button><button onClick={() => DeleteData(index)}>Delete</button></td>
+                  <td><button className='btn btn-success' onClick={() => EditData(index)}>Edit</button>&nbsp;<button className='btn btn-danger' onClick={() => DeleteData(index)}>Delete</button></td>
                 </tr>
               )
             })
           }
+          </tbody>
         </table>
       </div>
     </div>
