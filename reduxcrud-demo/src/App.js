@@ -5,7 +5,7 @@ import { addData, deleteData, updateData } from './Redux/Action';
 
 function App() {
   const userinfo = useSelector((state) => state.userData || []);
-  const [id_idx, setId] = useState("");
+  const [id, setId] = useState("");
   const dispatch = useDispatch();
   const [input, setInput] = useState({
     name: '',
@@ -48,7 +48,7 @@ function App() {
     e.preventDefault();
 
     const updatevalue = {
-      id: id_idx,
+      id: id,
       name: input.name,
       age: input.age,
       email: input.email,
@@ -67,7 +67,7 @@ function App() {
     <div className="App">
       <div>
         <h2>Crud Operation</h2>
-        <form onSubmit={id_idx !== "" ? UpdateUser:handleSubmit}>
+        <form onSubmit={id !== "" ? UpdateUser:handleSubmit}>
           <label>Name:-</label>
           <input type="text" name="name" value={input.name} onChange={handleChange} />
           <br /><br />
@@ -84,7 +84,7 @@ function App() {
           <input type="password" name="password" value={input.password} onChange={handleChange} />
           <br /><br />
 
-          <input type="submit" value={id_idx !== "" ? "Update Data" :"Save"} />
+          <input type="submit" value={id !== "" ? "Update Data" :"Save"} />
         </form>
       </div>
       <br /><br />

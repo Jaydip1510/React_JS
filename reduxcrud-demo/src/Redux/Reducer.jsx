@@ -19,7 +19,7 @@ const Reducer = (state = initialState, action) => {
         case 'Update_User': {
             return {
                 ...state, userData: state.userData.map((i,index) =>
-                    index == action.payload.id ? action.payload : i
+                    index === action.payload.id ? action.payload : i
                 ),
             };
         }
