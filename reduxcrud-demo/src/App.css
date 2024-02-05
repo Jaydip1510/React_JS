@@ -22,8 +22,14 @@ label{
      margin-top: 20px;
      font-weight: bold;
 }
+.g1{
+     margin-left: 30px;
+}
+.gl1{
+     margin-right: 10px;
+}
 .frm{
-      height: 350px;
+      height: 420px;
       width: 400px;
       border: solid 2px orangered;
       border-radius: 30px;

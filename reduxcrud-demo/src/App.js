@@ -10,6 +10,7 @@ function App() {
   const [input, setInput] = useState({
     name: '',
     age: '',
+    gender: '',
     email: '',
     password: '',
   });
@@ -24,6 +25,7 @@ function App() {
     setInput({
       name: '',
       age: '',
+      gender: '',
       email: '',
       password: '',
     });
@@ -38,6 +40,7 @@ function App() {
       setInput({
         name: selectedData.name || '',
         age: selectedData.age || '',
+        gender: selectedData.gender || '',
         email: selectedData.email || '',
         password: selectedData.password || '',
       })
@@ -51,6 +54,7 @@ function App() {
       id: id,
       name: input.name,
       age: input.age,
+      gender: input.gender,
       email: input.email,
       password: input.password,
     };
@@ -58,6 +62,7 @@ function App() {
     setInput({
       name: '',
       age: '',
+      gender: '',
       email: '',
       password: '',
     })
@@ -65,7 +70,7 @@ function App() {
   };
   return (
     <div>
-       <h2 style={{textAlign:"center",color:"lightgreen"}}><u>User Form</u></h2>
+      <h2 style={{ textAlign: "center", color: "lightgreen" }}><u>User Form</u></h2>
       <div className="frm1">
         <div className='frm'>
           <form onSubmit={id !== "" ? UpdateUser : handleSubmit}>
@@ -77,6 +82,31 @@ function App() {
             <input type="text" className='t2' name="age" value={input.age} onChange={handleChange} />
             <br /><br />
 
+            <label className='gl1'>Gender:-</label>
+              <label>
+                <input
+                  className='g1'
+                  type="radio"
+                  name="gender"
+                  value="male"
+                  checked={input.gender === 'male'}
+                  onChange={handleChange}
+                />
+                Male
+              </label>
+              <label>
+                <input
+                  className='g1'
+                  type="radio"
+                  name="gender"
+                  value="female"
+                  checked={input.gender === 'female'}
+                  onChange={handleChange}
+                />
+                Female
+              </label>
+            <br /><br />
+
             <label>Email:-</label>
             <input type="email" className='t3' name="email" value={input.email} onChange={handleChange} />
             <br /><br />
@@ -85,19 +115,20 @@ function App() {
             <input type="password" className='t4' name="password" value={input.password} onChange={handleChange} />
             <br /><br />
 
-            <input type="submit" style={{color:"green",fontWeight:"bold"}} class="btn btn-outline-warning" value={id !== "" ? "Update Data" : "Save"} />
+            <input type="submit" style={{ color: "green", fontWeight: "bold" }} class="btn btn-outline-warning" value={id !== "" ? "Update Data" : "Save"} />
           </form>
         </div>
       </div>
       <br /><br />
       <div className='t1'>
-        <h3 style={{color:"green"}}><u>User Table</u></h3>
+        <h3 style={{ color: "green" }}><u>User Table</u></h3>
         <table border={2} className='table table-striped'>
           <thead>
-            <tr style={{ fontWeight: "bold",textAlign:"center" }}>
+            <tr style={{ fontWeight: "bold", textAlign: "center" }}>
               <td>Id</td>
               <td>Name</td>
               <td>Age</td>
+              <td>Gender</td>
               <td>Email</td>
               <td>Password</td>
               <td>Action</td>
@@ -107,13 +138,14 @@ function App() {
             {
               userinfo.map((i, index) => {
                 return (
-                  <tr style={{textAlign:"center"}}>
+                  <tr style={{ textAlign: "center" }}>
                     <td>{index + 1}</td>
                     <td>{i.name}</td>
                     <td>{i.age}</td>
+                    <td>{i.gender}</td>
                     <td>{i.email}</td>
                     <td>{i.password}</td>
-                    <td><button style={{fontWeight:"bold"}} className='btn btn-outline-success' onClick={() => EditData(index)}>Edit</button>&nbsp;<button style={{fontWeight:"bold"}} className='btn btn-outline-danger' onClick={() => DeleteData(index)}>Delete</button></td>
+                    <td><button style={{ fontWeight: "bold" }} className='btn btn-outline-success' onClick={() => EditData(index)}>Edit</button>&nbsp;<button style={{ fontWeight: "bold" }} className='btn btn-outline-danger' onClick={() => DeleteData(index)}>Delete</button></td>
                   </tr>
                 )
               })
