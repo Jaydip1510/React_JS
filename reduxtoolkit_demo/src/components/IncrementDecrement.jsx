@@ -1,9 +1,9 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Increment, Decrement } from '../redux/Reducers';
+import { Increment,Decrement } from '../redux/Reducers';
 
 function IncrementDecrement() {
-  const ctData = useSelector((state) => state.cntReducers.cnt);
+  const ctData = useSelector((state) => state.cntData.cnt);
   const dispatch = useDispatch();
 
   return (

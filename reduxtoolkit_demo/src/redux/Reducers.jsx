@@ -1,21 +1,28 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-
 const initialState = {
-      cnt : 0
-}
+      userInfo : [],
+};
 
 export const cntReducers = createSlice({
-      name : "cntData",
+      name: "cntData",
       initialState,
-      reducers:{
-           Increment:(state)=>{
-              state.cnt = state.cnt + 1;
-           },
-           Decrement:(state) => {
-              state.cnt = state.cnt - 1;
-           }
+      reducers: {
+            Increment: (state) => {
+                  state.cnt = state.cnt + 1;
+            },
+            Decrement: (state) => {
+                  state.cnt = state.cnt - 1;
+            },
+            addItem : (state) => {
+                  return{
+                   ...state, userInfo: [...state.userInfo],
+                  }
+                  
+            }
+            
       }
-})
-export const {Increment,Decrement} = cntReducers.actions;
+});
+
+export const { Increment, Decrement } = cntReducers.actions;
 export default cntReducers.reducer;
