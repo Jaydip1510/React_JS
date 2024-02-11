@@ -36,21 +36,21 @@ function AddData() {
         <div className='frm'>
           <form onSubmit={handleSubmit} className='f1'>
             <label>Name:-</label>
-            <input type="text" name="name" value={inputValue.name} onChange={handleChange} />
+            <input  className="t1" type="text" name="name" value={inputValue.name} onChange={handleChange} />
             <br /><br />
 
             <label>Age:-</label>
-            <input type="text" name="age" value={inputValue.age} onChange={handleChange} />
+            <input type="text" className='t2' name="age" value={inputValue.age} onChange={handleChange} />
             <br /><br />
 
             <label>Email:-</label>
-            <input type="email" name="email" value={inputValue.email} onChange={handleChange} />
+            <input type="email" className='t3' name="email" value={inputValue.email} onChange={handleChange} />
             <br /><br />
 
-            <lable>Password:-</lable>
-            <input type="password" name="password" value={inputValue.password} onChange={handleChange} />
+            <label>Pwd:-</label>
+            <input type="password" className='t4' name="password" value={inputValue.password} onChange={handleChange} />
             <br /><br />
-            <button  class="btn btn-outline-success" type="submit">SaveData</button>
+            <button  class="btn btn-outline-warning fw-bold text-primary" type="submit">SaveData</button>
           </form>
         </div>
       </div>
