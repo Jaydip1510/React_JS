@@ -7,7 +7,7 @@ function App() {
     <div className="App">
      <h3 style={{color:"blue",fontFamily:"cursive"}}>ReduxToolkit</h3>
      <AddData/>
-     <IncrementDecrement/>
+     {/* <IncrementDecrement/> */}
     </div>
   );
 }
