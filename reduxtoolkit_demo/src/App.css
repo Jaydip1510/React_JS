@@ -9,6 +9,13 @@
      margin-top: 10px;
      background-color: rgb(27, 215, 27);
 }
+.box1{
+      height: 150px;
+      width: 250px;
+      border: 2px solid yellowgreen;
+      margin-top: 10px;
+      border-radius: 15px;
+}
 label{
      font-weight: bold;
      color: orangered;

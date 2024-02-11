@@ -7,10 +7,12 @@ function IncrementDecrement() {
   const dispatch = useDispatch();
 
   return (
-    <div>
-      <h3>Count is: {ctData}</h3>
-      <button type='button' onClick={() => dispatch(IncrementValue())}>Increment</button>
-      <button type='button' onClick={() => dispatch(DecrementValue())}>Decrement</button>
+    <div style={{display:"flex",justifyContent:"center",alignItems:"center"}}>
+      <div className='box1'>
+        <h3 style={{marginTop:"20px",color:"blue"}}>Count is: {ctData}</h3>
+        <button type='button' className='btn btn-success' onClick={() => dispatch(IncrementValue())}>Increment</button>&nbsp;&nbsp;
+        <button type='button' className='btn btn-warning' onClick={() => dispatch(DecrementValue())}>Decrement</button>
+      </div>
     </div>
   );
 }
