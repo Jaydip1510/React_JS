@@ -5,6 +5,7 @@ import { addItem, deleteItem } from '../redux/Reducers';
 function AddData() {
   const userinfo = useSelector((state) => state.user.userInfo || []);
   const dispatch = useDispatch();
+  const [id, setId] = useState("");
   const [inputValue, setInputValue] = useState({
     name: '',
     age: '',
@@ -29,6 +30,19 @@ function AddData() {
   };
   const deleteData = (id) => {
     dispatch(deleteItem(id));
+  } 
+  const editData = (id) => {
+    const selectedData = userinfo[id];
+    if (selectedData) {
+      setId(id);
+      setInputValue({
+        name: selectedData.name || '',
+        age: selectedData.age || '',
+        email: selectedData.email || '',
+        password: selectedData.password || '',
+      })
+
+    }
   }
   return (
     <div>
@@ -76,7 +90,7 @@ function AddData() {
                   <td>{i.age}</td>
                   <td>{i.email}</td>
                   <td>{i.password}</td>
-                  <td><button class="btn btn-outline-danger" type='button' onClick={() => deleteData(index)}>Delete</button></td>
+                  <td><button type='button' className='btn btn-outline-success' onClick={()=> editData(index)}>Edit</button>&nbsp;<button class="btn btn-outline-danger" type='button' onClick={() => deleteData(index)}>Delete</button></td>
                 </tr>
               )
             })

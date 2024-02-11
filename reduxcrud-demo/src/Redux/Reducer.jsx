@@ -10,6 +10,7 @@ const Reducer = (state = initialState, action) => {
             }
         }
         case "Delete_User": {
+            
             return {
                 ...state, userData: state.userData.filter(
                     (i, index) => index !== action.payload
