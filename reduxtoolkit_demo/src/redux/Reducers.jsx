@@ -11,7 +11,6 @@ const userSlice = createSlice({
     addItem: (state, action) => {
       state.userInfo.push(action.payload);
     },
-    // other reducers...
   },
 });
 
