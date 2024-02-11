@@ -36,19 +36,19 @@ function AddData() {
         <div className='frm'>
           <form onSubmit={handleSubmit} className='f1'>
             <label>Name:-</label>
-            <input  className="t1" type="text" name="name" value={inputValue.name} onChange={handleChange} />
+            <input  className="t1" type="text" name="name" value={inputValue.name} onChange={handleChange} required placeholder='Enter Your Name' />
             <br /><br />
 
             <label>Age:-</label>
-            <input type="text" className='t2' name="age" value={inputValue.age} onChange={handleChange} />
+            <input type="text" className='t2' name="age" value={inputValue.age} onChange={handleChange} required placeholder='Enter Your Age' />
             <br /><br />
 
             <label>Email:-</label>
-            <input type="email" className='t3' name="email" value={inputValue.email} onChange={handleChange} />
+            <input type="email" className='t3' name="email" value={inputValue.email} onChange={handleChange} required placeholder='Enter Your Email' />
             <br /><br />
 
             <label>Pwd:-</label>
-            <input type="password" className='t4' name="password" value={inputValue.password} onChange={handleChange} />
+            <input type="password" className='t4' name="password" value={inputValue.password} onChange={handleChange} required placeholder='Enter Your Password' />
             <br /><br />
             <button  class="btn btn-outline-warning fw-bold text-primary" type="submit">SaveData</button>
           </form>

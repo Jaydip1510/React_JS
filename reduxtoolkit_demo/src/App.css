@@ -17,7 +17,7 @@ input{
       height: 35px;
       width: 230px;
       border-radius: 5px;
-      border-color: blue;
+      border-color: orangered;
 }
 .frm1{
     display: flex;
