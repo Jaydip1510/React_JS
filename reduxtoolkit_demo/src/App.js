@@ -7,6 +7,7 @@ function App() {
     <div className="App">
      <h3>ReduxToolkit</h3>
      <AddData/>
+     <IncrementDecrement/>
     </div>
   );
 }
