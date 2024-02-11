@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { addItem, deleteItem } from '../redux/Reducers';
+import { addItem, deleteItem,updateItem } from '../redux/Reducers';
 
 function AddData() {
   const userinfo = useSelector((state) => state.user.userInfo || []);
@@ -44,11 +44,29 @@ function AddData() {
 
     }
   }
+  const updateData = (e) => {
+      e.preventDefault();
+      const updateValue = {
+          id:id,
+          name:inputValue.name,
+          age:inputValue.age,
+          email:inputValue.email,
+          password:inputValue.password,
+      };
+      dispatch(updateItem(updateValue));
+      setInputValue({
+         name:'',
+         age:'',
+         email:'',
+         password:'',
+      })
+      setId('');
+  }
   return (
     <div>
       <div className='frm1'>
         <div className='frm'>
-          <form onSubmit={handleSubmit} className='f1'>
+          <form onSubmit={id !== '' ? updateData :  handleSubmit} className='f1'>
             <label>Name:-</label>
             <input  className="t1" type="text" name="name" value={inputValue.name} onChange={handleChange} required placeholder='Enter Your Name' />
             <br /><br />
