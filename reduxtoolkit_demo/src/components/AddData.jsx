@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { addItem } from '../redux/Reducers';
+import { addItem, deleteItem } from '../redux/Reducers';
 
 function AddData() {
   const userinfo = useSelector((state) => state.user.userInfo || []);
@@ -27,6 +27,9 @@ function AddData() {
       password: '',
     });
   };
+  const deleteData = (id) => {
+     dispatch(deleteItem(id));
+  }
   return (
     <div>
        <form onSubmit={handleSubmit}>
@@ -55,6 +58,7 @@ function AddData() {
              <td>Age</td>
              <td>Email</td>
              <td>Password</td>
+             <td>Action</td>
          </tr>
          {
               userinfo.map((i,index) =>{
@@ -65,6 +69,7 @@ function AddData() {
                          <td>{i.age}</td>
                          <td>{i.email}</td>
                          <td>{i.password}</td>
+                         <td><button type='button' onClick={()=> deleteData(index)}>Delete</button></td>
                       </tr>
                   )
               })
