@@ -1,29 +1,32 @@
-import React, { useState } from 'react'
-import { useSelector,useDispatch } from 'react-redux';
+import React, { useState } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { addItem } from '../redux/Reducers';
 
 function AddData() {
-    const userinfo = useSelector((state) => state.userInfo || []);
-    const dispatch = useDispatch();
-     const [inputValue,setInputValue] = useState({
-        name:'',
-        age:'',
-        email:'',
-        password:'',
-     })
-     const handleChange = (e) => {
-        const { name, value } = e.target;
-        setInputValue({ ...inputValue, [name]: value });
-     }
-     const handleSubmit = (e) => {
-       e.preventDefault();
-       dispatch(addItem(inputValue));
-       setInputValue({
-         name: '',
-         age: '',
-         email: '',
-         password: '',
-       });
-     }
+  const userinfo = useSelector((state) => state.user.userInfo || []);
+  const dispatch = useDispatch();
+  const [inputValue, setInputValue] = useState({
+    name: '',
+    age: '',
+    email: '',
+    password: '',
+  });
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setInputValue({ ...inputValue, [name]: value });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    dispatch(addItem(inputValue));
+    setInputValue({
+      name: '',
+      age: '',
+      email: '',
+      password: '',
+    });
+  };
   return (
     <div>
        <form onSubmit={handleSubmit}>
