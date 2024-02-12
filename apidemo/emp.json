@@ -1,0 +1,25 @@
+{
+  "emp": [
+    {
+      "id": "1",
+      "name": "jaydip",
+      "age": 26,
+      "salary": 25000,
+      "address": "surat"
+    },
+    {
+      "id": "2",
+      "name": "alpesh",
+      "age": 24,
+      "salary": 20000,
+      "address": "rajkot"
+    },
+    {
+      "id": "c921",
+      "name": "abc",
+      "age": "22",
+      "salary": "35000",
+      "address": "rajkot"
+    }
+  ]
+}

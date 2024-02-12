@@ -10,7 +10,7 @@ function ApiComponet() {
   return (
     <div>
         <h3>Api calling...</h3>
-        <button type="button" onClick={appData}>Click</button>
+        {<button type="button" onClick={appData}>Click</button>}
         <table>
             <tr>
                 <td>ID</td>
@@ -19,11 +19,13 @@ function ApiComponet() {
             </tr>
             {
                 data.map((i) => {
+                    return (
                     <tr>
                         <td>{i.id}</td>
-                        <td>{i.name}</td>
+                        <td>{i.title}</td>
                         <td>{i.category}</td>
                     </tr>
+                    )
                 })
             }
         </table>
