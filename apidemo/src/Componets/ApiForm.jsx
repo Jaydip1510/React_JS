@@ -39,10 +39,10 @@ function ApiForm() {
             <input type='text' name="salary" value={empdata.salary} onChange={handleChange}/>
             <br /><br />
             
-            <label htmlFor="">Addree:-</label>
+            <label htmlFor="">Address:-</label>
             <input type="text" name="address" value={empdata.address} onChange={handleChange}/>
             <br/><br />
-            <input type="submit" value={id !=='' ? "Update" : "Save"}/>
+            <input type="submit" value={"Save"}/>
            </form>
     </div>
   )
