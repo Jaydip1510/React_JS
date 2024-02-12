@@ -13,13 +13,6 @@
       "age": 24,
       "salary": 20000,
       "address": "rajkot"
-    },
-    {
-      "id": "c921",
-      "name": "abc",
-      "age": "22",
-      "salary": "35000",
-      "address": "rajkot"
     }
   ]
 }

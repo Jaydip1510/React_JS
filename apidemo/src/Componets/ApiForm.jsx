@@ -40,6 +40,7 @@ function ApiForm() {
             
             <label htmlFor="">Addree:-</label>
             <input type="text" name="address" value={empdata.addree} onChange={handleChange}/>
+            <br/><br />
             <input type="submit" value={"Save"}/>
            </form>
     </div>
