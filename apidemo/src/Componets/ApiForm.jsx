@@ -1,7 +1,12 @@
 import React, { useEffect, useState } from 'react'
 
 function ApiForm() {
-     const [empdata,setEmpdata] = useState([]);
+     const [empdata,setEmpdata] = useState({
+         name:"",
+         age:"",
+         salary:"",
+         address:""
+     });
      useEffect(() => {
       fetch("http://localhost:3000/emp")
         .then(res => res.json())
@@ -22,6 +27,17 @@ function ApiForm() {
         })
            .then(res => res.json())
            .then(json =>console.log(json));
+     }
+     const removeData = (id) => {
+      fetch(`http://localhost:3000/emp/${id}`,{
+         method: "DELETE",
+         headers:{
+            "Content-Type": "application/json"
+         },
+         body: JSON.stringify(empdata)
+       })
+          .then(res => res.json())
+          .then(json =>console.log(json));
      }
   return (
     <div>
@@ -45,13 +61,14 @@ function ApiForm() {
            </form>
            <br/>
            <br/>
-           <table>
+           <table border={2}>
                <tr>
                   <td>Id</td>
                   <td>Name</td>
                   <td>Age</td>
                   <td>Salary</td>
                   <td>Address</td>
+                  <td>Action</td>
                </tr>
                {
                   empdata.map((i) => (
@@ -61,7 +78,7 @@ function ApiForm() {
                        <td>{i.age}</td>
                        <td>{i.salary}</td>
                        <td>{i.address}</td>
-                       <td><button>Delete</button></td>
+                       <td><button type='button' onClick={()=>removeData(i.id)}>Delete</button></td>
                      </tr>
                    ))
                }
