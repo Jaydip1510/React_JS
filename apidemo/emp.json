@@ -6,20 +6,6 @@
       "age": 26,
       "salary": 25000,
       "address": "surat"
-    },
-    {
-      "id": "2",
-      "name": "alpesh",
-      "age": 24,
-      "salary": 20000,
-      "address": "rajkot"
-    },
-    {
-      "id": "5cd7",
-      "name": "abc",
-      "age": "26",
-      "salary": "25000",
-      "address": "rajkot"
     }
   ]
 }
