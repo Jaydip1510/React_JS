@@ -1,16 +1,12 @@
 import React, { useEffect, useState } from 'react'
 
 function ApiForm() {
-     const [empdata,setEmpdata] = useState({
-        name:"",
-        age:"",
-        salary:"",
-        address:"",
-     });
+     const [empdata,setEmpdata] = useState([]);
      useEffect(() => {
       fetch("http://localhost:3000/emp")
         .then(res => res.json())
         .then(json => setEmpdata(json));
+        
     });
      const handleChange = (e) => {
           const {name,value} = e.target;
@@ -59,7 +55,7 @@ function ApiForm() {
                </tr>
                {
                   empdata.map((i) => (
-                     <tr key={i.id}>
+                     <tr>
                        <td>{i.id}</td>
                        <td>{i.name}</td>
                        <td>{i.age}</td>
