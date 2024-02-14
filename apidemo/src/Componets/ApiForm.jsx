@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 
 function ApiForm() {
    const [dt, setDt] = useState([]);
-   const [uid,setUid] = useState();
+   const [uid, setUid] = useState();
    const [empdata, setEmpdata] = useState({
       name: "",
       age: "",
@@ -20,15 +20,31 @@ function ApiForm() {
       setEmpdata({ ...empdata, [name]: value });
    }
    const setData = () => {
-      fetch("http://localhost:3000/emp", {
-         method: "POST",
-         headers: {
-            "Content-Type": "application/json"
-         },
-         body: JSON.stringify(empdata)
-      })
-         .then(res => res.json())
-         .then(json => console.log(json));
+      if (uid !== '') {
+         //updated code
+         fetch(`http://localhost:3000/emp/${uid}`, {
+            method: 'PUT',
+            headers: {
+               "Content-Type": "application/json"
+            },
+            body: JSON.stringify(empdata)
+         })
+            .then(res => res.json())
+            .then(json => console.log(json));
+         
+      } else {
+         //inserted code
+         fetch("http://localhost:3000/emp", {
+            method: "POST",
+            headers: {
+               "Content-Type": "application/json"
+            },
+            body: JSON.stringify(empdata)
+         })
+            .then(res => res.json())
+            .then(json => console.log(json));
+      }
+
    }
    const removeData = (id) => {
       fetch(`http://localhost:3000/emp/${id}`, {
@@ -41,10 +57,18 @@ function ApiForm() {
          .then(res => res.json())
          .then(json => console.log(json));
    }
+   // const editData = (id) => {
+   //    fetch(`http://localhost:3000/emp/${id}`)
+   //       .then(res => res.json())
+   //       .then(json =>setEmpdata(json));
+   // }
    const editData = (id) => {
       fetch(`http://localhost:3000/emp/${id}`)
          .then(res => res.json())
-         .then(json => setEmpdata(json));
+         .then(json => {
+            setUid(id);
+            setEmpdata(json);
+         });
    }
    return (
       <div>
