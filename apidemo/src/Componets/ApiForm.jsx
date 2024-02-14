@@ -20,30 +20,18 @@ function ApiForm() {
       setEmpdata({ ...empdata, [name]: value });
    }
    const setData = () => {
-      if (uid !== '') {
-         //updated code
-         fetch(`http://localhost:3000/emp/${uid}`, {
-            method: 'PUT',
-            headers: {
-               "Content-Type": "application/json"
-            },
-            body: JSON.stringify(empdata)
-         })
-            .then(res => res.json())
-            .then(json => console.log(json));
-         
-      } else {
-         //inserted code
-         fetch("http://localhost:3000/emp", {
-            method: "POST",
-            headers: {
-               "Content-Type": "application/json"
-            },
-            body: JSON.stringify(empdata)
-         })
-            .then(res => res.json())
-            .then(json => console.log(json));
-      }
+
+      //inserted code
+      fetch("http://localhost:3000/emp", {
+         method: "POST",
+         headers: {
+            "Content-Type": "application/json"
+         },
+         body: JSON.stringify(empdata)
+      })
+         .then(res => res.json())
+         .then(json => console.log(json));
+  
 
    }
    const removeData = (id) => {
