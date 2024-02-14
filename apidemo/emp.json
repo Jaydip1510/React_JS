@@ -6,6 +6,20 @@
       "age": 26,
       "salary": 25000,
       "address": "surat"
+    },
+    {
+      "id": "35a9",
+      "name": "alpesh",
+      "age": "25",
+      "salary": "12000",
+      "address": "acharda"
+    },
+    {
+      "id": "6490",
+      "name": "abc",
+      "age": "26",
+      "salary": "15000",
+      "address": "rajkot"
     }
   ]
 }
