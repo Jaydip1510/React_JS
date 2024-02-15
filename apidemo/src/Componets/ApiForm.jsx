@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 
 function ApiForm() {
    const [dt, setDt] = useState([]);
-   const [uid, setUid] = useState();
+   const [eid, setEid] = useState();
    const [empdata, setEmpdata] = useState({
       name: "",
       age: "",
@@ -45,18 +45,16 @@ function ApiForm() {
          .then(res => res.json())
          .then(json => console.log(json));
    }
-   // const editData = (id) => {
-   //    fetch(`http://localhost:3000/emp/${id}`)
-   //       .then(res => res.json())
-   //       .then(json =>setEmpdata(json));
-   // }
    const editData = (id) => {
-      fetch(`http://localhost:3000/emp/${id}`)
-         .then(res => res.json())
-         .then(json => {
-            setUid(id);
-            setEmpdata(json);
-         });
+      setEid(id)
+      fetch(`http://localhost:3000/emp/${id}`,{
+         method:"PATCH",
+         headers: {
+            "Content-Type": "application/json"
+         },
+      })
+      .then(res => res.json())
+      .then(json => setEmpdata(json));
    }
    return (
       <div>
