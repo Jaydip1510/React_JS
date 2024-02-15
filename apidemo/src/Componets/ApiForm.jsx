@@ -141,7 +141,7 @@ function ApiForm() {
                      <td>{i.age}</td>
                      <td>{i.salary}</td>
                      <td>{i.address}</td>
-                     <td><button type='button' className='btn btn-outline-primary fw-bold' onClick={() => editData(i.id)}>Edit</button>&nbsp;&nbsp;<button type='button' className='btn btn-danger fw-bold' onClick={() => removeData(i.id)}>Delete</button></td>
+                     <td><button type='button' className='btn btn-outline-primary fw-bold' onClick={() => editData(i.id)}>Edit</button>&nbsp;&nbsp;<button type='button' className='btn btn-outline-danger fw-bold' onClick={() => removeData(i.id)}>Delete</button></td>
                   </tr>
                ))
             }
