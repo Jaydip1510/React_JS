@@ -17,8 +17,8 @@ function ApiForm() {
       fetch("http://localhost:3000/emp")
          .then(res => res.json())
          .then(json => setDt(json));
-   },[handleChange]);
-   
+   }, [handleChange]);
+
    // const setData = () => {
    //    if(eid != ''){
    //       //update data
@@ -74,7 +74,7 @@ function ApiForm() {
       }
    }
    const removeData = (id) => {
-      fetch("http://localhost:3000/emp/"+id, {
+      fetch("http://localhost:3000/emp/" + id, {
          method: "DELETE",
          headers: {
             "Content-Type": "application/json"
@@ -86,39 +86,44 @@ function ApiForm() {
    }
    const editData = (id) => {
       setEid(id)
-      fetch("http://localhost:3000/emp/"+id,{
-         method:"PATCH",
+      fetch("http://localhost:3000/emp/" + id, {
+         method: "PATCH",
          headers: {
             "Content-Type": "application/json"
          },
       })
-      .then(res => res.json())
-      .then(json => setEmpdata(json));
+         .then(res => res.json())
+         .then(json => setEmpdata(json));
    }
    return (
       <div>
-         <form name="frm" onSubmit={setData} method='post'>
-            <label>Name:-</label>
-            <input type="text" id='name' name="name" value={empdata.name} onChange={handleChange} />
-            <br /><br />
+         <div className='frm2'>
+            <div className='frm'>
+               <form name="frm" className='fm1' onSubmit={setData} method='post'>
+                  <label>Name:-</label>
+                  <input type="text" className='t1' id='name' name="name" value={empdata.name} onChange={handleChange} />
+                  <br /><br />
 
-            <label htmlFor="">Age:-</label>
-            <input type="text" id='age' name="age" value={empdata.age} onChange={handleChange} />
-            <br /><br />
+                  <label htmlFor="">Age:-</label>
+                  <input type="text" className='t2' id='age' name="age" value={empdata.age} onChange={handleChange} />
+                  <br /><br />
 
-            <label htmlFor="">Salary:-</label>
-            <input type='text' id='salary' name="salary" value={empdata.salary} onChange={handleChange} />
-            <br /><br />
+                  <label htmlFor="">Salary:-</label>
+                  <input type='text' className='t3' id='salary' name="salary" value={empdata.salary} onChange={handleChange} />
+                  <br /><br />
 
-            <label htmlFor="">Address:-</label>
-            <input type="text" id='address' name="address" value={empdata.address} onChange={handleChange} />
-            <br /><br />
-            <input type="submit" value={"Save"} />
-         </form>
+                  <label htmlFor="">Add:-</label>
+                  <input type="text" className='t4' id='address' name="address" value={empdata.address} onChange={handleChange} />
+                  <br /><br />
+                  <input type="submit" className='btn btn-outline-warning fw-bold' value={"Save"} />
+               </form>
+            </div>
+         </div>
          <br />
          <br />
-         <table border={2}>
-            <tr>
+         <table border={2} className='table table-striped'>
+            <thead>
+            <tr className='fw-bold'>
                <td>Id</td>
                <td>Name</td>
                <td>Age</td>
@@ -126,6 +131,8 @@ function ApiForm() {
                <td>Address</td>
                <td>Action</td>
             </tr>
+            </thead>
+            <tbody>
             {
                dt.map((i) => (
                   <tr>
@@ -134,10 +141,11 @@ function ApiForm() {
                      <td>{i.age}</td>
                      <td>{i.salary}</td>
                      <td>{i.address}</td>
-                     <td><button type='button' onClick={() => editData(i.id)}>Edit</button><button type='button' onClick={() => removeData(i.id)}>Delete</button></td>
+                     <td><button type='button' className='btn btn-outline-primary fw-bold' onClick={() => editData(i.id)}>Edit</button>&nbsp;&nbsp;<button type='button' className='btn btn-danger fw-bold' onClick={() => removeData(i.id)}>Delete</button></td>
                   </tr>
                ))
             }
+            </tbody>
          </table>
       </div>
    )
