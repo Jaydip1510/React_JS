@@ -9,33 +9,72 @@ function ApiForm() {
       salary: "",
       address: ""
    });
-   useEffect(() => {
-      fetch("http://localhost:3000/emp")
-         .then(res => res.json())
-         .then(json => setDt(json));
-
-   });
    const handleChange = (e) => {
       const { name, value } = e.target;
       setEmpdata({ ...empdata, [name]: value });
    }
-   const setData = () => {
-
-      //inserted code
-      fetch("http://localhost:3000/emp", {
-         method: "POST",
-         headers: {
-            "Content-Type": "application/json"
-         },
-         body: JSON.stringify(empdata)
-      })
+   useEffect(() => {
+      fetch("http://localhost:3000/emp")
          .then(res => res.json())
-         .then(json => console.log(json));
-  
-
+         .then(json => setDt(json));
+   },[handleChange]);
+   
+   // const setData = () => {
+   //    if(eid != ''){
+   //       //update data
+   //       fetch("http://localhost:3000/emp/"+eid, {
+   //          method: 'PUT',
+   //          headers: {
+   //             "Content-Type": "application/json"
+   //          },
+   //          body: JSON.stringify(empdata)
+   //       })
+   //       .then(res => res.json())
+   //       .then(json => console.log(json));
+   //    }
+   //    else{
+   //       fetch("http://localhost:3000/emp", {
+   //       method: "POST",
+   //       headers: {
+   //          "Content-Type": "application/json"
+   //       },
+   //       body: JSON.stringify(empdata)
+   //    })
+   //       .then(res => res.json())
+   //       .then(json => console.log(json));
+   //    }
+   // }
+   const setData = () => {
+      if (eid) {
+         // Update data
+         fetch(`http://localhost:3000/emp/${eid}`, {
+            method: 'PUT',
+            headers: {
+               'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(empdata)
+         })
+            .then(res => res.json())
+            .then(json => console.log(json));
+      } else {
+         // Insert data
+         fetch('http://localhost:3000/emp', {
+            method: 'POST',
+            headers: {
+               'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(empdata)
+         })
+            .then(res => res.json())
+            .then(newData => {
+               // Update state with the new data
+               setDt([...dt, newData]);
+            })
+            .catch(error => console.error('Error inserting data:', error));
+      }
    }
    const removeData = (id) => {
-      fetch(`http://localhost:3000/emp/${id}`, {
+      fetch("http://localhost:3000/emp/"+id, {
          method: "DELETE",
          headers: {
             "Content-Type": "application/json"
@@ -47,7 +86,7 @@ function ApiForm() {
    }
    const editData = (id) => {
       setEid(id)
-      fetch(`http://localhost:3000/emp/${id}`,{
+      fetch("http://localhost:3000/emp/"+id,{
          method:"PATCH",
          headers: {
             "Content-Type": "application/json"

@@ -3,16 +3,30 @@
     {
       "id": 1,
       "name": "Jaydeep",
-      "age": "20",
-      "salary": "150000",
+      "age": "27",
+      "salary": "25000",
       "address": "Ahmedabad"
     },
     {
-      "name": "alpesh",
+      "name": "alpesh123",
       "age": "25",
       "salary": "15000",
       "address": "acharda",
       "id": 2
+    },
+    {
+      "name": "abc",
+      "age": "26",
+      "salary": "12000",
+      "address": "rajkot",
+      "id": 3
+    },
+    {
+      "name": "jaypal",
+      "age": "25",
+      "salary": "12000",
+      "address": "limbdi",
+      "id": 4
     }
   ]
 }
