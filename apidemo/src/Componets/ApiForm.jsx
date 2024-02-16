@@ -13,11 +13,18 @@ function ApiForm() {
       const { name, value } = e.target;
       setEmpdata({ ...empdata, [name]: value });
    }
+   const fetchitem = async () => {
+      try {
+         await fetch("http://localhost:3000/emp").then(res => res.json()).then
+         (res=>setDt(res));
+      }catch(error){
+          console.log(error.message);
+      }
+   }
    useEffect(() => {
-      fetch("http://localhost:3000/emp")
-         .then(res => res.json())
-         .then(json => setDt(json));
-   }, [handleChange]);
+      
+      fetchitem();
+   }, []);
 
    // const setData = () => {
    //    if(eid != ''){
@@ -73,7 +80,9 @@ function ApiForm() {
             .catch(error => console.error('Error inserting data:', error));
       }
    }
+
    const removeData = (id) => {
+
       fetch("http://localhost:3000/emp/" + id, {
          method: "DELETE",
          headers: {
@@ -83,7 +92,9 @@ function ApiForm() {
       })
          .then(res => res.json())
          .then(json => console.log(json));
+         fetchitem();
    }
+   
    const editData = (id) => {
       setEid(id)
       fetch("http://localhost:3000/emp/" + id, {
