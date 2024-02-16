@@ -22,35 +22,8 @@ function ApiForm() {
       }
    }
    useEffect(() => {
-      
       fetchitem();
    }, []);
-
-   // const setData = () => {
-   //    if(eid != ''){
-   //       //update data
-   //       fetch("http://localhost:3000/emp/"+eid, {
-   //          method: 'PUT',
-   //          headers: {
-   //             "Content-Type": "application/json"
-   //          },
-   //          body: JSON.stringify(empdata)
-   //       })
-   //       .then(res => res.json())
-   //       .then(json => console.log(json));
-   //    }
-   //    else{
-   //       fetch("http://localhost:3000/emp", {
-   //       method: "POST",
-   //       headers: {
-   //          "Content-Type": "application/json"
-   //       },
-   //       body: JSON.stringify(empdata)
-   //    })
-   //       .then(res => res.json())
-   //       .then(json => console.log(json));
-   //    }
-   // }
    const setData = () => {
       if (eid) {
          // Update data

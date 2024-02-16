@@ -13,6 +13,13 @@
       "salary": "25000",
       "address": "panshina",
       "id": 2
+    },
+    {
+      "name": "abc",
+      "age": "25",
+      "salary": "12000",
+      "address": "rajkot",
+      "id": 3
     }
   ]
 }
