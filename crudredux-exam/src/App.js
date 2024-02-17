@@ -7,6 +7,7 @@ import { useState } from 'react';
 function App() {
   const userInfo = useSelector((state) => state.userItems || [] );
   const dispatch = useDispatch();
+  const [eid,setEid] = useState('');
   const [inputValue,setInputValue] = useState({
       name:"",
       age:'',
@@ -31,6 +32,18 @@ function App() {
   }
   const deleteUser = (id) => {
      dispatch(DeleteItem(id));
+  }
+  const editData = (id) => {
+    const setData = userInfo[id];
+    if(setData){
+      setEid(id);
+      setInputValue({
+          name: setData.name || '',
+          age: setData.age || '',
+          salary: setData.salary || '',
+          address: setData.address || '',
+      })
+    }
   }
   return (
     <div className="App">
@@ -76,7 +89,7 @@ function App() {
                               <td>{i.age}</td>
                               <td>{i.salary}</td>
                               <td>{i.address}</td>
-                              <td><button onClick={() => deleteUser(index)}>Delete</button></td>
+                              <td><button onClick={() => editData(index)}>Edit</button><button onClick={() => deleteUser(index)}>Delete</button></td>
                             </tr>
                        )
                    })

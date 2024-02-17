@@ -29,6 +29,9 @@ function App() {
   const deleteItem = (id) => {
      dispatch(removeData(id));
   }
+  const editData = (id) => {
+    
+  }
   return (
     <div className="App">
       <form onSubmit={handleSubmit}>
@@ -68,7 +71,7 @@ function App() {
                   <td>{i.age}</td>
                   <td>{i.salary}</td>
                   <td>{i.address}</td>
-                  <td><button onClick={() => deleteItem(index)}>Delete</button></td>
+                  <td><button onClick={() => editData(index)}>Edit</button><button onClick={() => deleteItem(index)}>Delete</button></td>
                </tr>
               )
             })
