@@ -9,6 +9,13 @@ const Reducers = (state = initialState,action) =>{
                     ...state, userItems : [...state.userItems,action.payload]
                 }
             }
+            case "DeleteData" : {
+                return {
+                    ...state, userItems : state.userItems.filter(
+                        (i,index) => index !== action.payload
+                    )
+                }
+            }
             default : 
               return state
        }

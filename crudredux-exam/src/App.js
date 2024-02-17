@@ -1,7 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import { useDispatch, useSelector } from 'react-redux';
-import { addItem } from './Redux/Action';
+import { DeleteItem, addItem } from './Redux/Action';
 import { useState } from 'react';
 
 function App() {
@@ -28,6 +28,9 @@ function App() {
           salary:'',
           address:'',
       })
+  }
+  const deleteUser = (id) => {
+     dispatch(DeleteItem(id));
   }
   return (
     <div className="App">
@@ -73,7 +76,7 @@ function App() {
                               <td>{i.age}</td>
                               <td>{i.salary}</td>
                               <td>{i.address}</td>
-                              <td><button>Delete</button></td>
+                              <td><button onClick={() => deleteUser(index)}>Delete</button></td>
                             </tr>
                        )
                    })
