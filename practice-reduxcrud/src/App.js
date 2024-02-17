@@ -61,7 +61,7 @@ function App() {
           </tr>
           {
             empInfo.map((i,index) => {
-              return (
+                return (
                <tr>
                   <td>{index +1}</td>
                   <td>{i.name}</td>

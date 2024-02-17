@@ -1,0 +1,86 @@
+import logo from './logo.svg';
+import './App.css';
+import { useDispatch, useSelector } from 'react-redux';
+import { addItem } from './Redux/Action';
+import { useState } from 'react';
+
+function App() {
+  const userInfo = useSelector((state) => state.userItems || [] );
+  const dispatch = useDispatch();
+  const [inputValue,setInputValue] = useState({
+      name:"",
+      age:'',
+      salary:'',
+      address:'',
+  });
+
+  const handelChange = (e) => {
+      const {name, value} = e.target;
+      setInputValue({...inputValue, [name] : value});
+  }
+  const handelSubmmit = (e) => {
+      e.preventDefault();
+
+      dispatch(addItem(inputValue));
+      setInputValue({
+          name:"",
+          age:'',
+          salary:'',
+          address:'',
+      })
+  }
+  return (
+    <div className="App">
+         <form onSubmit={handelSubmmit}>
+              <label>Name:-</label>
+              <input type="text" name='name' value={inputValue.name} onChange={handelChange} />
+              <br/>
+              <br/>
+
+              <label>Age:-</label>
+              <input type='number' name='age' value={inputValue.age} onChange={handelChange} /> 
+              <br/>
+              <br/>
+
+              <label>Salary:-</label>
+              <input type="number" name='salary' value={inputValue.salary} onChange={handelChange} />
+              <br/>
+              <br/>
+
+              <label>Address:-</label>
+              <input type="text" name="address" value={inputValue.address} onChange={handelChange} /> 
+              <br/>
+              <br/>
+
+              <button type='submmit'>SaveData</button>
+         </form>
+         <br/><br/>
+         <table border={2}>
+                <tr>
+                    <td>Id</td>
+                    <td>Name</td>
+                    <td>Age</td>
+                    <td>Salary</td>
+                    <td>Address</td>
+                    <td>Action</td>
+                </tr>
+                {
+                   userInfo.map((i,index)=>{
+                       return (
+                            <tr>
+                              <td>{index+1}</td>
+                              <td>{i.name}</td>
+                              <td>{i.age}</td>
+                              <td>{i.salary}</td>
+                              <td>{i.address}</td>
+                              <td><button>Delete</button></td>
+                            </tr>
+                       )
+                   })
+                }
+         </table>
+    </div>
+  );
+}
+
+export default App;
