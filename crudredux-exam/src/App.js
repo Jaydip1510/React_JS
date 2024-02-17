@@ -1,7 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import { useDispatch, useSelector } from 'react-redux';
-import { DeleteItem, addItem } from './Redux/Action';
+import { DeleteItem, addItem,updateItem } from './Redux/Action';
 import { useState } from 'react';
 
 function App() {
@@ -45,9 +45,28 @@ function App() {
       })
     }
   }
+  const updateitem = (e) => {
+    e.preventDefault();
+
+    const updatevalue = {
+      id:eid,
+      name:inputValue.name,
+      age:inputValue.age,
+      salary:inputValue.salary,
+      address:inputValue.address,
+    };
+    dispatch(updateItem(updatevalue));
+    setInputValue({
+       name:'',
+       age:'',
+       salary:'',
+       address:'',
+    })
+    setEid('');
+  }
   return (
     <div className="App">
-         <form onSubmit={handelSubmmit}>
+         <form onSubmit={eid !== '' ? updateitem : handelSubmmit}>
               <label>Name:-</label>
               <input type="text" name='name' value={inputValue.name} onChange={handelChange} />
               <br/>

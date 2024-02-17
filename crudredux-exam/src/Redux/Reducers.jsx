@@ -16,6 +16,13 @@ const Reducers = (state = initialState,action) =>{
                     )
                 }
             }
+            case "UpdateData" : {
+                 return {
+                    ...state, userItems: state.userItems.map((i,index)=>
+                        index === action.payload.id ? action.payload : i
+                    ),
+                 };
+            }
             default : 
               return state
        }
