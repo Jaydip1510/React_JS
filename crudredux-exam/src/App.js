@@ -90,7 +90,8 @@ function App() {
               <button type='submmit'>SaveData</button>
          </form>
          <br/><br/>
-         <table border={2}>
+         <table border={2} className='table table-striped'>
+               <thead>
                 <tr>
                     <td>Id</td>
                     <td>Name</td>
@@ -99,6 +100,8 @@ function App() {
                     <td>Address</td>
                     <td>Action</td>
                 </tr>
+                </thead>
+                <tbody>
                 {
                    userInfo.map((i,index)=>{
                        return (
@@ -113,6 +116,7 @@ function App() {
                        )
                    })
                 }
+                </tbody>
          </table>
     </div>
   );
