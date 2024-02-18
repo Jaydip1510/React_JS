@@ -70,22 +70,22 @@ function AppData() {
                 <div className='frm'>
                     <form className='f1' onSubmit={uid !== '' ? updateData : handleSubmit}>
                         <label>Name:-</label>
-                        <input type='text' name='name' value={inputValue.name} onChange={handleChange} />
+                        <input type='text' className='t1' name='name' value={inputValue.name} onChange={handleChange} />
                         <br /><br />
 
                         <label>Age:-</label>
-                        <input type='tex' name='age' value={inputValue.age} onChange={handleChange} />
+                        <input type='tex' className='t2' name='age' value={inputValue.age} onChange={handleChange} />
                         <br /><br />
 
                         <label>Email:-</label>
-                        <input type='email' name='email' value={inputValue.email} onChange={handleChange} />
+                        <input type='email' className='t3' name='email' value={inputValue.email} onChange={handleChange} />
                         <br /><br />
 
                         <label>Password:-</label>
-                        <input type='password' name='password' value={inputValue.password} onChange={handleChange} />
+                        <input type='password' className='t4' name='password' value={inputValue.password} onChange={handleChange} />
                         <br /><br />
 
-                        <button type='submit'>SaveData</button>
+                        <button className='btn btn-primary' type='submit'>SaveData</button>
                     </form>
                 </div>
             </div>
@@ -93,7 +93,7 @@ function AppData() {
             <br />
             <table border={2} className='table table-striped'>
                 <thead>
-                    <tr>
+                    <tr className='fw-bold'>
                         <td>Id</td>
                         <td>Name</td>
                         <td>Age</td>
