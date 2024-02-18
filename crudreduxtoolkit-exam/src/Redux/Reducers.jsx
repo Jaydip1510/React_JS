@@ -1,16 +1,18 @@
-const intialState = {
-    empData: []
+import { createSlice } from "@reduxjs/toolkit";
+
+const initialState = {
+    empData: [],
 };
 
 const empSlice = createSlice({
-     name:'emp',
-     intialState,
-     reducers:{
-          addData:(state,action) => {
-              state.empData.push(action.payload);
-          }
-     }
-})
+    name: 'emp',
+    initialState,
+    reducers: {
+        addData: (state, action) => {
+            state.empData.push(action.payload);
+        },
+    },
+});
 
-export const {addData} = empSlice.actions;
+export const { addData } = empSlice.actions;
 export default empSlice.reducer;

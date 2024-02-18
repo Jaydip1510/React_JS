@@ -1,11 +1,8 @@
 import { configureStore } from "@reduxjs/toolkit";
-import { useReducer } from "./Reducers";
-
-
-
+import empReducer from './Reducers';
 const Store = configureStore({
     reducer:{
-        emp:useReducer
+        emp: empReducer
     },
 })
 

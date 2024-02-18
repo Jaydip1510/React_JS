@@ -50,7 +50,7 @@ function AppData() {
         </form>
         <br/>
         <br/>
-         <table>
+         <table border={2}>
             <tr>
                 <td>Id</td>
                 <td>Name</td>
@@ -68,7 +68,7 @@ function AppData() {
                             <td>{i.age}</td>
                             <td>{i.email}</td>
                             <td>{i.password}</td>
-                            <td><button type='button'>Submmit</button></td>
+                            <td><button type='button'>Delete</button></td>
                         </tr>
                     )
                 })
