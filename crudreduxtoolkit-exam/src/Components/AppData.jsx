@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
-import { addData, deleteItem } from '../Redux/Reducers';
+import { addData, deleteItem, updateItem } from '../Redux/Reducers';
 
 function AppData() {
     const empInfo = useSelector((state) => state.emp.empData || []);
@@ -44,9 +44,29 @@ function AppData() {
             })
         }
     }
+    const updateData = (e) => {
+       e.preventDefault();
+       const updateval = {
+          id:uid,
+          name:inputValue.name,
+          age:inputValue.age,
+          email:inputValue.email,
+          password:inputValue.password,
+          address:inputValue.address
+       }
+       dispatch(updateItem(updateval));
+       setInputValue({
+          name:'',
+          age:'',
+          email:'',
+          password:'',
+          address:''
+       })
+       setUid('');
+    }
   return (
     <div>
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={uid !== '' ? updateData : handleSubmit}>
          <label>Name:-</label>
          <input type='text' name='name' value={inputValue.name} onChange={handleChange} />
          <br/><br/>
@@ -67,7 +87,8 @@ function AppData() {
         </form>
         <br/>
         <br/>
-         <table border={2}>
+         <table border={2} className='table table-striped'>
+            <thead>
             <tr>
                 <td>Id</td>
                 <td>Name</td>
@@ -76,6 +97,8 @@ function AppData() {
                 <td>Password</td>
                 <td>Action</td>
             </tr>
+            </thead>
+            <tbody>
             {
                 empInfo.map((i,index) => {
                     return (
@@ -85,11 +108,12 @@ function AppData() {
                             <td>{i.age}</td>
                             <td>{i.email}</td>
                             <td>{i.password}</td>
-                            <td><button type='button' onClick={() => editData(index)}>Edit</button><button type='button' onClick={() => deleteData(index)}>Delete</button></td>
+                            <td><button type='button' className='btn btn-outline-success' onClick={() => editData(index)}>Edit</button>&nbsp;<button type='button' className='btn btn-outline-danger' onClick={() => deleteData(index)}>Delete</button></td>
                         </tr>
                     )
                 })
             }
+           </tbody>
          </table>
     </div>
   )
