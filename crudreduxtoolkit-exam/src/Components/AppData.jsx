@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
-import { addData } from '../Redux/Reducers';
+import { addData, deleteItem } from '../Redux/Reducers';
 
 function AppData() {
     const empInfo = useSelector((state) => state.emp.empData || []);
@@ -26,6 +26,9 @@ function AppData() {
             password:'',
             address:'',
         })
+    }
+    const deleteData = (id) => {
+        dispatch(deleteItem(id));
     }
   return (
     <div>
@@ -68,7 +71,7 @@ function AppData() {
                             <td>{i.age}</td>
                             <td>{i.email}</td>
                             <td>{i.password}</td>
-                            <td><button type='button'>Delete</button></td>
+                            <td><button type='button' onClick={() => deleteData(index)}>Delete</button></td>
                         </tr>
                     )
                 })

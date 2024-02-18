@@ -11,8 +11,11 @@ const empSlice = createSlice({
         addData: (state, action) => {
             state.empData.push(action.payload);
         },
+        deleteItem:(state, action) => {
+             state.empData = state.empData.filter((item,index)=> index !== action.payload);
+        }
     },
 });
 
-export const { addData } = empSlice.actions;
+export const { addData,deleteItem } = empSlice.actions;
 export default empSlice.reducer;
