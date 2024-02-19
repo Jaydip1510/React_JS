@@ -79,23 +79,23 @@ function App() {
         <div className='frm1'>
           <form className='f1' onSubmit={eid !== '' ? updateData : handleSubmit}>
             <label>Name:-</label>
-            <input className='t1' type="text" name='name' value={inputValue.name} onChange={handleChange} />
+            <input className='t1' type="text" name='name' value={inputValue.name} onChange={handleChange} placeholder='Enter Your Name' />
             <br /><br />
 
             <label>Age:-</label>
-            <input className='t2' type="text" name='age' value={inputValue.age} onChange={handleChange} />
+            <input className='t2' type="text" name='age' value={inputValue.age} onChange={handleChange} placeholder='Enter Your Age' />
             <br /><br />
 
             <label>Email:-</label>
-            <input className='t3' type="email" name='email' value={inputValue.email} onChange={handleChange} />
+            <input className='t3' type="email" name='email' value={inputValue.email} onChange={handleChange} placeholder='Enter Yout Email' />
             <br /><br />
 
             <label>Password:-</label>
-            <input className='t4' type='password' name='password' value={inputValue.password} onChange={handleChange} />
+            <input className='t4' type='password' name='password' value={inputValue.password} onChange={handleChange} placeholder='Enter Your Password' />
             <br /><br />
 
             <label>Address:-</label>
-            <input className='t5' type='text' name='address' value={inputValue.address} onChange={handleChange} />
+            <input className='t5' type='text' name='address' value={inputValue.address} onChange={handleChange} placeholder='Enter Your Address' />
             <br /><br />
 
             <button className='btn btn-warning' type='submmit'>SaveData</button>
