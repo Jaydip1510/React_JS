@@ -1,7 +1,50 @@
 .App {
   text-align: center;
 }
-
+.frm{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.frm1{
+      height: 350px;
+      width: 450px;
+      border: 2px solid black;
+      border-radius: 15px;
+      background-color: rgb(51, 225, 135);
+}
+.f1{
+     margin-top: 20px;
+}
+label{
+     font-weight: 700;
+    
+}
+.txt{
+      font-family: cursive;
+      color: blue;
+      text-decoration: underline;
+}
+.t1{
+     margin-left: 10px;
+     width: 220px;
+}
+.t2{
+     margin-left: 25px;
+     width: 220px;
+}
+.t3{
+     margin-left: 15px;
+     width: 220px;
+}
+.t4{
+     margin-right: 15px;
+     width: 220px;
+}
+.t5{
+     margin-right: 5px;
+     width: 220px;
+}
 .App-logo {
   height: 40vmin;
   pointer-events: none;
