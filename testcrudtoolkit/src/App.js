@@ -98,7 +98,7 @@ function App() {
             <input className='t5' type='text' name='address' value={inputValue.address} onChange={handleChange} placeholder='Enter Your Address' />
             <br /><br />
 
-            <button className='btn btn-warning' type='submmit'>SaveData</button>
+            <button className='btn btn-warning fw-bold' type='submmit'>SaveData</button>
           </form>
         </div>
       </div>
@@ -126,7 +126,7 @@ function App() {
                   <td>{i.email}</td>
                   <td>{i.password}</td>
                   <td>{i.address}</td>
-                  <td><button className='btn btn-outline-success' onClick={() => editData(index)}>Edit</button>&nbsp;&nbsp;<button className='btn btn-outline-danger' onClick={() => deleteData(index)}>Delete</button></td>
+                  <td><button className='btn btn-outline-success fw-bold' onClick={() => editData(index)}>Edit</button>&nbsp;&nbsp;<button className='btn btn-outline-danger fw-bold' onClick={() => deleteData(index)}>Delete</button></td>
                 </tr>
               )
             })
