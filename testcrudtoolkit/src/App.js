@@ -9,6 +9,7 @@ import { useSelector } from 'react-redux';
 function App() {
   const empInfo = useSelector((state) => state.empData || []);
   const dispatch = useDispatch('');
+  const [eid,setEid] = useState('');
   const [inputValue,setInputValue] = useState({
        name:'',
        age:'',
@@ -35,9 +36,27 @@ function App() {
   const deleteData = (id) => {
        dispatch(removeData(id));
   }
+  const editData = (id) => {
+      const eData = empInfo[id];
+      if(eData){
+         setEid(id);
+         setInputValue({
+            name:eData.name || '',
+            age:eData.age || '',
+            email:eData.email || '',
+            password:eData.password || '',
+            address:eData.address || ''
+         })
+      }
+  }
+
+  const updateData = (e) => {
+      e.preventDefault();
+      
+  }
   return (
     <div className="App">
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={eid !== '' ? updateData : handleSubmit}>
             <label>Name:-</label>
             <input type="text" name='name' value={inputValue.name} onChange={handleChange} />
             <br /><br/>
@@ -81,7 +100,7 @@ function App() {
                       <td>{i.email}</td>
                       <td>{i.password}</td>
                       <td>{i.address}</td>
-                      <td><button onClick={() => deleteData(index)}>Delete</button></td>
+                      <td><button onClick={() => editData(index)}>Edit</button><button onClick={() => deleteData(index)}>Delete</button></td>
                   </tr>
                   )
                })
