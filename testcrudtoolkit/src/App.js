@@ -2,7 +2,7 @@ import logo from './logo.svg';
 import './App.css';
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { addData, removeData } from './Redux/Action';
+import { addData, removeData,updateItem } from './Redux/Action';
 import { useSelector } from 'react-redux';
 
 
@@ -53,7 +53,25 @@ function App() {
   const updateData = (e) => {
       e.preventDefault();
       
+      const updatevalue = {
+          id:eid,
+          name:inputValue.name,
+          age:inputValue.age,
+          email:inputValue.email,
+          password:inputValue.password,
+          address:inputValue.address
+      }
+      dispatch(updateItem(updatevalue));
+      setInputValue({
+          name:'',
+          age:'',
+          email:'',
+          password:'',
+          address:'',
+      })
+      setEid('');
   }
+
   return (
     <div className="App">
         <form onSubmit={eid !== '' ? updateData : handleSubmit}>

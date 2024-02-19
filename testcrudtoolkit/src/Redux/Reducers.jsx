@@ -16,7 +16,7 @@ const Reducers = (state=initialState,action) => {
                     )
                 }
             }
-            case "UpdateData" : {
+            case "Update_Item" : {
                  return {
                     ...state, empData: state.empData.map((i,index)=>
                         index === action.payload.id ? action.payload : i
