@@ -1,7 +1,51 @@
 .App {
   text-align: center;
 }
-
+.frm1{
+      height: 350px;
+      width: 450px;
+      border: 2px solid green;
+      border: none;
+      border-radius: 15px;
+      background: rgb(195,34,34);
+      background: linear-gradient(0deg, rgba(195,34,34,1) 0%, rgba(14,255,10,0.7904411764705882) 100%);
+}
+.frm{
+     display: flex;
+     justify-content: center;
+     align-items: center;
+}
+.f1{
+     margin-top: 30px;
+}
+label{
+     font-weight: 700;
+}
+.t1{
+    margin-left: 15px;
+    height: 35px;
+    width: 220px;
+}
+.t2{
+    margin-left: 25px;
+    height: 35px;
+    width: 220px;
+}
+.t3{
+    margin-left: 15px;
+    height: 35px;
+    width: 220px;
+}
+.t4{
+    margin-right: 15px;
+    height: 35px;
+    width: 220px;
+}
+.txt{
+      font-family: cursive;
+      color: rgb(19, 228, 255);
+      text-decoration: underline;
+}
 .App-logo {
   height: 40vmin;
   pointer-events: none;
