@@ -3,7 +3,8 @@ import React, { useState } from 'react'
 function Formfunctionbasecomponent() {
     const [inputs, setInputs] = useState({});
     const [qual, setQual] = useState([]);
-    const [alluserdata, setUserdata] = useState(JSON.parse(localStorage.getItem('UserInfo')))
+    const initialUserData = JSON.parse(localStorage.getItem('UserInfo')) || [];
+    const [alluserdata, setUserdata] = useState(initialUserData);
     const [editMode, setEditMode] = useState(false); // Define edit mode state
     const [editIndex, setEditIndex] = useState(null); // Define edit index state
     const submitData = (e) => {
