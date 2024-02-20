@@ -22,11 +22,6 @@ const Apiform = () => {
         }
      }
     useEffect(() => {
-        // axios.get('http://localhost:3000/user')
-        //     .then((res) => setData(res.data))
-        //     .catch((error) => {
-        //         console.error('Error fetching data:', error);
-        //     });
             fetchitem();
     }, []);
     const handleSubmmit = (e) => {
