@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react'
 
 const Apiform = () => {
     const [data,setData] = useState([])
+    const [uid,setUid] = useState();
     const [userData,setUserData] = useState({
         name:'',
         age:'',
@@ -53,6 +54,17 @@ const Apiform = () => {
             });
             fetchitem();
     };
+    const editData = (id) => {
+         setUid(id);
+         axios.patch(`http://localhost:3000/user/${id}`)
+         .then(res => {
+            console.log(res.data); 
+            setUserData(res.data);
+        })
+        .catch(error => {
+            console.error('Error editing data:', error);
+        });
+    }
   return (
     <div>
       <form onSubmit={handleSubmmit}>
@@ -92,7 +104,7 @@ const Apiform = () => {
                         <td>{i.age}</td>
                         <td>{i.email}</td>
                         <td>{i.password}</td>
-                        <td><button type='button' onClick={() => deleteData(i.id)}>Delete</button></td>
+                        <td><button type='button' onClick={() => editData(i.id)}>Edit</button><button type='button' onClick={() => deleteData(i.id)}>Delete</button></td>
                     </tr>  
               ))
           }
