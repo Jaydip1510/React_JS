@@ -8,25 +8,32 @@
       "password": "jaydip123"
     },
     {
-      "id": 2,
-      "name": "alpesh",
-      "age": "23",
-      "email": "alpesh@gmail.com",
-      "password": "alpesh123"
+      "name": "abc",
+      "age": "26",
+      "email": "abc@gmail.com",
+      "password": "qwert",
+      "id": 2
     },
     {
-      "name": "abc",
-      "age": "20",
-      "email": "abc@gmail.com",
-      "password": "qwer",
+      "name": "alpesh",
+      "age": "25",
+      "email": "alpesh@gmail.com",
+      "password": "zxcvb",
       "id": 3
     },
     {
-      "name": "jaydip",
-      "age": "26",
-      "email": "jaydipmakwana1510@gmail.com",
-      "password": "asdf",
+      "name": "sdsa",
+      "age": "15",
+      "email": "dsfgb@fdd.com",
+      "password": "eferfe",
       "id": 4
+    },
+    {
+      "name": "jaypal",
+      "age": "27",
+      "email": "jaypal12@cvdc.com",
+      "password": "jaypal123",
+      "id": 5
     }
   ]
 }

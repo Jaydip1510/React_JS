@@ -27,8 +27,9 @@ const Apiform = () => {
     }, []);
     const handleSubmmit = (e) => {
         e.preventDefault();
-    
-        axios.post('http://localhost:3000/user', userData)
+        if(uid){
+            //update
+            axios.put(`http://localhost:3000/user/${uid}`, userData)
             .then(res => {
                 console.log(res.data);
                 setUserData({
@@ -37,12 +38,33 @@ const Apiform = () => {
                     email: '',
                     password: ''
                 });
-                
+                setUid(null); 
+                fetchitem(); 
             })
             .catch(error => {
-                console.error('Error:', error);
+                console.error('Error updating data:', error);
             });
-            fetchitem();
+
+        }else{
+           
+    
+            axios.post('http://localhost:3000/user', userData)
+                .then(res => {
+                    console.log(res.data);
+                    setUserData({
+                        name: '',
+                        age: '',
+                        email: '',
+                        password: ''
+                    });
+                    
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                });
+                fetchitem();
+        }
+        
     }
     const deleteData = (id) => {
         axios.delete(`http://localhost:3000/user/${id}`)
@@ -67,7 +89,7 @@ const Apiform = () => {
     }
   return (
     <div>
-      <form onSubmit={handleSubmmit}>
+      <form onSubmit={handleSubmmit} method='post'>
           <label>Name:-</label>
           <input type="text" name='name' value={userData.name} onChange={handleChange} />
           <br/><br/>
