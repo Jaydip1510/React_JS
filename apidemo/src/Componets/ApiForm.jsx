@@ -51,6 +51,7 @@ function ApiForm() {
                setDt([...dt, newData]);
             })
             .catch(error => console.error('Error inserting data:', error));
+            fetchitem();
       }
    }
 
