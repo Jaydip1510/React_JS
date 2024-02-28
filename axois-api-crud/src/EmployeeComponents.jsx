@@ -28,6 +28,23 @@ function EmployeeComponents() {
         await deleteDoc(doc(db,"empData",id))
     }
 
+    const editData = async(id) => {
+        const dataToEdit = allData.find((item) => item.id === id);
+
+        // Check if dataToEdit exists
+        if (dataToEdit) {
+            // Open a form or modal with the current data for editing
+            // You can set the form values using the state
+            setInputValue({
+                name: dataToEdit.name,
+                age: dataToEdit.age,
+                email: dataToEdit.email,
+                password: dataToEdit.password,
+                salary: dataToEdit.salary,
+            });
+        }
+    }
+
     const handleChange = (e) => {
         const { name, value } = e.target;
         setInputValue({ ...inputValue, [name]: value });
@@ -111,7 +128,7 @@ function EmployeeComponents() {
                                 <td>{i.email}</td>
                                 <td>{i.password}</td>
                                 <td>{i.salary}</td>
-                                <td><button onClick={() => deleteData(i.id)}>Delete</button></td>
+                                <td><button onClick={() => editData(i.id)}>Edit</button><button onClick={() => deleteData(i.id)}>Delete</button></td>
                             </tr>
                         ))
                     }
@@ -121,4 +138,4 @@ function EmployeeComponents() {
     )
 }
 
-export default EmployeeComponents;
+export default EmployeeComponents
