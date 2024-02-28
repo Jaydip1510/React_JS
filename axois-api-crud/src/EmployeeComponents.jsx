@@ -110,7 +110,7 @@ function EmployeeComponents() {
             </div>
             <br /><br />
             <h3 className='App'>User Table</h3>
-            <table className='table table-striped'>
+            <table border={2} className='table table-striped'>
                 <thead>
                     <tr style={{ textAlign: 'center', fontWeight: "bold" }}>
                         <td>id</td>
