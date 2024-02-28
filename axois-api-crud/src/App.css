@@ -1,14 +1,28 @@
 .App {
   text-align: center;
+  text-decoration: underline;
+  color: rgba(14,255,10,0.7904411764705882);
 }
+
+.frm{
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     text-align: center;
+}
+label{
+      margin-top: 20px;
+}
+
 .frm1{
-      height: 350px;
+      height: 410px;
       width: 450px;
       border: 2px solid green;
       border: none;
       border-radius: 15px;
       background: rgb(195,34,34);
       background: linear-gradient(0deg, rgba(195,34,34,1) 0%, rgba(14,255,10,0.7904411764705882) 100%);
+      margin-top: 15px;
 }
 .frm{
      display: flex;
