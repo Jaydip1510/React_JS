@@ -1,28 +1,43 @@
-import { addDoc, collection, doc, onSnapshot, query } from 'firebase/firestore';
+import { addDoc, collection, deleteDoc, doc, onSnapshot, query } from 'firebase/firestore';
 import { db } from './firebase/Demofirebase';
 import React, { useEffect, useState } from 'react';
 
 function EmployeeComponents() {
-    const [inputValue,setInputValue] = useState({
-        name:'',
-        age:'',
-        email:'',
-        password:'',
-        salary:'',
+    const [inputValue, setInputValue] = useState({
+        name: '',
+        age: '',
+        email: '',
+        password: '',
+        salary: '',
     })
-    const [allData,setAllData] = useState([]);
+    const [allData, setAllData] = useState([]);
 
+    // useEffect(() => {
+    //     const j = query(collection(db,'empData'))
+    //     const userdata = onSnapshot(j,(querySnapshot)=>{
+    //         let dataArray = [];
+    //         querySnapshot.forEach((doc)=>{
+    //             dataArray.push({...doc.data(),id: doc.id});
+    //         });
+    //         setAllData(dataArray);
+    //     })
+    //     return () => userdata;
+    // },[]);
     useEffect(() => {
-        const j = query(collection(db,'empData'));
-        const data = onSnapshot(j,(querySnapshot)=>{
+        const j = query(collection(db, 'empData'))
+        const unsubscribe = onSnapshot(j, (querySnapshot) => {
             let dataArray = [];
-            querySnapshot.forEach((doc)=>{
-                dataArray.push({...doc.data(),id: doc.id});
+            querySnapshot.forEach((doc) => {
+                dataArray.push({ ...doc.data(), id: doc.id });
             });
             setAllData(dataArray);
-        })
-        return () => data;
-    },[]);
+        });
+        return () => unsubscribe();
+    }, []);
+
+    const deleteData = async(id) => {
+        await deleteDoc(doc(db,"empData",id))
+    }
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -84,9 +99,9 @@ function EmployeeComponents() {
 
                 <button type='submit'>Save Data</button>
             </form>
-            <br/><br/>
-            <table>
-                  <thead>
+            <br /><br />
+            <table border={2}>
+                <thead>
                     <tr>
                         <td>id</td>
                         <td>Name</td>
@@ -96,22 +111,22 @@ function EmployeeComponents() {
                         <td>Salary</td>
                         <td>Action</td>
                     </tr>
-                  </thead>
-                  <tbody>
+                </thead>
+                <tbody>
                     {
-                        allData.map((i)=>{
-                          <tr>
-                            <td>{i.id}</td>
-                            <td>{i.name}</td>
-                            <td>{i.age}</td>
-                            <td>{i.email}</td>
-                            <td>{i.password}</td>
-                            <td>{i.salary}</td>
-                            <td><button>Delete</button></td>
-                          </tr>
-                        })
+                        allData.map((i) => (
+                            <tr key={i.id}>
+                                <td>{i.id}</td>
+                                <td>{i.name}</td>
+                                <td>{i.age}</td>
+                                <td>{i.email}</td>
+                                <td>{i.password}</td>
+                                <td>{i.salary}</td>
+                                <td><button onClick={() => deleteData(i.id)}>Delete</button></td>
+                            </tr>
+                        ))
                     }
-                  </tbody>
+                </tbody>
             </table>
         </div>
     )
