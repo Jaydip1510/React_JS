@@ -12,17 +12,6 @@ function EmployeeComponents() {
     })
     const [allData, setAllData] = useState([]);
 
-    // useEffect(() => {
-    //     const j = query(collection(db,'empData'))
-    //     const userdata = onSnapshot(j,(querySnapshot)=>{
-    //         let dataArray = [];
-    //         querySnapshot.forEach((doc)=>{
-    //             dataArray.push({...doc.data(),id: doc.id});
-    //         });
-    //         setAllData(dataArray);
-    //     })
-    //     return () => userdata;
-    // },[]);
     useEffect(() => {
         const j = query(collection(db, 'empData'))
         const unsubscribe = onSnapshot(j, (querySnapshot) => {
