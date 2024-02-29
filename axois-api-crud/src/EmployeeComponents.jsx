@@ -1,4 +1,4 @@
-import { addDoc, collection, deleteDoc, doc, onSnapshot, query } from 'firebase/firestore';
+import { addDoc, collection, deleteDoc, doc, onSnapshot, query, updateDoc, getDocs } from 'firebase/firestore';
 import { db } from './firebase/Demofirebase';
 import React, { useEffect, useState } from 'react';
 
@@ -9,32 +9,32 @@ function EmployeeComponents() {
         email: '',
         password: '',
         salary: '',
-    })
+    });
     const [allData, setAllData] = useState([]);
+    const [id, setId] = useState(null);
 
     useEffect(() => {
-        const j = query(collection(db, 'empData'))
-        const unsubscribe = onSnapshot(j, (querySnapshot) => {
-            let dataArray = [];
-            querySnapshot.forEach((doc) => {
-                dataArray.push({ ...doc.data(), id: doc.id });
-            });
+        const fetchData = async () => {
+            const querySnapshot = await getDocs(query(collection(db, 'empData')));
+            const dataArray = querySnapshot.docs.map((doc) => ({ ...doc.data(), id: doc.id }));
             setAllData(dataArray);
+        };
+
+        const unsubscribe = onSnapshot(query(collection(db, 'empData')), () => {
+            fetchData();
         });
+
         return () => unsubscribe();
     }, []);
 
     const deleteData = async (id) => {
-        await deleteDoc(doc(db, "empData", id))
-    }
+        await deleteDoc(doc(db, "empData", id));
+    };
 
-    const editData = async (id) => {
+    const editData = (id) => {
         const dataToEdit = allData.find((item) => item.id === id);
-
-        // Check if dataToEdit exists
         if (dataToEdit) {
-            // Open a form or modal with the current data for editing
-            // You can set the form values using the state
+            setId(id);
             setInputValue({
                 name: dataToEdit.name,
                 age: dataToEdit.age,
@@ -43,27 +43,39 @@ function EmployeeComponents() {
                 salary: dataToEdit.salary,
             });
         }
-    }
+    };
 
     const handleChange = (e) => {
         const { name, value } = e.target;
         setInputValue({ ...inputValue, [name]: value });
-    }
-    const handleSubmmit = (e) => {
+    };
+
+    const handleSubmmit = async (e) => {
         e.preventDefault();
-        const { name, age, email, password, salary } = inputValue;
+        try {
+            const { name, age, email, password, salary } = inputValue;
 
-        if (name !== '' && age !== '' && email !== '' && password !== '' && salary !== '') {
-            addDoc(collection(db, "empData"), {
-                name,
-                age,
-                email,
-                password,
-                salary,
-                completed: false,
-            });
-
-            // Reset all input fields
+            if (id !== "") {
+                // Updating existing data
+                await updateDoc(doc(db, 'empData', id), {
+                    name,
+                    age,
+                    email,
+                    password,
+                    salary,
+                });
+                console.log('Data updated successfully');
+            } else {
+                await addDoc(collection(db, 'empData'), {
+                    name,
+                    age,
+                    email,
+                    password,
+                    salary,
+                    completed: false,
+                });
+                console.log('New data added successfully');
+            }
             setInputValue({
                 name: '',
                 age: '',
@@ -71,10 +83,12 @@ function EmployeeComponents() {
                 password: '',
                 salary: '',
             });
+
+            setId(null); // Reset id state
+        } catch (error) {
+            console.error('Error updating data:', error);
         }
-    }
-
-
+    };
     return (
         <div>
             <h3 style={{textAlign:'center',color:'blue',textDecoration:'underline'}}>User Form</h3>
