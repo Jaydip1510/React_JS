@@ -1,6 +1,6 @@
 import { initializeApp } from "firebase/app"
 import { getFirestore } from "firebase/firestore";
-
+import{getStorage} from "firebase/storage";
 
 
 const firebaseConfig = {
@@ -13,6 +13,6 @@ const firebaseConfig = {
     measurementId: "G-CSH3D2YRW8"
   };
   const app = initializeApp(firebaseConfig)
-  const db = getFirestore(app)
-  
+  const db = getFirestore(app)  
   export {db}
+  export const imageDb = getStorage(app);
