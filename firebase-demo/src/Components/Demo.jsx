@@ -11,6 +11,7 @@ function Demo() {
   return (
     <div className='App'>
       <input type='file' onChange={(e) =>setImg(e.target.files[0])}/>
+      <br/><br/>
       <button onClick={handleClick}>Upload</button>
     </div>
   )
