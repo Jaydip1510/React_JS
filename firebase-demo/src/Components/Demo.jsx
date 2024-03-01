@@ -2,27 +2,21 @@ import React, { useEffect, useState } from 'react'
 import { imageDb } from '../firebase/Dbfirebase'
 import { getDownloadURL, listAll, ref, uploadBytes } from 'firebase/storage';
 import { v4 } from 'uuid';
-
-//   const [img, setImg] = useState('');
-//   const [imgUrl,setImgUrl] = useState([]);
-
-//   // const handleClick = () => {
-//   //     const imgRef = ref(imageDb, v4())
-//   //     uploadBytes(imgRef, img)
-//   //   }
-   
-//   // }
-//   return (
-//     <div className='App'>
-//       <input type='file' onChange={(e) => setImg(e.target.files[0])} />
-//       <br /><br />
-//       <button onClick={handleClick}>Upload</button>
-//     </div>
-//   )
-// }
 function Demo() {
   const [img, setImg] = useState(null);
   const [imgUrl, setImgUrl] = useState([]);
+
+  // const handleClick = () => {
+  //     const imgRef = ref(imageDb, v4())
+  //     uploadBytes(imgRef, img)
+  //   }
+  // return (
+  //   <div className='App'>
+  //     <input type='file' onChange={(e) => setImg(e.target.files[0])} />
+  //     <br /><br />
+  //     <button onClick={handleClick}>Upload</button>
+  //   </div>
+  // )
 
   const handleClick = async () => {
     if (img !== null) {
@@ -53,13 +47,6 @@ function Demo() {
       <br /><br />
       <button onClick={handleClick}>Upload</button>
       <br/><br/>
-      {/* {
-        imgUrl.map((url, index) => (
-          <div key={index}>
-            <img src={url} alt={`img-${index}`} height="200px" width="150px" />
-          </div>
-        ))
-      } */}
       <table border={2}>
          <thead>
               <tr>
@@ -87,3 +74,8 @@ function Demo() {
 }
 
 export default Demo
+
+  
+
+
+
