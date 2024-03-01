@@ -5,7 +5,7 @@ import { v4 } from 'uuid';
 function Demo() {
   const [img,setImg] = useState('');
   const handleClick = () => {
-  const imgRef = ref(imageDb,`files/${v4()}`)
+  const imgRef = ref(imageDb,v4())
   uploadBytes(imgRef,img)
   }
   return (
