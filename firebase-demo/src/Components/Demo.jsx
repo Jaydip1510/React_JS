@@ -68,7 +68,7 @@ function Demo() {
                    <tr key={index}>
                      <td>{index+1}</td>
                      <td><img src={url} alt={`img-${index}`} height="100px" width="150px" /></td>
-                     <td><button onClick={() => deleteData(url)}>Delete</button></td>
+                     <td><button>Edit</button>&nbsp;<button onClick={() => deleteData(url)}>Delete</button></td>
                    </tr>
                   )
               })
@@ -80,8 +80,3 @@ function Demo() {
 }
 
 export default Demo
-
-  
-
-
-
