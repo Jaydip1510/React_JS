@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { imageDb } from '../firebase/Dbfirebase'
-import { getDownloadURL, listAll, ref, uploadBytes } from 'firebase/storage';
+import { getDownloadURL, listAll, ref, uploadBytes,deleteObject } from 'firebase/storage';
 import { v4 } from 'uuid';
 function Demo() {
   const [img, setImg] = useState(null);
@@ -41,6 +41,12 @@ function Demo() {
     fetchImages();
   }, []);
 
+  const deleteData = async (id) => {
+      const imgRef = ref(imageDb, id);
+      await deleteObject(imgRef);
+      setImgUrl((prevUrls) => prevUrls.filter((url) => url !== id));
+  };
+
   return (
     <div className='App'>
       <input type='file' onChange={(e) => setImg(e.target.files[0])} />
@@ -62,7 +68,7 @@ function Demo() {
                    <tr key={index}>
                      <td>{index+1}</td>
                      <td><img src={url} alt={`img-${index}`} height="100px" width="150px" /></td>
-                     <td><button>Delete</button></td>
+                     <td><button onClick={() => deleteData(url)}>Delete</button></td>
                    </tr>
                   )
               })
