@@ -48,12 +48,12 @@ function Demo() {
   };
 
   return (
-    <div className='App'>
+    <div>
       <input type='file' onChange={(e) => setImg(e.target.files[0])} />
       <br /><br />
       <button onClick={handleClick}>Upload</button>
       <br/><br/>
-      <table border={2}>
+      <table border={2} className='tbl'>
          <thead>
               <tr>
                   <td>Id</td>
