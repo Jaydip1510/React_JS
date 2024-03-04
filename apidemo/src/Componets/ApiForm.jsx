@@ -16,9 +16,9 @@ function ApiForm() {
    const fetchitem = async () => {
       try {
          await fetch("http://localhost:3000/emp").then(res => res.json()).then
-         (res=>setDt(res));
-      }catch(error){
-          console.log(error.message);
+            (res => setDt(res));
+      } catch (error) {
+         console.log(error.message);
       }
    }
    useEffect(() => {
@@ -51,7 +51,7 @@ function ApiForm() {
                setDt([...dt, newData]);
             })
             .catch(error => console.error('Error inserting data:', error));
-            fetchitem();
+         fetchitem();
       }
    }
 
@@ -66,9 +66,9 @@ function ApiForm() {
       })
          .then(res => res.json())
          .then(json => console.log(json));
-         fetchitem();
+      fetchitem();
    }
-   
+
    const editData = (id) => {
       setEid(id)
       fetch("http://localhost:3000/emp/" + id, {
@@ -108,28 +108,28 @@ function ApiForm() {
          <br />
          <table border={2} className='table table-striped'>
             <thead>
-            <tr className='fw-bold'>
-               <td>Id</td>
-               <td>Name</td>
-               <td>Age</td>
-               <td>Salary</td>
-               <td>Address</td>
-               <td>Action</td>
-            </tr>
+               <tr className='fw-bold'>
+                  <td>Id</td>
+                  <td>Name</td>
+                  <td>Age</td>
+                  <td>Salary</td>
+                  <td>Address</td>
+                  <td>Action</td>
+               </tr>
             </thead>
             <tbody>
-            {
-               dt.map((i) => (
-                  <tr>
-                     <td>{i.id}</td>
-                     <td>{i.name}</td>
-                     <td>{i.age}</td>
-                     <td>{i.salary}</td>
-                     <td>{i.address}</td>
-                     <td><button type='button' className='btn btn-outline-primary fw-bold' onClick={() => editData(i.id)}>Edit</button>&nbsp;&nbsp;<button type='button' className='btn btn-outline-danger fw-bold' onClick={() => removeData(i.id)}>Delete</button></td>
-                  </tr>
-               ))
-            }
+               {
+                  dt.map((i) => (
+                     <tr>
+                        <td>{i.id}</td>
+                        <td>{i.name}</td>
+                        <td>{i.age}</td>
+                        <td>{i.salary}</td>
+                        <td>{i.address}</td>
+                        <td><button type='button' className='btn btn-outline-primary fw-bold' onClick={() => editData(i.id)}>Edit</button>&nbsp;&nbsp;<button type='button' className='btn btn-outline-danger fw-bold' onClick={() => removeData(i.id)}>Delete</button></td>
+                     </tr>
+                  ))
+               }
             </tbody>
          </table>
       </div>

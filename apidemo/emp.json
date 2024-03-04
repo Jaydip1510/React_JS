@@ -2,31 +2,24 @@
   "emp": [
     {
       "id": 1,
-      "name": "Jaydeep",
+      "name": "Jaydip",
       "age": "27",
       "salary": "25000",
-      "address": "Ahmedabad"
+      "address": "panshina"
     },
     {
       "name": "alpesh",
       "age": "26",
-      "salary": "25000",
-      "address": "panshina",
+      "salary": "20000",
+      "address": "limbdi",
       "id": 2
     },
     {
-      "name": "abc",
-      "age": "20",
-      "salary": "15000",
-      "address": "limbdi",
+      "name": "jaypal",
+      "age": "27",
+      "salary": "22000",
+      "address": "tokarala",
       "id": 3
-    },
-    {
-      "name": "hardik",
-      "age": "25",
-      "salary": "12000",
-      "address": "acharda",
-      "id": 4
     }
   ]
 }
