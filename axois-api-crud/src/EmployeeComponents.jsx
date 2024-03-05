@@ -54,8 +54,8 @@ function EmployeeComponents() {
         e.preventDefault();
         try {
             const { name, age, email, password, salary } = inputValue;
-
-            if (id !== "") {
+    
+            if (id !== null) {
                 // Updating existing data
                 await updateDoc(doc(db, 'empData', id), {
                     name,
@@ -66,16 +66,17 @@ function EmployeeComponents() {
                 });
                 console.log('Data updated successfully');
             } else {
+                // Adding new data
                 await addDoc(collection(db, 'empData'), {
                     name,
                     age,
                     email,
                     password,
                     salary,
-                    completed: false,
                 });
                 console.log('New data added successfully');
             }
+    
             setInputValue({
                 name: '',
                 age: '',
@@ -83,7 +84,7 @@ function EmployeeComponents() {
                 password: '',
                 salary: '',
             });
-
+    
             setId(null); // Reset id state
         } catch (error) {
             console.error('Error updating data:', error);

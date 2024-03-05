@@ -8,11 +8,11 @@ import EmployeeComponents from './EmployeeComponents';
 function App() {
   return (
     <div>
-      <Googlecomponent/>
+      {/* <Googlecomponent/> */}
       {/* <h3 className='txt'>Axios CrudOperation</h3> */}
       {/* <Apiform/> */}
       {/* <FirebaseComponents/> */}
-      {/* <EmployeeComponents/> */}
+      <EmployeeComponents/>
     </div>
   );
 }
