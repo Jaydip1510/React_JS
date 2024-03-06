@@ -4,7 +4,7 @@ const EditModal = ({ img, updatedImg, setUpdatedImg, handleUpdate }) => {
   return (
     <div>
       <h2>Edit Image</h2>
-      <img src={img} alt="edit-img" />
+      <img src={img} alt="edit-img" height={"150px"} width={"200px"} />
       <input
         type="file"
         onChange={(e) => setUpdatedImg(e.target.files[0])}
