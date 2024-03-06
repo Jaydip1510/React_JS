@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react'
 import { imageDb } from '../firebase/Dbfirebase'
-import { getDownloadURL, listAll, ref, uploadBytes,deleteObject } from 'firebase/storage';
+import { getDownloadURL, listAll, ref, uploadBytes, deleteObject } from 'firebase/storage';
 import { v4 } from 'uuid';
 function Demo() {
   const [img, setImg] = useState(null);
   const [imgUrl, setImgUrl] = useState([]);
+  const [imgId, setImgId] = useState("");
 
   // const handleClick = () => {
   //     const imgRef = ref(imageDb, v4())
@@ -19,11 +20,18 @@ function Demo() {
   // )
 
   const handleClick = async () => {
-    if (img !== null) {
+    if (img !== '' && imgId !== '') {
+      const imgRef = ref(imageDb, imgId);
+      await deleteObject(imgRef);
+      const imgRef1 = ref(imageDb, v4());
+      await uploadBytes(imgRef1, img);
+      const url = await getDownloadURL(imgRef1);
+      setImgUrl((prevUrls) => [...prevUrls, url]);
+    } else {
       const imgRef = ref(imageDb, v4());
-        await uploadBytes(imgRef, img);
-        const url = await getDownloadURL(imgRef);
-        setImgUrl((prevUrls) => [...prevUrls, url]);
+      await uploadBytes(imgRef, img);
+      const url = await getDownloadURL(imgRef);
+      setImgUrl((prevUrls) => [...prevUrls, url]);
     }
   };
 
@@ -42,38 +50,42 @@ function Demo() {
   }, []);
 
   const deleteData = async (id) => {
-      const imgRef = ref(imageDb, id);
-      await deleteObject(imgRef);
-      setImgUrl((prevUrls) => prevUrls.filter((url) => url !== id));
+    const imgRef = ref(imageDb, id);
+    await deleteObject(imgRef);
+    setImgUrl((prevUrls) => prevUrls.filter((url) => url !== id));
   };
+
+  const editData = async (id) => {
+    setImgId(id);
+  }
 
   return (
     <div>
       <input type='file' onChange={(e) => setImg(e.target.files[0])} />
       <br /><br />
       <button onClick={handleClick}>Upload</button>
-      <br/><br/>
+      <br /><br />
       <table border={2} className='tbl'>
-         <thead>
-              <tr>
-                  <td>Id</td>
-                  <td>Image</td>
-                  <td>Action</td>
-              </tr>
-         </thead>
-         <tbody>
+        <thead>
+          <tr>
+            <td>Id</td>
+            <td>Image</td>
+            <td>Action</td>
+          </tr>
+        </thead>
+        <tbody>
           {
-              imgUrl.map((url, index) => {
-                return (
-                   <tr key={index}>
-                     <td>{index+1}</td>
-                     <td><img src={url} alt={`img-${index}`} height="100px" width="150px" /></td>
-                     <td><button>Edit</button>&nbsp;<button onClick={() => deleteData(url)}>Delete</button></td>
-                   </tr>
-                  )
-              })
+            imgUrl.map((url, index) => {
+              return (
+                <tr key={index}>
+                  <td>{index + 1}</td>
+                  <td><img src={url} alt={`img-${index}`} height="100px" width="150px" /></td>
+                  <td><button onClick={() => editData(url)}>Edit</button>&nbsp;<button onClick={() => deleteData(url)}>Delete</button></td>
+                </tr>
+              )
+            })
           }
-         </tbody>
+        </tbody>
       </table>
     </div>
   );
