@@ -11,7 +11,8 @@ function AppData() {
         age: '',
         email: '',
         password: '',
-        address: ''
+        address: '',
+        
     })
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -26,6 +27,7 @@ function AppData() {
             email: '',
             password: '',
             address: '',
+            
         })
     }
     const deleteData = (id) => {
@@ -41,6 +43,7 @@ function AppData() {
                 email: edititem.email || '',
                 password: edititem.password || '',
                 address: edititem.address || '',
+               
             })
         }
     }
@@ -84,6 +87,7 @@ function AppData() {
                         <label>Password:-</label>
                         <input type='password' className='t4' name='password' value={inputValue.password} onChange={handleChange} />
                         <br /><br />
+
 
                         <button className='btn btn-primary' type='submit'>SaveData</button>
                     </form>
