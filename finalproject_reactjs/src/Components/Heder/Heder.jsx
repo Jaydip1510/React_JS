@@ -7,7 +7,6 @@ const Heder = () => {
   return (
     <div>
         <>
-        
   {/* Spinner Start */}
   <div
     id="spinner"
