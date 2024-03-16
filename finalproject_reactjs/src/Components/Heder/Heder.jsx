@@ -3,12 +3,11 @@ import '../../lib/lightbox/css/lightbox.min.css';
 import '../../lib/owlcarousel/assets/owl.carousel.min.css';
 import '../../css/bootstrap.min.css';
 
-
-
 const Heder = () => {
   return (
     <div>
         <>
+        
   {/* Spinner Start */}
   <div
     id="spinner"
