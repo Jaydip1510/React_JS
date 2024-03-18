@@ -4,7 +4,16 @@ import '../css/tiny-slider.css'
 import '../css/style.css'
 import user from '../images/user.svg'
 import cart from '../images/cart.svg'
-import couch from '../images/couch.png'
+
+import { Link } from 'react-router-dom'
+import ProductSession from './ProductSession'
+import WhyChoose from './WhyChoose'
+import WeHelpYou from './WeHelpYou'
+import PopularProduct from './PopularProduct'
+import Testimonials from './Testimonials'
+import ResentBox from './RecentBox'
+import Footer from './Footer'
+import HeroSecssion from './HeroSecssion'
 
 export default function NavBar() {
      return (
@@ -31,14 +40,14 @@ export default function NavBar() {
                          <div className="collapse navbar-collapse" id="navbarsFurni">
                               <ul className="custom-navbar-nav navbar-nav ms-auto mb-2 mb-md-0">
                                    <li className="nav-item active">
-                                        <a className="nav-link" href="index.html">
+                                        <Link className="nav-link" to="/">
                                              Home
-                                        </a>
+                                        </Link>
                                    </li>
                                    <li>
-                                        <a className="nav-link" href="Shop.html">
+                                        <Link className="nav-link" to="/shop">
                                              Shop
-                                        </a>
+                                        </Link>
                                    </li>
                                    <li>
                                         <a className="nav-link" href="about.html">
@@ -76,39 +85,14 @@ export default function NavBar() {
                          </div>
                     </div>
                </nav>
-
-               <div>
-                    <div className="hero">
-                         <div className="container">
-                              <div className="row justify-content-between">
-                                   <div className="col-lg-5">
-                                        <div className="intro-excerpt">
-                                             <h1>
-                                                  Modern Interior <span clsas="d-block">Design Studio</span>
-                                             </h1>
-                                             <p className="mb-4">
-                                                  Donec vitae odio quis nisl dapibus malesuada. Nullam ac aliquet
-                                                  velit. Aliquam vulputate velit imperdiet dolor tempor tristique.
-                                             </p>
-                                             <p>
-                                                  <a href="" className="btn btn-secondary me-2">
-                                                       Shop Now
-                                                  </a>
-                                                  <a href="#" className="btn btn-white-outline">
-                                                       Explore
-                                                  </a>
-                                             </p>
-                                        </div>
-                                   </div>
-                                   <div className="col-lg-7">
-                                        <div className="hero-img-wrap">
-                                             <img src={couch} className="img-fluid" />
-                                        </div>
-                                   </div>
-                              </div>
-                         </div>
-                    </div>
-               </div>
+               <HeroSecssion/>
+               <ProductSession/>
+               <WhyChoose/>
+               <WeHelpYou/>
+               <PopularProduct/>
+               <Testimonials/>
+               <ResentBox/>
+               <Footer/>
           </div>
      )
 }
