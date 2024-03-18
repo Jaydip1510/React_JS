@@ -4,6 +4,7 @@ import '../css/tiny-slider.css'
 import '../css/style.css'
 import Heder from './Heder'
 import Footer from './Footer'
+import { Link } from 'react-router-dom'
 
 const CheckOut = () => {
     return (
@@ -503,12 +504,14 @@ const CheckOut = () => {
                                             </div>
                                         </div>
                                         <div className="form-group">
+                                            <Link to="/thankyou">
                                             <button
                                                 className="btn btn-black btn-lg py-3 btn-block"
                                                 onclick="window.location='thankyou.html'"
                                             >
                                                 Place Order
                                             </button>
+                                            </Link>
                                         </div>
                                     </div>
                                 </div>
