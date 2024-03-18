@@ -6,6 +6,7 @@ import Heder from './Heder'
 import img from '../images/product-1.png'
 import img1 from '../images/product-2.png'
 import Footer from './Footer'
+import { Link } from 'react-router-dom'
 
 const Cart = () => {
     return (
@@ -208,12 +209,15 @@ const Cart = () => {
                                     </div>
                                     <div className="row">
                                         <div className="col-md-12">
+                                           <Link to="/checkout">
                                             <button
                                                 className="btn btn-black btn-lg py-3 btn-block"
-                                                onclick="window.location='checkout.html'"
+                                                onclick="window.location='checkout.jsx'"
                                             >
+
                                                 Proceed To Checkout
                                             </button>
+                                            </Link>
                                         </div>
                                     </div>
                                 </div>
