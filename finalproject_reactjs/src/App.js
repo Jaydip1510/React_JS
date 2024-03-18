@@ -9,6 +9,7 @@ import NavBar from './component/NavBar';
 // import WeHelpYou from './component/WeHelpYou';
 // import WhyChoose from './component/WhyChoose';
 import Shop from './component/Shop';
+import AboutUs from './component/AboutUs';
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
       <Routes>
         <Route path='/' element={<NavBar/>} />
         <Route path='/shop' element={<Shop/>} />
+        <Route path='/about' element={<AboutUs/>} />
       </Routes>
 
     </div>
