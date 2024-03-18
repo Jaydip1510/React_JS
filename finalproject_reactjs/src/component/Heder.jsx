@@ -53,9 +53,9 @@ const Heder = () => {
                                         </Link>
                                    </li>
                                    <li>
-                                        <a className="nav-link" href="contact.html">
+                                        <Link className="nav-link" to="/contact">
                                              Contact us
-                                        </a>
+                                        </Link>
                                    </li>
                               </ul>
                               <ul className="custom-navbar-cta navbar-nav mb-2 mb-md-0 ms-5">
@@ -65,9 +65,9 @@ const Heder = () => {
                                         </a>
                                    </li>
                                    <li>
-                                        <a className="nav-link" href="cart.html">
+                                        <Link className="nav-link" to="/cart">
                                              <img src={cart} />
-                                        </a>
+                                        </Link>
                                    </li>
                               </ul>
                          </div>
