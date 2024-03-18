@@ -43,9 +43,9 @@ const Heder = () => {
                                         </Link>
                                    </li>
                                    <li>
-                                        <a className="nav-link" href="services.html">
+                                        <Link className="nav-link" to="/services">
                                              Services
-                                        </a>
+                                        </Link>
                                    </li>
                                    <li>
                                         <a className="nav-link" href="blog.html">
