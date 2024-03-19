@@ -220,7 +220,7 @@ a.more {
   }
 }
 
-.hero .hero-img-wrap:after {
+/* .hero .hero-img-wrap:after {
   content: "";
   position: absolute;
   width: 255px;
@@ -230,7 +230,7 @@ a.more {
   background-repeat: no-repeat;
   right: -100px;
   top: -0px;
-}
+} */
 
 @media (min-width: 1200px) {
   .hero .hero-img-wrap:after {
@@ -454,13 +454,13 @@ a.more {
   padding: 7rem 0;
 }
 
-.we-help-section .imgs-grid {
+/* .we-help-section .imgs-grid {
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: (1fr)[27];
   grid-template-columns: repeat(27, 1fr);
   position: relative;
-}
+} */
 
 .we-help-section .imgs-grid:before {
   position: absolute;

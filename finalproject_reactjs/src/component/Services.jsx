@@ -10,6 +10,7 @@ import img3 from '../images/return.svg'
 import i1 from '../images/product-1.png'
 import i2 from '../images/product-2.png'
 import i3 from '../images/product-3.png'
+import img4 from '../images/cross.svg'
 import Heder from './Heder'
 import Testimonials from './Testimonials'
 import Footer from './Footer'
@@ -183,7 +184,7 @@ const Services = () => {
                                         <h3 className="product-title">Nordic Chair</h3>
                                         <strong className="product-price">$50.00</strong>
                                         <span className="icon-cross">
-                                            <img src="images/cross.svg" className="img-fluid" />
+                                            <img src={img4} className="img-fluid" />
                                         </span>
                                     </a>
                                 </div>
@@ -198,7 +199,7 @@ const Services = () => {
                                         <h3 className="product-title">Kruzo Aero Chair</h3>
                                         <strong className="product-price">$78.00</strong>
                                         <span className="icon-cross">
-                                            <img src="images/cross.svg" className="img-fluid" />
+                                            <img src={img4} className="img-fluid" />
                                         </span>
                                     </a>
                                 </div>
@@ -213,7 +214,7 @@ const Services = () => {
                                         <h3 className="product-title">Ergonomic Chair</h3>
                                         <strong className="product-price">$43.00</strong>
                                         <span className="icon-cross">
-                                            <img src="images/cross.svg" className="img-fluid" />
+                                            <img src={img4} className="img-fluid" />
                                         </span>
                                     </a>
                                 </div>
