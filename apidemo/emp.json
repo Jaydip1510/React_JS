@@ -20,13 +20,6 @@
       "salary": "22000",
       "address": "tokarala",
       "id": 3
-    },
-    {
-      "name": "abc",
-      "age": "25",
-      "salary": "25000",
-      "address": "panshina",
-      "id": 4
     }
   ]
 }
