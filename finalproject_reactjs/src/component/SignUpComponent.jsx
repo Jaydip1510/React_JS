@@ -1,22 +1,23 @@
 import * as React from 'react';
+import { Link } from 'react-router-dom'; // Import Link from React Router
 import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import CssBaseline from '@mui/material/CssBaseline';
 import TextField from '@mui/material/TextField';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Checkbox from '@mui/material/Checkbox';
-import Link from '@mui/material/Link';
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-import Heder from './Heder'
-import '../css/bootstrap.min.css'
-import '../css/tiny-slider.css'
-import '../css/style.css'
+import Heder from './Heder';
+import '../css/bootstrap.min.css';
+import '../css/tiny-slider.css';
+import '../css/style.css';
 import Footer from './Footer';
+
 const defaultTheme = createTheme();
 const SignUpComponent = () => {
     const handleSubmit = (event) => {
@@ -116,8 +117,9 @@ const SignUpComponent = () => {
                             </Button>
                             <Grid container justifyContent="flex-end">
                                 <Grid item>
+                                    {/* Use Link from React Router */}
                                     <Link to="/login" variant="body2">
-                                        Already have an account? Sign in
+                                        Sign in
                                     </Link>
                                 </Grid>
                             </Grid>
@@ -127,7 +129,7 @@ const SignUpComponent = () => {
             </ThemeProvider>
             <Footer />
         </div>
-    )
+    );
 }
 
-export default SignUpComponent
+export default SignUpComponent;
