@@ -9,6 +9,8 @@ import ContactUs from './component/ContactUs';
 import Cart from './component/Cart';
 import CheckOut from './component/CheckOut';
 import ThankYou from './component/ThankYou';
+import LoginComponent from './component/LoginComponent';
+import SignUpComponent from './component/SignUpComponent';
 
 function App() {
   return (
@@ -23,8 +25,8 @@ function App() {
         <Route path='/cart' element={<Cart/>} />
         <Route path='/checkout' element={<CheckOut/>} />
         <Route path='/thankyou' element={<ThankYou/>} />
-
-
+        <Route path='/login' element={<LoginComponent/>} />
+        <Route path='/register' element={<SignUpComponent/>} />
       </Routes>
 
     </div>

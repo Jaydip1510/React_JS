@@ -1046,3 +1046,10 @@ textarea {
 .img-fluid{
    margin: auto;
 }
+.reg{
+     height: 40px;
+     width: 150px;
+     margin-left: 10px;
+     border-radius: 10px;
+     background-color: darkcyan;
+}

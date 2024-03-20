@@ -214,7 +214,6 @@ const Cart = () => {
                                                 className="btn btn-black btn-lg py-3 btn-block"
                                                 onclick="window.location='checkout.jsx'"
                                             >
-
                                                 Proceed To Checkout
                                             </button>
                                             </Link>
