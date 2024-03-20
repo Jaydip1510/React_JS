@@ -1,24 +1,17 @@
 {
   "emp": [
     {
-      "id": 1,
-      "name": "Jaydip",
+      "name": "jaydip",
       "age": "27",
       "salary": "25000",
-      "address": "panshina"
-    },
-    {
-      "name": "alpesh",
-      "age": "26",
-      "salary": "20000",
-      "address": "limbdi",
+      "address": "panshina",
       "id": 2
     },
     {
-      "name": "jaypal",
-      "age": "27",
-      "salary": "22000",
-      "address": "tokarala",
+      "name": "alpesh",
+      "age": "25",
+      "salary": "20000",
+      "address": "acharda",
       "id": 3
     }
   ]

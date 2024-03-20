@@ -55,19 +55,19 @@ function ApiForm() {
       }
    }
 
-   const removeData = (id) => {
+   // const removeData = (id) => {
 
-      fetch("http://localhost:3000/emp/" + id, {
-         method: "DELETE",
-         headers: {
-            "Content-Type": "application/json"
-         },
-         body: JSON.stringify(empdata)
-      })
-         .then(res => res.json())
-         .then(json => console.log(json));
-      fetchitem();
-   }
+   //    fetch("http://localhost:3000/emp/" + id, {
+   //       method: "DELETE",
+   //       headers: {
+   //          "Content-Type": "application/json"
+   //       },
+   //       body: JSON.stringify(empdata)
+   //    })
+   //       .then(res => res.json())
+   //       .then(json => console.log(json));
+   //    fetchitem();
+   // }
 
    const editData = (id) => {
       setEid(id)
@@ -80,6 +80,21 @@ function ApiForm() {
          .then(res => res.json())
          .then(json => setEmpdata(json));
    }
+   const removeData = (id) => {
+     
+      setDt(dt.filter(item => item.id !== id));
+  
+      fetch("http://localhost:3000/emp/" + id, {
+          method: "DELETE",
+          headers: {
+              "Content-Type": "application/json"
+          },
+          body: JSON.stringify(empdata)
+      })
+      .then(res => res.json())
+      .then(json => console.log(json))
+      .catch(error => console.error('Error deleting data:', error));
+  }
    return (
       <div>
          <div className='frm2'>
