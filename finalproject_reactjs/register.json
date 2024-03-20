@@ -1,0 +1,18 @@
+{
+  "register": [
+    {
+      "firstname": "jaydip",
+      "lastname": "makwana",
+      "email": "jaydip123@gmail.com",
+      "password": "jaydip123",
+      "id": 1
+    },
+    {
+      "firstname": "alpesh",
+      "lastname": "anjara",
+      "email": "alpesh123@gmail.com",
+      "password": "alpesh123",
+      "id": 2
+    }
+  ]
+}
