@@ -1,7 +1,6 @@
-import React, { useState } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
-import { addItem } from '../Redux/Action';
-
+import React, { useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { addItem, removeItem } from '../Redux/Action';
 
 const FormComponent = () => {
     const empData = useSelector((state) => state.empItems || []);
@@ -13,14 +12,17 @@ const FormComponent = () => {
         password:"",
         salary: "",
         address: "",
-    })
+    });
 
     const handleChange = (e) => {
         const { name, value } = e.target;
-        setInputValue({ ...inputValue, [name]: value });
-    }
+        setInputValue(prevState => ({
+            ...prevState,
+            [name]: value
+        }));
+    };
 
-    const handlesubmit = (e) => {
+    const handleSubmit = (e) => {
         e.preventDefault();
         dispatch(addItem(inputValue));
         setInputValue({
@@ -30,66 +32,73 @@ const FormComponent = () => {
             password:'',
             salary:'',
             address:''
-        })
+        });
+    };
+
+    const deleteData = (id) => {
+      dispatch(removeItem(id));
     }
+
     return (
         <div>
-            <form onSubmit={handlesubmit}  method='post'>
-                <lable>Name:-</lable>
-                <input type="text" name="name" onChange={handleChange} placeholder="Enter Your Name" />
+            <form onSubmit={handleSubmit} method='post'>
+                <label htmlFor="name">Name:</label>
+                <input type="text" id="name" name="name" value={inputValue.name} onChange={handleChange} placeholder="Enter Your Name" />
                 <br/><br/>
 
-                <label htmlFor="">Age:-</label>
-                <input type="text" name="age" placeholder='Enter Your Age' onChange={handleChange} />
+                <label htmlFor="age">Age:</label>
+                <input type="text" id="age" name="age" value={inputValue.age} placeholder='Enter Your Age' onChange={handleChange} />
                 <br/><br/>
 
-
-                <label htmlFor="">Email:-</label>
-                <input type="email" name="email" placeholder='Enter Your Email' onChange={handleChange} />
+                <label htmlFor="email">Email:</label>
+                <input type="email" id="email" name="email" value={inputValue.email} placeholder='Enter Your Email' onChange={handleChange} />
                 <br/><br/>
 
-                <label htmlFor="">password:-</label>
-                <input type="password" name="password" placeholder='Enter Your Password' onChange={handleChange} />
+                <label htmlFor="password">Password:</label>
+                <input type="password" id="password" name="password" value={inputValue.password} placeholder='Enter Your Password' onChange={handleChange} />
                 <br/><br/>
 
-                <label htmlFor="">Salary:-</label>
-                <input type="number" name="salary" placeholder='Enter Your Salary' onChange={handleChange} />
+                <label htmlFor="salary">Salary:</label>
+                <input type="number" id="salary" name="salary" value={inputValue.salary} placeholder='Enter Your Salary' onChange={handleChange} />
                 <br/><br/>
 
-                <label htmlFor="">address:-</label>
-                <input type="text" name="address" placeholder="Enter Your Address" onChange={handleChange} />
+                <label htmlFor="address">Address:</label>
+                <input type="text" id="address" name="address" value={inputValue.address} placeholder="Enter Your Address" onChange={handleChange} />
                 <br/><br/>
 
-                <button type='submit'>SaveData</button>
+                <button type='submit'>Save Data</button>
             </form>
             <br/><br/>
             <table border={2}>
-                <tr>
-                    <th>Name</th>
-                    <th>Age</th>
-                    <th>Email</th>
-                    <th>Password</th>
-                    <th>Salary</th>
-                    <th>address</th>
-                </tr>
-                {
-                    empData.map((i,index)=>{
-                        return (
-                            <tr>
-                                <td>{index+1}</td>
-                                <td>{i.name}</td>
-                                <td>{i.age}</td>
-                                <td>{i.email}</td>
-                                <td>{i.password}</td>
-                                <td>{i.salary}</td>
-                                <td>{i.address}</td>
-                            </tr>
-                        )
-                    })
-                }
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Name</th>
+                        <th>Age</th>
+                        <th>Email</th>
+                        <th>Password</th>
+                        <th>Salary</th>
+                        <th>Address</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {empData.map((item, index) => (
+                        <tr key={index}>
+                            <td>{index+1}</td>
+                            <td>{item.name}</td>
+                            <td>{item.age}</td>
+                            <td>{item.email}</td>
+                            <td>{item.password}</td>
+                            <td>{item.salary}</td>
+                            <td>{item.address}</td>
+                            <td><button onClick={()=>deleteData(index)}>Delete</button></td>
+                        </tr>
+                    ))}
+                </tbody>
             </table>
         </div>
-    )
-}
+    );
+};
 
-export default FormComponent
+export default FormComponent;
