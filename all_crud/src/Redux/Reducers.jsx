@@ -17,6 +17,13 @@ const initialState = {
                )
             }
          }
+         case "UpdateData": {
+              return {
+                ...state,empItems: state.empItems.map((i,index)=>
+                     index === action.payload.id ? action.payload : i
+                ), 
+              };
+         }
          default:
              return state;
      }
