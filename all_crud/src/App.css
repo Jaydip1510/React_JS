@@ -13,12 +13,34 @@
     align-items: center;
 }
 .frm1{
-    height: 400px;
-    width: 400px;
+    height: 520px;
+    width: 490px;
     border: 2px solid black;
     margin-top: 10px;
+    
 }
-
+label{
+    margin-top: 20px;
+    font-weight: 800;
+}
+.t1{
+     margin-left: 10px;
+}
+.t2{
+     margin-left: 25px;
+}
+.t3{
+    margin-left: 15px;
+}
+.t4{
+    margin-left: 20px;
+}
+.t5{
+   margin-left: 5px;
+}
+.t6{
+    margin-left: 20px;
+}
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;

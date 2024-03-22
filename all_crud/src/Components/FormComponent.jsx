@@ -82,37 +82,37 @@ const FormComponent = () => {
             <div className='frm'>
                 <div className='frm1'>
                     <form onSubmit={eid !== '' ? updatedata : handleSubmit} method='post'>
-                        <label htmlFor="name">Name:</label>
-                        <input type="text" id="name" name="name" value={inputValue.name} onChange={handleChange} placeholder="Enter Your Name" />
+                        <label htmlFor="name">Name:-</label>
+                        <input className='t1' type="text" id="name" name="name" value={inputValue.name} onChange={handleChange} placeholder="Enter Your Name" />
                         <br /><br />
 
-                        <label htmlFor="age">Age:</label>
-                        <input type="text" id="age" name="age" value={inputValue.age} placeholder='Enter Your Age' onChange={handleChange} />
+                        <label htmlFor="age">Age:-</label>
+                        <input className='t2' type="text" id="age" name="age" value={inputValue.age} placeholder='Enter Your Age' onChange={handleChange} />
                         <br /><br />
 
-                        <label htmlFor="email">Email:</label>
-                        <input type="email" id="email" name="email" value={inputValue.email} placeholder='Enter Your Email' onChange={handleChange} />
+                        <label htmlFor="email">Email:-</label>
+                        <input className='t3' type="email" id="email" name="email" value={inputValue.email} placeholder='Enter Your Email' onChange={handleChange} />
                         <br /><br />
 
-                        <label htmlFor="password">Password:</label>
-                        <input type="password" id="password" name="password" value={inputValue.password} placeholder='Enter Your Password' onChange={handleChange} />
+                        <label htmlFor="password">Pwd:-</label>
+                        <input className='t4' type="password" id="password" name="password" value={inputValue.password} placeholder='Enter Your Password' onChange={handleChange} />
                         <br /><br />
 
-                        <label htmlFor="salary">Salary:</label>
-                        <input type="number" id="salary" name="salary" value={inputValue.salary} placeholder='Enter Your Salary' onChange={handleChange} />
+                        <label htmlFor="salary">Salary:-</label>
+                        <input className='t5' type="number" id="salary" name="salary" value={inputValue.salary} placeholder='Enter Your Salary' onChange={handleChange} />
                         <br /><br />
 
-                        <label htmlFor="address">Address:</label>
-                        <input type="text" id="address" name="address" value={inputValue.address} placeholder="Enter Your Address" onChange={handleChange} />
-                        <br /><br />
+                        <label htmlFor="address">Add:-</label>
+                        <input className='t6' type="text" id="address" name="address" value={inputValue.address} placeholder="Enter Your Address" onChange={handleChange} />
+                        <br /><br /><br/>
 
-                        <button type='submit'>Save Data</button>
+                        <button type='submit' className='btn btn-outline-success fw-bold'>Save Data</button>
                     </form>
                 </div>
             </div>
 
             <br /><br />
-            <table border={2}>
+            <table border={2} className='table table-striped'>
                 <thead>
                     <tr>
                         <th>Id</th>
@@ -135,7 +135,7 @@ const FormComponent = () => {
                             <td>{item.password}</td>
                             <td>{item.salary}</td>
                             <td>{item.address}</td>
-                            <td><button onClick={() => editData(index)}>Edit</button><button onClick={() => deleteData(index)}>Delete</button></td>
+                            <td><button className='btn btn-outline-info' onClick={() => editData(index)}>Edit</button>&nbsp;&nbsp;<button className='btn btn-outline-danger' onClick={() => deleteData(index)}>Delete</button></td>
                         </tr>
                     ))}
                 </tbody>
