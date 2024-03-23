@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import { useDispatch, useSelector } from 'react-redux';
-import { addItem } from '../Redux/Reducers';
+import { addItem, deleteItem } from '../Redux/Reducers';
 import Table from 'react-bootstrap/Table';
 const FormData = () => {
     const userInfo = useSelector((state) => state.user.userData || []);
@@ -26,8 +26,11 @@ const FormData = () => {
             name: '',
             age: '',
             email: '',
-            password: '',
-        })
+            password: ''
+        });
+    }
+    const deleteData = (id) => {
+      dispatch(deleteItem(id));
     }
     return (
         <>
@@ -81,6 +84,7 @@ const FormData = () => {
                         <th>Age</th>
                         <th>Email</th>
                         <th>Password</th>
+                        <th>Action</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -91,6 +95,7 @@ const FormData = () => {
                             <td>{user.age}</td>
                             <td>{user.email}</td>
                             <td>{user.password}</td>
+                            <td><button className='btn btn-outline-danger' onClick={() => deleteData(index)}>Delete</button></td>
                         </tr>
                     ))}
                 </tbody>

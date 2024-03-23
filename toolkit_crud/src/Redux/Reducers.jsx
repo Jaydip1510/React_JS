@@ -11,8 +11,11 @@ const userSlice = createSlice({
            addItem: (state, action) => {
               state.userData.push(action.payload);
            },
+           deleteItem:(state, action) => {
+              state.userData = state.userData.filter((item, index) => index !== action.payload);
+           }
      },
 })
 
-export const { addItem } = userSlice.actions;
+export const { addItem,deleteItem } = userSlice.actions;
 export default userSlice.reducer;
