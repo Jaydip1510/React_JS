@@ -7,6 +7,7 @@ import Table from 'react-bootstrap/Table';
 const FormData = () => {
     const userInfo = useSelector((state) => state.user.userData || []);
     const dispatch = useDispatch();
+    const [uid, setUid] = useState('');
     const [inputValue, setInputValue] = useState({
         name: '',
         age: '',
@@ -29,8 +30,23 @@ const FormData = () => {
             password: ''
         });
     }
+    // delete data
     const deleteData = (id) => {
       dispatch(deleteItem(id));
+    }
+
+    // edit data
+    const editData = (id) => {
+       const edititem = userInfo[id];
+       if(edititem){
+          setUid(id);
+          setInputValue({
+             name: edititem.name || '',
+             age: edititem.age || '',
+             email: edititem.email || '',
+             password: edititem.password || '',
+          })
+       }
     }
     return (
         <>
@@ -40,32 +56,28 @@ const FormData = () => {
                     <Form.Control
                         type="text"
                         name='name'
-                        id="inputPassword5"
-                        aria-describedby="passwordHelpBlock"
+                        value={inputValue.name}
                         onChange={handleChange}
                     />
                     <label>Age</label>
                     <Form.Control
                         type="text"
                         name='age'
-                        id="inputPassword5"
-                        aria-describedby="passwordHelpBlock"
+                        value={inputValue.age}
                         onChange={handleChange}
                     />
                     <label>Email</label>
                     <Form.Control
                         type="email"
                         name='email'
-                        id="inputPassword5"
-                        aria-describedby="passwordHelpBlock"
+                        value={inputValue.email}
                         onChange={handleChange}
                     />
                     <label>Password</label>
                     <Form.Control
                         type="password"
                         name='password'
-                        id="inputPassword5"
-                        aria-describedby="passwordHelpBlock"
+                        value={inputValue.password}
                         onChange={handleChange}
                     />
                     <br /><br />
@@ -95,7 +107,7 @@ const FormData = () => {
                             <td>{user.age}</td>
                             <td>{user.email}</td>
                             <td>{user.password}</td>
-                            <td><button className='btn btn-outline-danger' onClick={() => deleteData(index)}>Delete</button></td>
+                            <td><button className='btn btn-outline-success' onClick={()=>editData(index)}>Edit</button><button className='btn btn-outline-danger' onClick={() => deleteData(index)}>Delete</button></td>
                         </tr>
                     ))}
                 </tbody>
