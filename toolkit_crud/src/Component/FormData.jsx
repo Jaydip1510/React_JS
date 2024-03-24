@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import { useDispatch, useSelector } from 'react-redux';
-import { addItem, deleteItem } from '../Redux/Reducers';
+import { addItem, deleteItem, updateItem } from '../Redux/Reducers';
 import Table from 'react-bootstrap/Table';
 const FormData = () => {
     const userInfo = useSelector((state) => state.user.userData || []);
@@ -48,10 +48,29 @@ const FormData = () => {
           })
        }
     }
+    // update user
+    const updateData = (e) => {
+       e.preventDefault();
+       const updateuser = {
+          id:uid,
+          name: inputValue.name,
+          age: inputValue.age,
+          email: inputValue.email,
+          password: inputValue.password,
+       }
+       dispatch(updateItem(updateuser));
+       setInputValue({
+          name:'',
+          age:"",
+          email:"",
+          password:"",
+       })
+       setUid('');
+    }
     return (
         <>
             <div className='container'>
-                <form className='frm' onSubmit={handleSubmit} method='post'>
+                <form className='frm' onSubmit={uid !== ''? updateData : handleSubmit} method='post'>
                     <label>Name</label>
                     <Form.Control
                         type="text"
