@@ -1,0 +1,20 @@
+{
+  "user": [
+    {
+      "name": "jaydip",
+      "age": 27,
+      "email": "jaydip@gmail.com",
+      "password": "jaydip123",
+      "address": "panshina",
+      "id": 1
+    },
+    {
+      "name": "alpesh",
+      "age": "26",
+      "email": "alpesh123",
+      "password": "alpesh1510",
+      "address": "limbdi",
+      "id": 2
+    }
+  ]
+}
