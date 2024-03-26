@@ -4,7 +4,7 @@
       "name": "jaydip",
       "age": 27,
       "email": "jaydip@gmail.com",
-      "password": "jaydip123",
+      "password": "jaydip",
       "address": "panshina",
       "id": 1
     },
@@ -15,14 +15,6 @@
       "password": "alpesh1510",
       "address": "limbdi",
       "id": 2
-    },
-    {
-      "name": "abc",
-      "age": "20",
-      "email": "abc@gmail.com",
-      "password": "abc123",
-      "address": "asdaf",
-      "id": 3
     }
   ]
 }

@@ -6,6 +6,7 @@ import Button from '@mui/material/Button';
 
 const ApiData = () => {
     const [dt, setDt] = useState([]);
+    const [uid, setUid] = useState();
     const [userData, setUserData] = useState({
         name: '',
         age: '',
@@ -18,23 +19,6 @@ const ApiData = () => {
         const { name, value } = e.target;
         setUserData({ ...userData, [name]: value });
     }
-
-    const saveData = (e) => {
-        fetch('http://localhost:3000/user', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(userData)
-        })
-            .then(res => res.json())
-            .then(newData => {
-                // Update state with the new data
-                setDt([...dt, newData]);
-            })
-            .catch(error => console.error('Error inserting data:', error));
-        fetchitem();
-    }
     const fetchitem = async () => {
         try {
             await fetch("http://localhost:3000/user").then(res => res.json()).then
@@ -46,6 +30,39 @@ const ApiData = () => {
     useEffect(() => {
         fetchitem();
     }, []);
+
+    const saveData = (e) => {
+        if (uid) {
+            // update data
+            fetch(`http://localhost:3000/user/${uid}`, {
+            method: 'PUT',
+            headers: {
+               'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(userData)
+         })
+            .then(res => res.json())
+            .then(json => console.log(json));
+        } else {
+            //insert data
+            fetch('http://localhost:3000/user', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(userData)
+            })
+                .then(res => res.json())
+                .then(newData => {
+                    // Update state with the new data
+                    setDt([...dt, newData]);
+                })
+                .catch(error => console.error('Error inserting data:', error));
+            fetchitem();
+        }
+
+    }
+
 
     const deleteData = (id) => {
         setDt(dt.filter(item => item.id === id));
@@ -60,7 +77,18 @@ const ApiData = () => {
             .then(res => res.json())
             .then(json => console.log(json))
             .catch(error => console.error('Error deleting data:', error));
-            fetchitem();
+        fetchitem();
+    }
+    const editData = (id) => {
+        setUid(id);
+        fetch("http://localhost:3000/user/" + id, {
+            method: "PATCH",
+            headers: {
+                "Content-Type": "application/json"
+            },
+        })
+            .then(res => res.json())
+            .then(json => setUserData(json));
     }
     return (
         <>
@@ -74,15 +102,15 @@ const ApiData = () => {
                             marginTop: "40px"
                         }}
                     >
-                        <TextField fullWidth label="name" name='name' onChange={handleChange} id="fullWidth" />
+                        <TextField fullWidth label="name" name='name' value={userData.name} onChange={handleChange} id="fullWidth" />
                         <br /><br />
-                        <TextField fullWidth label="age" name='age' onChange={handleChange} id="fullWidth" />
+                        <TextField fullWidth label="age" name='age' value={userData.age} onChange={handleChange} id="fullWidth" />
                         <br /><br />
-                        <TextField fullWidth label="email" name='email' onChange={handleChange} id="fullWidth" />
+                        <TextField fullWidth label="email" name='email' value={userData.email} onChange={handleChange} id="fullWidth" />
                         <br /><br />
-                        <TextField fullWidth label="password" name='password' onChange={handleChange} id="fullWidth" />
+                        <TextField fullWidth label="password" name='password' value={userData.password} onChange={handleChange} id="fullWidth" />
                         <br /><br />
-                        <TextField fullWidth label="address" name='address' onChange={handleChange} id="fullWidth" />
+                        <TextField fullWidth label="address" name='address' value={userData.address} onChange={handleChange} id="fullWidth" />
                     </Box><br /><br />
                     <Stack spacing={2} direction="row" className='btn1'>
                         <Button type='submit' variant="contained" >SaveData</Button>
@@ -113,7 +141,7 @@ const ApiData = () => {
                                     <td>{i.email}</td>
                                     <td>{i.password}</td>
                                     <td>{i.address}</td>
-                                    <td><button onClick={() => deleteData(i.id)} className='btn btn-outline-danger'>Delete</button></td>
+                                    <td><button className='btn btn-outline-info' onClick={() => editData(i.id)}>Edit</button>&nbsp;<button onClick={() => deleteData(i.id)} className='btn btn-outline-danger'>Delete</button></td>
                                 </tr>
                             );
                         })
