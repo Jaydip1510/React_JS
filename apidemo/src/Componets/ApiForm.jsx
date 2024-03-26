@@ -94,6 +94,7 @@ function ApiForm() {
       .then(res => res.json())
       .then(json => console.log(json))
       .catch(error => console.error('Error deleting data:', error));
+      
   }
    return (
       <div>
@@ -121,7 +122,7 @@ function ApiForm() {
          </div>
          <br />
          <br />
-         <table border={2} className='table table-striped'>
+         <table  className='table table-striped'>
             <thead>
                <tr className='fw-bold'>
                   <td>Id</td>

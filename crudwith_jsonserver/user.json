@@ -15,6 +15,14 @@
       "password": "alpesh1510",
       "address": "limbdi",
       "id": 2
+    },
+    {
+      "name": "abc",
+      "age": "20",
+      "email": "abc@gmail.com",
+      "password": "abc123",
+      "address": "asdaf",
+      "id": 3
     }
   ]
 }
