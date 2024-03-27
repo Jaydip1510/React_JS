@@ -41,8 +41,8 @@ const AxoisForm = () => {
                setInputValue({
                    name: '',
                    age: '',
-                   email: '',
-                   password: ''
+                   salary: '',
+                   address: ''
                });
                setUid(null);
                fetchitem();
@@ -144,7 +144,7 @@ const AxoisForm = () => {
                                 <td>{i.age}</td>
                                 <td>{i.salary}</td>
                                 <td>{i.address}</td>
-                                <td><button onClick={() => editData(i.id)}>Edit</button><button onClick={() => deleteData(i.id)} className='btn btn-outline-danger'>Delete</button></td>
+                                <td><button className='btn btn-outline-info' onClick={() => editData(i.id)}>Edit</button><button onClick={() => deleteData(i.id)} className='btn btn-outline-danger'>Delete</button></td>
                             </tr>
                         ))
                     }
