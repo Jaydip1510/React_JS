@@ -48,6 +48,17 @@ const AxoisForm = () => {
             });
     }
 
+    const deleteData = (id) => {
+        axios.delete(`http://localhost:3000/emp/${id}`)
+            .then(res => {
+                console.log(res.data);
+            })
+            .catch(error => {
+                console.error('Error deleting data:', error);
+            });
+        fetchitem();
+    }
+
     return (
         <>
             <div className='frm'>
@@ -79,7 +90,7 @@ const AxoisForm = () => {
                     </Box>
                 </form>
             </div>
-            <table border={2}>
+            <table border={2} className='table table-striped'>
                 <thead>
                     <tr>
                         <td>Id</td>
@@ -99,7 +110,7 @@ const AxoisForm = () => {
                                 <td>{i.age}</td>
                                 <td>{i.salary}</td>
                                 <td>{i.address}</td>
-                                <td><button>Delete</button></td>
+                                <td><button onClick={() => deleteData(i.id)} className='btn btn-outline-danger'>Delete</button></td>
                             </tr>
                         ))
                     }
