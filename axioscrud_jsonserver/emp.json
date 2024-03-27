@@ -6,6 +6,13 @@
       "age": "25",
       "salary": "20000",
       "address": "panshina"
+    },
+    {
+      "name": "alpesh",
+      "age": "20",
+      "salary": "12000",
+      "address": "acharda",
+      "id": 2
     }
   ]
 }

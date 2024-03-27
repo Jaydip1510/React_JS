@@ -60,16 +60,16 @@ const AxoisForm = () => {
                             marginTop: "30px"
                         }}
                     >
-                        <TextField fullWidth label="Name" name='name' onChange={handleChange} id="fullWidth" />
+                        <TextField fullWidth label="Name" name='name' value={inputValue.name} onChange={handleChange} id="fullWidth" />
                         <br /><br />
 
-                        <TextField fullWidth label="Age" name='age' onChange={handleChange} id="fullWidth" />
+                        <TextField fullWidth label="Age" name='age' value={inputValue.age} onChange={handleChange} id="fullWidth" />
                         <br /><br />
 
-                        <TextField fullWidth label="Salary" name='salary' onChange={handleChange} id="fullWidth" />
+                        <TextField fullWidth label="Salary" name='salary' value={inputValue.salary} onChange={handleChange} id="fullWidth" />
                         <br /><br />
 
-                        <TextField fullWidth label="Address" name='address' onChange={handleChange} id="fullWidth" />
+                        <TextField fullWidth label="Address" name='address' value={inputValue.address} onChange={handleChange} id="fullWidth" />
                         <br /><br />
 
                         <Button type='submit' variant="contained" color="success">
@@ -79,6 +79,32 @@ const AxoisForm = () => {
                     </Box>
                 </form>
             </div>
+            <table border={2}>
+                <thead>
+                    <tr>
+                        <td>Id</td>
+                        <td>Name</td>
+                        <td>Age</td>
+                        <td>Salary</td>
+                        <td>Address</td>
+                        <td>Action</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    {
+                        edata.map((i) => (
+                            <tr>
+                                <td>{i.id}</td>
+                                <td>{i.name}</td>
+                                <td>{i.age}</td>
+                                <td>{i.salary}</td>
+                                <td>{i.address}</td>
+                                <td><button>Delete</button></td>
+                            </tr>
+                        ))
+                    }
+                </tbody>
+            </table>
         </>
     )
 }
