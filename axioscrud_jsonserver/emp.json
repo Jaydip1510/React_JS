@@ -1,0 +1,11 @@
+{
+  "emp": [
+    {
+      "id": 1,
+      "name": "jaydip",
+      "age": "25",
+      "salary": "20000",
+      "address": "panshina"
+    }
+  ]
+}

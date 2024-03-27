@@ -15,6 +15,14 @@
       "password": "alpesh1510",
       "address": "limbdi",
       "id": 2
+    },
+    {
+      "name": "jaypal",
+      "age": "21",
+      "email": "jaypal@gmail.com",
+      "password": "jaypal123",
+      "address": "limbdi",
+      "id": 3
     }
   ]
 }
