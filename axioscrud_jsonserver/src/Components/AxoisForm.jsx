@@ -6,6 +6,7 @@ import axios from 'axios';
 
 const AxoisForm = () => {
     const [edata, setData] = useState([])
+    const [uid, setUid] = useState();
     const [inputValue, setInputValue] = useState({
         name: '',
         age: "",
@@ -32,7 +33,26 @@ const AxoisForm = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        axios.post("http://localhost:3000/emp", inputValue)
+        if(uid){
+           // update
+           axios.put(`http://localhost:3000/emp/${uid}`, inputValue)
+           .then(res => {
+               console.log(res.data);
+               setInputValue({
+                   name: '',
+                   age: '',
+                   email: '',
+                   password: ''
+               });
+               setUid(null);
+               fetchitem();
+           })
+           .catch(error => {
+               console.error('Error updating data:', error);
+           });
+        }else{
+          // insert data
+          axios.post("http://localhost:3000/emp", inputValue)
             .then(res => {
                 console.log(res.data);
                 setInputValue({
@@ -46,6 +66,8 @@ const AxoisForm = () => {
             .catch(error => {
                 console.error('Error:', error);
             });
+        }
+        
     }
 
     const deleteData = (id) => {
@@ -57,6 +79,18 @@ const AxoisForm = () => {
                 console.error('Error deleting data:', error);
             });
         fetchitem();
+    }
+
+    const editData = (id) => {
+        setUid(id);
+        axios.patch(`http://localhost:3000/emp/${id}`)
+            .then(res => {
+                console.log(res.data);
+                setInputValue(res.data);
+            })
+            .catch(error => {
+                console.error('Error editing data:', error);
+            });
     }
 
     return (
@@ -110,7 +144,7 @@ const AxoisForm = () => {
                                 <td>{i.age}</td>
                                 <td>{i.salary}</td>
                                 <td>{i.address}</td>
-                                <td><button onClick={() => deleteData(i.id)} className='btn btn-outline-danger'>Delete</button></td>
+                                <td><button onClick={() => editData(i.id)}>Edit</button><button onClick={() => deleteData(i.id)} className='btn btn-outline-danger'>Delete</button></td>
                             </tr>
                         ))
                     }

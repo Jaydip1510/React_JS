@@ -13,13 +13,6 @@
       "salary": "12000",
       "address": "acharda",
       "id": 2
-    },
-    {
-      "name": "raj",
-      "age": "20",
-      "salary": "12000",
-      "address": "tokarala",
-      "id": 3
     }
   ]
 }
