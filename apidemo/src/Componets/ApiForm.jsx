@@ -135,7 +135,8 @@ function ApiForm() {
             </thead>
             <tbody>
                {
-                  dt.map((i) => (
+                  dt.map((i) => {
+                   return(
                      <tr>
                         <td>{i.id}</td>
                         <td>{i.name}</td>
@@ -144,7 +145,8 @@ function ApiForm() {
                         <td>{i.address}</td>
                         <td><button type='button' className='btn btn-outline-primary fw-bold' onClick={() => editData(i.id)}>Edit</button>&nbsp;&nbsp;<button type='button' className='btn btn-outline-danger fw-bold' onClick={() => removeData(i.id)}>Delete</button></td>
                      </tr>
-                  ))
+                  )})
+                  
                }
             </tbody>
          </table>
