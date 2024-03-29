@@ -19,34 +19,9 @@
       "roomname": "room105",
       "capacity": "5",
       "id": 4
-    },
-    {
-      "roomid": "",
-      "date": "08/01/2024",
-      "checkIn": "10:00",
-      "checkout": "3:30",
-      "userid": "2",
-      "checkin": "0",
-      "id": 5
     }
   ],
   "reservations": [
-    {
-      "id": 1,
-      "roomId": 1,
-      "date": "2024-04-01",
-      "startTime": "10:00",
-      "endTime": "12:00",
-      "userId": 1
-    },
-    {
-      "id": 2,
-      "roomId": 2,
-      "date": "2024-04-02",
-      "startTime": "14:00",
-      "endTime": "16:00",
-      "userId": 2
-    },
     {
       "roomid": "",
       "date": "08/01/2024",

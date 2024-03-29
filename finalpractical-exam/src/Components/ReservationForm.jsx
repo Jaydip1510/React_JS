@@ -2,8 +2,11 @@ import React, { useEffect, useState } from 'react'
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
+
 const ReservationForm = () => {
     const [dt, setDt] = useState([]);
+    const [uid, setUid] = useState();
+    const [searchQuery, setSearchQuery] = useState('');
       const [reserdata,setReserData] = useState({
            roomid:'',
            date:'',
@@ -36,7 +39,45 @@ const ReservationForm = () => {
             body: JSON.stringify(reserdata)
          })
             .then(res => res.json())
+            fetchitem();
     }
+    const handleSearchChange = (e) => {
+        setSearchQuery(e.target.value);
+    };
+
+    const filteredData = dt.filter(item =>
+        item.roomid.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        item.date.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        item.userid.toLowerCase().includes(searchQuery.toLowerCase())
+    );
+    const editData = (id) => {
+        setUid(id);
+        fetch("http://localhost:3000/reservations/" + id, {
+            method: "PATCH",
+            headers: {
+                "Content-Type": "application/json"
+            },
+        })
+            .then(res => res.json())
+            .then(json => setReserData(json));
+    }
+    const deleteData = (id) => {
+     
+        setDt(dt.filter(item => item.id !== id));
+    
+        fetch("http://localhost:3000/reservations/" + id, {
+            method: "DELETE",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(reserdata)
+        })
+        .then(res => res.json())
+        .then(json => console.log(json))
+        .catch(error => console.error('Error deleting data:', error));
+        
+    }
+   
   return (
     <>
         <div className='frm'>
@@ -70,12 +111,23 @@ const ReservationForm = () => {
                 </Box>
             </form>
         </div>
-        {/* <table  className='table table-striped'>
+        <TextField
+                label="Search"
+                fullWidth
+                value={searchQuery}
+                onChange={handleSearchChange}
+                style={{ marginTop: '20px', marginLeft: '75px', width: '400px' }}
+            />
+
+        <table  className='table table-striped'>
             <thead>
                <tr className='fw-bold'>
-                  <td>Id</td>
-                  <td>RoomName</td>
-                  <td>Capacity</td>
+                  <td>RoomId</td>
+                  <td>Date</td>
+                  <td>CheckIn</td>
+                  <td>CheckOut</td>
+                  <td>UserId</td>
+                  <td>Action</td>
                </tr>
             </thead>
             <tbody>
@@ -83,14 +135,17 @@ const ReservationForm = () => {
                   dt.map((i) => {
                    return(
                      <tr>
-                        <td>{i.id}</td>
-                        <td>{i.roomname}</td>
-                        <td>{i.capacity}</td>
+                        <td>{i.userid}</td>
+                        <td>{i.date}</td>
+                        <td>{i.checkIn}</td>
+                        <td>{i.checkout}</td>
+                        <td>{i.userid}</td>
+                        <td><button className='btn btn-outline-info' onClick={() => editData(i.id)}>Edit</button>&nbsp;<button className='btn btn-outline-danger' onClick={() => deleteData(i.id)}>Delete</button></td>
                      </tr>
                   )})
                }
             </tbody>
-         </table> */}
+         </table>
         </>
   )
 }
