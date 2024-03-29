@@ -20,6 +20,7 @@ const NavbarComponent = () => {
             navbarScroll
           >
             <Nav.Link href="#action1">Home</Nav.Link>
+            
             <Link className="nav-link"  to="/roomlist">RoomDetails</Link>&nbsp;
             <Link className="nav-link" to="/reservation">ReservationDetail</Link>
             
