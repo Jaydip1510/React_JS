@@ -15,8 +15,9 @@ function ApiForm() {
    }
    const fetchitem = async () => {
       try {
-         await fetch("http://localhost:3000/emp").then(res => res.json()).then
-            (res => setDt(res));
+         const res = await fetch("http://localhost:3000/emp");
+         const data = await res.json();
+         setDt(data);
       } catch (error) {
          console.log(error.message);
       }
@@ -35,7 +36,11 @@ function ApiForm() {
             body: JSON.stringify(empdata)
          })
             .then(res => res.json())
-            .then(json => console.log(json));
+            .then(updatedData => {
+               // Update state with the updated data
+               setDt(dt.map(item => item.id === eid ? updatedData : item));
+            })
+            .catch(error => console.error('Error updating data:', error));
       } else {
          // Insert data
          fetch('http://localhost:3000/emp', {
@@ -51,23 +56,8 @@ function ApiForm() {
                setDt([...dt, newData]);
             })
             .catch(error => console.error('Error inserting data:', error));
-         fetchitem();
       }
    }
-
-   // const removeData = (id) => {
-
-   //    fetch("http://localhost:3000/emp/" + id, {
-   //       method: "DELETE",
-   //       headers: {
-   //          "Content-Type": "application/json"
-   //       },
-   //       body: JSON.stringify(empdata)
-   //    })
-   //       .then(res => res.json())
-   //       .then(json => console.log(json));
-   //    fetchitem();
-   // }
 
    const editData = (id) => {
       setEid(id)
