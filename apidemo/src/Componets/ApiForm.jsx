@@ -113,7 +113,7 @@ function ApiForm() {
          </div>
          <br />
          <br />
-         <table  className='table table-striped'>
+         <table  className='table table-striped' border={2}>
             <thead>
                <tr className='fw-bold'>
                   <td>Id</td>
