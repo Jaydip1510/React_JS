@@ -13,6 +13,7 @@ function App() {
     age: '',
     salary: '',
     address: '',
+    
   });
 
   const handelChange = (e) => {
