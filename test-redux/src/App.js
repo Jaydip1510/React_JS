@@ -31,7 +31,7 @@ function App() {
          password: '',
       })
    }
-   const deteleEmp = (id) => {
+   const deleteEmp = (id) => {
       dispatch(removeItem(id));
    }
 
@@ -41,27 +41,27 @@ function App() {
             <div className='frm1'>
                <form onSubmit={handleSubmit} method='post'>
                   <label>Name:-</label>
-                  <input type='text' name='name' placeholder='Enter Your Name' value={inputValue.name} onChange={handleChange}></input>
+                  <input type='text' name='name' className='t1' placeholder='Enter Your Name' value={inputValue.name} onChange={handleChange}></input>
                   <br /><br />
 
                   <label>Age:-</label>
-                  <input type='text' name='age' placeholder='Enter Your Age' value={inputValue.age} onChange={handleChange}></input>
+                  <input type='text' name='age' className='t2' placeholder='Enter Your Age' value={inputValue.age} onChange={handleChange}></input>
                   <br /><br />
 
                   <label>salary:-</label>
-                  <input type='text' name='salary' placeholder='Enter Your Salary' value={inputValue.salary} onChange={handleChange}></input>
+                  <input type='text' name='salary' className='t3' placeholder='Enter Your Salary' value={inputValue.salary} onChange={handleChange}></input>
                   <br /><br />
 
                   <label>Address:-</label>
-                  <input type='text' name='address' placeholder='Enter Your Address' value={inputValue.address} onChange={handleChange}></input>
+                  <input type='text' name='address' className='t4' placeholder='Enter Your Address' value={inputValue.address} onChange={handleChange}></input>
                   <br /><br />
 
                   <label>Email:-</label>
-                  <input type='email' name='email' placeholder='Enter Your Email' value={inputValue.email} onChange={handleChange}></input>
+                  <input type='email' name='email' className='t5' placeholder='Enter Your Email' value={inputValue.email} onChange={handleChange}></input>
                   <br /><br />
 
                   <label>Password:-</label>
-                  <input type='password' name='password' placeholder='Enter Your Password' value={inputValue.password} onChange={handleChange}></input>
+                  <input type='password' name='password' className='t6' placeholder='Enter Your Password' value={inputValue.password} onChange={handleChange}></input>
                   <br /><br />
 
                   <button className='btn btn-outline-info' type='submit'>Submit</button>
@@ -78,6 +78,7 @@ function App() {
                   <td>Address</td>
                   <td>Email</td>
                   <td>Password</td>
+                  <td>Action</td>
                </tr>
             </thead>
             <tbody>
@@ -92,6 +93,7 @@ function App() {
                            <td>{i.address}</td>
                            <td>{i.email}</td>
                            <td>{i.password}</td>
+                           <td><button className='btn btn-outline-danger' onClick={() => deleteEmp(index)} >Delete</button></td>
                         </tr>
                      )
                   })

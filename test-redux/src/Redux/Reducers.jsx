@@ -9,7 +9,7 @@ const Reducers = (state = initialState,action) => {
                     ...state, empItem : [...state.empItem,action.payload]
                 }
             }
-            case "DeleteData": {
+            case "RemoveData": {
                 return {
                     ...state, empItem : state.empItem.filter(
                         (i,index) => index !== action.payload

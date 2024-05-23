@@ -23,6 +23,30 @@
       margin-top: 20px;
 }
 
+.t1{
+      width: 250px;
+      margin-left: 20px;
+}
+.t2{
+      width: 250px;
+      margin-left: 35px;
+}
+.t3{
+     width: 250px;
+     margin-left: 20px;
+}
+.t4{
+    width: 250px;
+    margin-left: 5px;
+}
+.t5{
+    width: 250px;
+    margin-left: 20px;
+}
+.t6{
+    width: 250px;
+    margin-left: 5px;
+}
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
