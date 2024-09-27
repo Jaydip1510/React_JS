@@ -18,11 +18,12 @@ function App() {
     <>
       <Navbar />
       <Routes>
-        <Route exact path="/" element={Home} />
-        <Route exact path="/rooms/" element={Room} />
-        <Route exact path="/rooms/:slug" element={SingleRoom} />
-        <Route component={Error} />
-        </Routes>
+        {/* JSX એલિમેન્ટ્સ તરીકે ફંક્શન્સને return કરો */}
+        <Route path="/" element={<Home />} />
+        <Route path="/rooms/" element={<Room />} />
+        <Route path="/rooms/:slug" element={<SingleRoom />} />
+        <Route path="*" element={<Error />} /> {/* Error પેજ માટે wildcard path ઉમેરો */}
+      </Routes>
       <Footer />
     </>
   );
