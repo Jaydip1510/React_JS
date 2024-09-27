@@ -8,6 +8,8 @@ export default function AddData() {
         password:"",
         address:""
     })
+
+    const [edit,setEdit] = useState(null);
     
     const [user,setUser] = useState(() => {
         const userData = localStorage.getItem("user");
@@ -24,14 +26,38 @@ export default function AddData() {
 
     const handlesubmit = (e) => {
         e.preventDefault();
-           setUser([...user,inputvalue]);
-           setInputValue({
-              name:'',
-              age:'',
-              email:'',
-              password:'',
-              address:''
-           })
+        if(edit === null){
+            setUser([...user,inputvalue]);
+            setInputValue({
+               name:'',
+               age:'',
+               email:'',
+               password:'',
+               address:''
+            })
+        }else {  
+            const updatauser = [...user];
+            updatauser[edit] = inputvalue;
+            setUser(updatauser);
+            setInputValue({
+               name:'',
+               age:'',
+               email:'',
+               password:'',
+               address:''
+            });
+            setEdit(null);
+        }
+          
+    }
+    const deleteItem = (id) =>{
+        const updateuser = [...user];
+        updateuser.splice(id, 1);
+        setUser(updateuser);
+    }
+    const edituser = (id) => {
+           setInputValue(user[id]);
+           setEdit(id);
     }
   return (
     <div>
@@ -56,8 +82,15 @@ export default function AddData() {
         <label htmlFor="">Address:-</label>
         <input type="text" name="address" value={inputvalue.address} onChange={handlechange} />
         <br /><br />
-
-        <button type='submit'>AddData</button>
+        {
+            edit === null ? (
+                <button type='submit'>AddData</button>
+            ) :
+            (
+                <button>UpdateData</button>
+            )
+        }
+        
       </form>
       <br /><br />
       <table border={2}>
@@ -80,7 +113,7 @@ export default function AddData() {
                         <td>{u.email}</td>
                         <td>{u.password}</td>
                         <td>{u.address}</td>
-                        <td><button>Delete</button></td>
+                        <td><button onClick={() => edituser(i)}>Edit</button><button onClick={() => deleteItem()}>Delete</button></td>
                     </tr>
                 ))
             }
