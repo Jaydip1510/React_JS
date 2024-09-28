@@ -112,7 +112,8 @@ export default function CrudApi() {
           </tr>
         </thead>
         <tbody>
-          {users.map((user) => (
+          {
+            users.map((user) => (
             <tr key={user.id}>
               <td>{user.id}</td>
               <td>{user.name}</td>
