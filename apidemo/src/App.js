@@ -5,6 +5,7 @@ import ApiForm from './Componets/ApiForm';
 import FetchApi from './Componets/FetchApi';
 import ApiData from './Componets/ApiData';
 import ApiCrud from './Componets/ApiCrud';
+import ApiImgcrud from './Componets/ApiImgcrud';
 
 
 function App() {
@@ -13,9 +14,10 @@ function App() {
       {/* <h3 className='txt'>API CrudDemo</h3> */}
       {/* <ApiComponet/> */}
       {/* <ApiForm/> */}
-      <FetchApi/>
+      {/* <FetchApi/> */}
       {/* <ApiData/> */}
       {/* <ApiCrud/> */}
+      <ApiImgcrud/>
     </div>
   );
 }
