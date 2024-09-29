@@ -13,9 +13,9 @@ function App() {
       {/* <h3 className='txt'>API CrudDemo</h3> */}
       {/* <ApiComponet/> */}
       {/* <ApiForm/> */}
-      {/* <FetchApi/> */}
+      <FetchApi/>
       {/* <ApiData/> */}
-      <ApiCrud/>
+      {/* <ApiCrud/> */}
     </div>
   );
 }
