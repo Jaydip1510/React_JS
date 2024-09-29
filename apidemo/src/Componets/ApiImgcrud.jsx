@@ -26,7 +26,7 @@ export default function ApiImgcrud() {
                             <td>{list.albumId}</td>
                             <td>{list.id}</td>
                             <td>{list.title}</td>
-                            <td><img src={list.img} alt="img" /></td>
+                            <td><img src={list.url} alt="img" height="100px" width="100px" /></td>
                             <td><button>Delete</button></td>
                         </tr>
                     ))
