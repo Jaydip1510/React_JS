@@ -14,7 +14,7 @@ export default function Footer() {
           rel="noreferrer"
           href="https://www.facebook.com/SamiurRahmanMukul"
         >
-          Samiur Rahman Mukul
+          Jaydip makwana
         </a>
       </p>
     </footer>

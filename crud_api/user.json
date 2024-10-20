@@ -6,7 +6,7 @@
       "email": "jaydip@gmail.com",
       "password": "jaydip123",
       "address": "panshina",
-      "id": 1
+      "id": "1"
     },
     {
       "id": "5535",
@@ -15,6 +15,14 @@
       "email": "vishal@gmail.com",
       "password": "vishal08",
       "address": "ahmedabad"
+    },
+    {
+      "id": "4f93",
+      "name": "fhgj",
+      "age": "21",
+      "email": "rutviksasani123@gmail.com",
+      "password": "jaydip123",
+      "address": "panshina"
     }
   ]
 }
