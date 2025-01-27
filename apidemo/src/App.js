@@ -13,8 +13,8 @@ function App() {
     <div className="App">
       {/* <h3 className='txt'>API CrudDemo</h3> */}
       {/* <ApiComponet/> */}
-      {/* <ApiForm/> */}
-      <FetchApi/>
+      <ApiForm/>
+      {/* <FetchApi/> */}
       {/* <ApiData/> */}
       {/* <ApiCrud/> */}
       {/* <ApiImgcrud/> */}
