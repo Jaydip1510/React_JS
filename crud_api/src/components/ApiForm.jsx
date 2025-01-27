@@ -9,6 +9,8 @@ export default function ApiForm() {
     password: '',
     address: '',
   });
+  const [isEditing, setIsEditing] = useState(false);
+  const [editId, setEditId] = useState(null);
 
   const handlechange = (e) => {
     const { name, value } = e.target;
@@ -30,20 +32,41 @@ export default function ApiForm() {
   }, []);
 
   const setData = async (e) => {
-    e.preventDefault(); // Prevent the default form submission
-    try {
-      const res = await fetch('http://localhost:3000/user', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(inputvalue),
-      });
-      const newData = await res.json();
-      setDt([...dt, newData]); // Update the data list
-      setInputValue({ name: '', age: '', email: '', password: '', address: '' }); // Reset the form fields
-    } catch (error) {
-      console.error('Error inserting data:', error);
+    e.preventDefault();
+    if (isEditing) {
+      // Update data if in editing mode
+      try {
+        const res = await fetch(`http://localhost:3000/user/${editId}`, {
+          method: 'PUT',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(inputvalue),
+        });
+        const updatedData = await res.json();
+        setDt(dt.map((item) => (item.id === editId ? updatedData : item)));
+        setIsEditing(false);
+        setEditId(null);
+        setInputValue({ name: '', age: '', email: '', password: '', address: '' });
+      } catch (error) {
+        console.error('Error updating data:', error);
+      }
+    } else {
+      // Add new data
+      try {
+        const res = await fetch('http://localhost:3000/user', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(inputvalue),
+        });
+        const newData = await res.json();
+        setDt([...dt, newData]);
+        setInputValue({ name: '', age: '', email: '', password: '', address: '' });
+      } catch (error) {
+        console.error('Error inserting data:', error);
+      }
     }
   };
 
@@ -52,10 +75,24 @@ export default function ApiForm() {
       await fetch(`http://localhost:3000/user/${id}`, {
         method: 'DELETE',
       });
-      // Remove the deleted item from the state
       setDt(dt.filter((item) => item.id !== id));
     } catch (error) {
       console.error('Error deleting data:', error);
+    }
+  };
+
+  const editData = (id) => {
+    const selectedItem = dt.find((item) => item.id === id);
+    if (selectedItem) {
+      setInputValue({
+        name: selectedItem.name,
+        age: selectedItem.age,
+        email: selectedItem.email,
+        password: selectedItem.password,
+        address: selectedItem.address,
+      });
+      setEditId(id);
+      setIsEditing(true);
     }
   };
 
@@ -112,7 +149,7 @@ export default function ApiForm() {
         <br />
         <br />
 
-        <button type="submit">AddData</button>
+        <button type="submit">{isEditing ? 'Update Data' : 'Add Data'}</button>
       </form>
 
       {/* Table to display data */}
@@ -121,7 +158,7 @@ export default function ApiForm() {
         <table border="1" cellPadding="10" cellSpacing="0">
           <thead>
             <tr>
-               <th>Id</th>
+              <th>Id</th>
               <th>Name</th>
               <th>Age</th>
               <th>Email</th>
@@ -131,15 +168,16 @@ export default function ApiForm() {
             </tr>
           </thead>
           <tbody>
-            {dt.map((item,index) => (
+            {dt.map((item, index) => (
               <tr key={item.id}>
-                <td>{index+1}</td>
+                <td>{index + 1}</td>
                 <td>{item.name}</td>
                 <td>{item.age}</td>
                 <td>{item.email}</td>
                 <td>{item.password}</td>
                 <td>{item.address}</td>
                 <td>
+                  <button onClick={() => editData(item.id)}>Edit</button>&nbsp;
                   <button onClick={() => deleteData(item.id)}>Delete</button>
                 </td>
               </tr>
