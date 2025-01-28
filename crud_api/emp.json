@@ -1,0 +1,14 @@
+{
+    "emp": [
+        {
+            "id":1,
+            "FirstName": "jaydip",
+            "LastName": "makwana",
+            "Email": "jaydip@gmail.com",
+            "age":"26",
+            "gender":"male",
+            "education":"bca",
+            "address":"panshina"
+        }
+    ]
+}

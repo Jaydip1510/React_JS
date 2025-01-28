@@ -37,7 +37,7 @@
   }
 }
 .frm{
-  height: 500px;
+  height: 550px;
   width: 600px;
   border: 1px solid black;
   margin-top: 20px;
@@ -55,6 +55,20 @@
    height: 40px;
    border-radius: 10px;
 }
+/* Set height and width for gender radio buttons */
+.gender {
+  width: 20px;
+  height: 20px;
+  margin-right: 5px; /* Space between the radio button and label */
+}
+
+/* Set height and width for education checkboxes */
+.edu {
+  width: 20px;
+  height: 20px;
+  margin-right: 5px; /* Space between the checkbox and label */
+}
+
 .agebox{
    margin-left: 23px;
 }
