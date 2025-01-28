@@ -2,8 +2,8 @@
   "user": [
     {
       "name": "jaydip",
-      "age": "22",
-      "email": "jaydip@gmail.com",
+      "age": "27",
+      "email": "jaydip1510@gmail.com",
       "password": "jaydip123",
       "address": "panshina",
       "id": "1"
@@ -17,20 +17,20 @@
       "address": "ahmedabad"
     },
     {
-      "id": "0817",
-      "name": "jaydip",
-      "age": "27",
-      "email": "jaydip@gmail.com",
-      "password": "123456789",
-      "address": "panshina"
-    },
-    {
       "name": "alpesh",
       "age": "28",
       "email": "alpesh123@gmail.com",
       "password": "alpesh123",
       "address": "limbdi",
       "id": "6b8b"
+    },
+    {
+      "id": "b5db",
+      "name": "jaypal",
+      "age": "16",
+      "email": "jaypal123@gmail.com",
+      "password": "jaypal123",
+      "address": "limbdi"
     }
   ]
 }

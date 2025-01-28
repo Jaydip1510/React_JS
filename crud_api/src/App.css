@@ -36,3 +36,37 @@
     transform: rotate(360deg);
   }
 }
+.frm{
+  height: 500px;
+  width: 600px;
+  border: 1px solid black;
+  margin-top: 20px;
+  background-color: #61c522;
+}
+.frm2{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+.txt{
+   margin-left: 10px;
+   width: 280px;
+   height: 40px;
+   border-radius: 10px;
+}
+.agebox{
+   margin-left: 23px;
+}
+.emailbox{
+  margin-left: 15px;
+}
+.pwdbox{
+  margin-right: 23px;
+}
+.addbox{
+  margin-right: 13px;
+}
+.tbl{
+  width: 100%;
+}
