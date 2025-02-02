@@ -20,7 +20,7 @@ const Signup = () => {
 
     localStorage.setItem(userKey, JSON.stringify(user));
 
-    window.location.href = "/login";
+    window.location.href = "/";
   };
 
   return (

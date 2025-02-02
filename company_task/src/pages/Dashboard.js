@@ -4,7 +4,7 @@ import { Table, Button, Container, Card, Navbar, Nav } from "react-bootstrap";
 const Dashboard = () => {
   const handleLogout = () => {
     localStorage.removeItem("isLoggedIn"); // Clear session on logout
-    window.location.href = "/login"; // Redirect to login page
+    window.location.href = "/"; // Redirect to login page
   };
 
   const [bids, setBids] = useState([]);
