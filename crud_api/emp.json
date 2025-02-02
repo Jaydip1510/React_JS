@@ -1,14 +1,34 @@
 {
-    "emp": [
-        {
-            "id":1,
-            "FirstName": "jaydip",
-            "LastName": "makwana",
-            "Email": "jaydip@gmail.com",
-            "age":"26",
-            "gender":"male",
-            "education":"bca",
-            "address":"panshina"
-        }
-    ]
+  "emp": [
+    {
+      "id": "1",
+      "FirstName": "jaydip",
+      "LastName": "makwana",
+      "Email": "jaydip@gmail.com",
+      "age": "26",
+      "gender": "male",
+      "education": "bca",
+      "address": "panshina"
+    },
+    {
+      "id": "7617",
+      "FirstName": "alpesh",
+      "LastName": "anajara",
+      "Email": "alpesh123@gmail.com",
+      "Age": "25",
+      "Gender": "Male",
+      "Education": "BCA",
+      "Address": "limbdi"
+    },
+    {
+      "id": "dc59",
+      "FirstName": "jaypal",
+      "LastName": "jadav",
+      "Email": "jaypal123@gmail.com",
+      "Age": "25",
+      "Gender": "Male",
+      "Education": "BCA",
+      "Address": "limbdi"
+    }
+  ]
 }
